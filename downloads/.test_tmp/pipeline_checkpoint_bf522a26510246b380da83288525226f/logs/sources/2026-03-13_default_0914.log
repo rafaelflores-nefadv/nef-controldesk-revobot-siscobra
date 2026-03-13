@@ -1,0 +1,11 @@
+2026-03-13 13:00:42,487 [INFO] test-revo360-pipeline.source.default_0914 - Iniciando pipeline do source=default_0914
+2026-03-13 13:00:42,488 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 - tentativa 1/3
+2026-03-13 13:00:42,488 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa download (try=1).
+2026-03-13 13:00:42,489 [INFO] test-revo360-pipeline.source.default_0914 - Etapa download concluida com sucesso.
+2026-03-13 13:00:42,490 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa prepare (try=1).
+2026-03-13 13:00:42,490 [INFO] test-revo360-pipeline.source.default_0914 - Etapa prepare concluida com sucesso.
+2026-03-13 13:00:42,492 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_server (try=1).
+2026-03-13 13:00:42,492 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_server concluida com sucesso.
+2026-03-13 13:00:42,493 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_ftp (try=1).
+2026-03-13 13:00:42,493 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_ftp concluida com sucesso.
+2026-03-13 13:00:42,494 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 concluido com sucesso na tentativa 1.

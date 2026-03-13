@@ -1,0 +1,12 @@
+2026-03-13 15:10:37,579 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Iniciando pipeline do source=siscobra_0914
+2026-03-13 15:10:37,580 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Source siscobra_0914 - tentativa 1/1
+2026-03-13 15:10:37,580 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Executando etapa download (try=1).
+2026-03-13 15:10:37,581 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Etapa download concluida com sucesso.
+2026-03-13 15:10:37,582 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Executando etapa prepare (try=1).
+2026-03-13 15:10:37,582 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Etapa prepare concluida com sucesso.
+2026-03-13 15:10:37,583 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Executando etapa send_server (try=1).
+2026-03-13 15:10:37,583 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Etapa send_server concluida com sucesso.
+2026-03-13 15:10:37,584 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Executando etapa send_ftp (try=1).
+2026-03-13 15:10:37,584 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Etapa send_ftp concluida com sucesso.
+2026-03-13 15:10:37,586 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Source siscobra_0914 concluido com sucesso na tentativa 1.
+2026-03-13 15:10:37,588 [INFO] test-revo360-cli-source-filter.source.siscobra_0914 - Metricas do source: started=2026-03-13T15:10:37 finished=2026-03-13T15:10:37 duration_s=0.007 category=success final_stage=send_ftp

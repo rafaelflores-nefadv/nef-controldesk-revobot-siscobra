@@ -1,0 +1,6 @@
+2026-03-13 16:38:55,890 [INFO] __main__ - Log iniciado em: C:\Projetos\revo360-bot\downloads\logs\execucao_20260313_163855.log
+2026-03-13 16:38:55,892 [INFO] __main__ - Lock de instancia adquirido: C:\Projetos\revo360-bot\downloads\logs\revo360.lock
+2026-03-13 16:38:55,892 [INFO] __main__ - Modo daemon iniciado (poll=30s, after_run_sleep=60s).
+2026-03-13 16:38:55,892 [INFO] __main__ - Fora da janela (2026-03-13 18:40:00 -> 2026-03-13 18:40:59). Proxima janela em 2026-03-13 18:40:00. Dormindo 7264 segundos.
+2026-03-13 16:52:19,688 [INFO] __main__ - Lock de instancia removido: C:\Projetos\revo360-bot\downloads\logs\revo360.lock
+2026-03-13 16:52:19,688 [INFO] __main__ - Execucao interrompida pelo usuario (Ctrl+C).

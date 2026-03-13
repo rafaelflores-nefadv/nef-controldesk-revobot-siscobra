@@ -1,0 +1,27 @@
+2026-03-13 14:22:12,237 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 14:22:12,239 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 14:22:12,239 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 14:22:12,239 [ERROR] test-revo360-pipeline.source.source_b - Falha na etapa download: arquivo esperado nao encontrado
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1260, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Projetos\revo360-bot\tests\test_pipeline_checkpoint.py", line 726, in download_by_source
+    raise RuntimeError("arquivo esperado nao encontrado")
+RuntimeError: arquivo esperado nao encontrado
+2026-03-13 14:22:12,242 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 14:22:12,242 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 14:22:12,242 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 14:22:12,242 [ERROR] test-revo360-pipeline.source.source_b - Source source_b falhou definitivamente apos 1 tentativa(s).
+2026-03-13 14:22:12,244 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T14:22:12 finished=2026-03-13T14:22:12 duration_s=0.006 category=not_found final_stage=download

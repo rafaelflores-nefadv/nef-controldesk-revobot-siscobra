@@ -1,0 +1,11 @@
+2026-03-13 12:59:50,272 [INFO] test-revo360-source-config.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:59:50,273 [INFO] test-revo360-source-config.source.source_a - Source source_a - tentativa 1/1
+2026-03-13 12:59:50,273 [INFO] test-revo360-source-config.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:59:50,274 [INFO] test-revo360-source-config.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:59:50,275 [INFO] test-revo360-source-config.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:59:50,275 [INFO] test-revo360-source-config.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:59:50,276 [INFO] test-revo360-source-config.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:59:50,276 [INFO] test-revo360-source-config.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:59:50,277 [INFO] test-revo360-source-config.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:59:50,278 [INFO] test-revo360-source-config.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:59:50,279 [INFO] test-revo360-source-config.source.source_a - Source source_a concluido com sucesso na tentativa 1.

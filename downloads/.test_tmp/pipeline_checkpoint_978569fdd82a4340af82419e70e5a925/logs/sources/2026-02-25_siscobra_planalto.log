@@ -1,0 +1,45 @@
+2026-03-13 15:56:44,358 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,359 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,360 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,360 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,361 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,372 [INFO] test-revo360-pipeline.source.siscobra_planalto - Prepare concluido: C:\Projetos\revo360-bot\downloads\.test_tmp\pipeline_checkpoint_978569fdd82a4340af82419e70e5a925\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260225_155644.csv
+2026-03-13 15:56:44,372 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,373 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,373 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,374 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,375 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,377 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.018 category=success final_stage=send_server
+2026-03-13 15:56:44,404 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,405 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,405 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,405 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,406 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,407 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,408 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,408 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,409 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,410 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,412 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.007 category=success final_stage=send_server
+2026-03-13 15:56:44,648 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,649 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,649 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,650 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,651 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,652 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,653 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,653 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,654 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,655 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,657 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.008 category=success final_stage=send_server
+2026-03-13 15:56:44,684 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,685 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,685 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,686 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,687 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,687 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,688 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,689 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,689 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,691 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,692 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.008 category=success final_stage=send_server

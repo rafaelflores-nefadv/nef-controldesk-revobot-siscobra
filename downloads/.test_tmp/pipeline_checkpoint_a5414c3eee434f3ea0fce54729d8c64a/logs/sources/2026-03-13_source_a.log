@@ -1,0 +1,72 @@
+2026-03-13 12:39:33,625 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:39:33,626 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/3
+2026-03-13 12:39:33,626 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:39:33,627 [INFO] test-revo360-pipeline.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,628 [INFO] test-revo360-pipeline.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,628 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,630 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,630 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,631 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,631 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,632 [INFO] test-revo360-pipeline.source.source_a - Source source_a concluido com sucesso na tentativa 1.
+2026-03-13 12:39:33,653 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:39:33,654 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/1
+2026-03-13 12:39:33,654 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:39:33,654 [ERROR] test-revo360-pipeline.source.source_a - Falha na etapa download: arquivo nao encontrado
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in executar_fluxo_por_etapas
+    _run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1142, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Projetos\revo360-bot\tests\test_pipeline_checkpoint.py", line 579, in download_by_source
+    raise RuntimeError("arquivo nao encontrado")
+RuntimeError: arquivo nao encontrado
+2026-03-13 12:39:33,657 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 12:39:33,657 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 12:39:33,657 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 12:39:33,657 [ERROR] test-revo360-pipeline.source.source_a - Source source_a falhou definitivamente apos 1 tentativa(s).
+2026-03-13 12:39:33,684 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:39:33,686 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/1
+2026-03-13 12:39:33,687 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:39:33,687 [INFO] test-revo360-pipeline.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,688 [INFO] test-revo360-pipeline.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,689 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,690 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,690 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,692 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,692 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,693 [INFO] test-revo360-pipeline.source.source_a - Source source_a concluido com sucesso na tentativa 1.
+2026-03-13 12:39:33,715 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:39:33,717 [INFO] test-revo360-pipeline.source.source_a - Source source_a ja estava concluido. Pulando reprocessamento.
+2026-03-13 12:39:33,732 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:39:33,733 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/3
+2026-03-13 12:39:33,734 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:39:33,734 [INFO] test-revo360-pipeline.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,735 [INFO] test-revo360-pipeline.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,735 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,737 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,737 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,738 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,738 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,739 [INFO] test-revo360-pipeline.source.source_a - Source source_a concluido com sucesso na tentativa 1.
+2026-03-13 12:39:33,753 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:39:33,754 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/3
+2026-03-13 12:39:33,754 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:39:33,754 [INFO] test-revo360-pipeline.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,755 [INFO] test-revo360-pipeline.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,756 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,757 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,757 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,758 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,758 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,759 [INFO] test-revo360-pipeline.source.source_a - Source source_a concluido com sucesso na tentativa 1.

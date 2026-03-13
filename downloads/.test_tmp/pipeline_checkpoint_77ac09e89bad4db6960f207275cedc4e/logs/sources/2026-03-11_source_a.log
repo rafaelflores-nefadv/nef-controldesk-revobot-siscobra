@@ -1,0 +1,22 @@
+2026-03-13 12:59:22,294 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:59:22,295 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/3
+2026-03-13 12:59:22,295 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:59:22,296 [INFO] test-revo360-pipeline.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:59:22,297 [INFO] test-revo360-pipeline.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:59:22,297 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:59:22,298 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:59:22,299 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:59:22,299 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:59:22,300 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:59:22,301 [INFO] test-revo360-pipeline.source.source_a - Source source_a concluido com sucesso na tentativa 1.
+2026-03-13 12:59:22,315 [INFO] test-revo360-pipeline.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:59:22,316 [INFO] test-revo360-pipeline.source.source_a - Source source_a - tentativa 1/3
+2026-03-13 12:59:22,316 [INFO] test-revo360-pipeline.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:59:22,317 [INFO] test-revo360-pipeline.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:59:22,318 [INFO] test-revo360-pipeline.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:59:22,318 [INFO] test-revo360-pipeline.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:59:22,319 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:59:22,320 [INFO] test-revo360-pipeline.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:59:22,321 [INFO] test-revo360-pipeline.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:59:22,321 [INFO] test-revo360-pipeline.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:59:22,322 [INFO] test-revo360-pipeline.source.source_a - Source source_a concluido com sucesso na tentativa 1.

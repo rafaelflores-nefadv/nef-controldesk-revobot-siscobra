@@ -1,0 +1,126 @@
+2026-03-13 15:56:44,138 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,139 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,139 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,139 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,140 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,141 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,142 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,142 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,143 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,143 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,145 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.007 category=success final_stage=send_server
+2026-03-13 15:56:44,166 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,167 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,167 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,168 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,168 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,169 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,170 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,170 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,171 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,172 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,175 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.008 category=success final_stage=send_server
+2026-03-13 15:56:44,194 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,194 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,195 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,195 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,196 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,198 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,199 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,199 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,200 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,201 [ERROR] test-revo360-pipeline.source.siscobra_planalto - Falha inesperada ao enviar notificacoes (ignorada para nao afetar o pipeline): notify down
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1464, in _safe_emit_notifications
+    emitir_notificacoes(resumo, execution_summary, logger)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+  File "C:\Projetos\revo360-bot\main.py", line 1464, in _safe_emit_notifications
+    emitir_notificacoes(resumo, execution_summary, logger)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1228, in _execute_mock_call
+    raise effect
+RuntimeError: notify down
+2026-03-13 15:56:44,202 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,204 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.009 category=success final_stage=send_server
+2026-03-13 15:56:44,233 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,234 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,234 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,234 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,235 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,236 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,237 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,238 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,239 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,241 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.008 category=success final_stage=prepare
+2026-03-13 15:56:44,267 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,268 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/1
+2026-03-13 15:56:44,268 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,269 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,270 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,270 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,271 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,272 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,273 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,275 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.007 category=success final_stage=prepare
+2026-03-13 15:56:44,294 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,296 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto ja estava concluido. Pulando reprocessamento.
+2026-03-13 15:56:44,297 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.002 category=skipped final_stage=prepare
+2026-03-13 15:56:44,358 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,359 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,360 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,360 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,361 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,372 [INFO] test-revo360-pipeline.source.siscobra_planalto - Prepare concluido: C:\Projetos\revo360-bot\downloads\.test_tmp\pipeline_checkpoint_978569fdd82a4340af82419e70e5a925\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260225_155644.csv
+2026-03-13 15:56:44,372 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,373 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,373 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,374 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,375 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,377 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.018 category=success final_stage=send_server
+2026-03-13 15:56:44,404 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,405 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,405 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,405 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,406 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,407 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,408 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,408 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,409 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,410 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,412 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.007 category=success final_stage=send_server
+2026-03-13 15:56:44,648 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,649 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,649 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,650 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,651 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,652 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,653 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,653 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,654 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,655 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,657 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.008 category=success final_stage=send_server
+2026-03-13 15:56:44,684 [INFO] test-revo360-pipeline.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:56:44,685 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/3
+2026-03-13 15:56:44,685 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:56:44,686 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:56:44,687 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:56:44,687 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:56:44,688 [INFO] test-revo360-pipeline.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:56:44,689 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:56:44,689 [INFO] test-revo360-pipeline.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:56:44,691 [INFO] test-revo360-pipeline.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:56:44,692 [INFO] test-revo360-pipeline.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:56:44 finished=2026-03-13T15:56:44 duration_s=0.008 category=success final_stage=send_server

@@ -1,0 +1,111 @@
+2026-03-13 16:36:18,877 [INFO] __main__ - Log iniciado em: C:\Projetos\revo360-bot\downloads\logs\execucao_20260313_163618.log
+2026-03-13 16:36:18,879 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-03-12 (server=True ftp=True).
+2026-03-13 16:36:18,880 [INFO] __main__ - Lock de instancia adquirido: C:\Projetos\revo360-bot\downloads\logs\revo360.lock
+2026-03-13 16:36:18,880 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-03-13 16:36:18,881 [INFO] __main__ - Inicio do ciclo 2026-03-12 em 2026-03-13T16:36:18
+2026-03-13 16:36:18,881 [INFO] __main__ - State do ciclo removido por --force-run: C:\Projetos\revo360-bot\downloads\logs\state_2026-03-12.json
+2026-03-13 16:36:18,882 [INFO] __main__ - Ciclo 2026-03-12 carregado com targets: server=True ftp=True
+2026-03-13 16:36:18,883 [INFO] __main__ - Pre-validacao de configuracao concluida: 2 source(s) configurado(s).
+2026-03-13 16:36:18,883 [INFO] __main__ - Source selecionado manualmente: siscobra_celeiro
+2026-03-13 16:36:18,883 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_celeiro
+2026-03-13 16:36:18,883 [INFO] __main__ - Processando source 1/1: siscobra_celeiro
+2026-03-13 16:36:18,885 [INFO] __main__.source.siscobra_celeiro - Iniciando pipeline do source=siscobra_celeiro
+2026-03-13 16:36:18,886 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro - tentativa 1/10
+2026-03-13 16:36:18,886 [INFO] __main__.source.siscobra_celeiro - Executando etapa download (try=1).
+2026-03-13 16:36:18,886 [INFO] __main__.source.siscobra_celeiro - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_celeiro)
+2026-03-13 16:36:18,888 [INFO] WDM - ====== WebDriver manager ======
+2026-03-13 16:36:19,599 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-03-13 16:36:22,033 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-03-13 16:36:22,325 [INFO] WDM - Driver [C:\Users\rafael.flores\.wdm\drivers\chromedriver\win64\146.0.7680.76\chromedriver-win32/chromedriver.exe] found in cache
+2026-03-13 16:36:34,757 [INFO] __main__.source.siscobra_celeiro - Login realizado com sucesso
+2026-03-13 16:36:34,757 [INFO] __main__.source.siscobra_celeiro - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 16:36:34,758 [INFO] __main__.source.siscobra_celeiro - Consultando pasta remota no navegador autenticado: Exportação Siscobra 0914
+2026-03-13 16:36:34,758 [INFO] core.download_api - Executando listagem via navegacao do navegador para a pasta 'Exportação Siscobra 0914'
+2026-03-13 16:36:34,773 [INFO] core.download_api - Usando base URL configurada para o contexto same-origin do File Manager: https://nef.revo360.io:10024
+2026-03-13 16:36:34,774 [INFO] core.download_api - Garantindo contexto same-origin do File Manager na mesma aba: handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io/ url_original=https://nef.revo360.io/ base_url=https://nef.revo360.io:10024
+2026-03-13 16:36:34,952 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=867F8F3496BB3BE56DD3CB3823D1CA9D url=https://nef.revo360.io:10024/ readyState=complete
+2026-03-13 16:36:34,953 [INFO] core.download_api - Contexto do File Manager carregado na mesma guia: handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D handle_original=867F8F3496BB3BE56DD3CB3823D1CA9D handle_file_manager=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io/ mesma_aba=True aba_nova=False
+2026-03-13 16:36:34,957 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra 0914' no navegador autenticado: handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D handle_original=867F8F3496BB3BE56DD3CB3823D1CA9D handle_file_manager=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io/ mesma_aba=True aba_nova=False base_url=https://nef.revo360.io:10024 endpoint=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-03-13 16:36:34,957 [INFO] core.download_api - Navegando na aba do File Manager para listar arquivos: handle_file_manager=867F8F3496BB3BE56DD3CB3823D1CA9D url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D
+2026-03-13 16:36:35,049 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=867F8F3496BB3BE56DD3CB3823D1CA9D url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D readyState=complete
+2026-03-13 16:36:35,054 [INFO] core.download_api - Payload bruto da listagem (primeiros 1000 caracteres): handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D url_original=https://nef.revo360.io/ mesma_aba=True payload={"success":true,"errorCode":null,"errorText":"","result":[{"key":"Exportação Siscobra 0914\\Exportacao_Siscobra_0914_20251229.csv","name":"Exportacao_Siscobra_0914_20251229.csv","dateModified":"2025-12-29T19:02:57.6645019Z","isDirectory":false,"size":24924,"hasSubDirectories":false},{"key":"Exportação Siscobra 0914\\Exportacao_Siscobra_0914_20251230.csv","name":"Exportacao_Siscobra_0914_20251230.csv","dateModified":"2025-12-30T21:00:00.6719874Z","isDirectory":false,"size":36969,"hasSubDirectories":false},{"key":"Exportação Siscobra 0914\\Exportacao_Siscobra_0914_20251231.csv","name":"Exportacao_Siscobra_0914_20251231.csv","dateModified":"2025-12-31T21:00:01.1030738Z","isDirectory":false,"size":190,"hasSubDirectories":false},{"key":"Exportação Siscobra 0914\\Exportacao_Siscobra_0914_20260101.csv","name":"Exportacao_Siscobra_0914_20260101.csv","dateModified":"2026-01-01T21:00:00.8768927Z","isDirectory":false,"size":190,"hasSubDirectories":false},{"key":"Exportação Siscobra 0914\\Exportac
+2026-03-13 16:36:35,054 [INFO] core.download_api - Listagem via navegacao do navegador concluida: 74 item(ns) em 'Exportação Siscobra 0914'
+2026-03-13 16:36:35,054 [INFO] __main__.source.siscobra_celeiro - Listagem via navegacao do navegador concluida: 74 item(ns) em 'Exportação Siscobra 0914'
+2026-03-13 16:36:35,055 [INFO] __main__.source.siscobra_celeiro - Arquivo selecionado para o ciclo 2026-03-12 (source=siscobra_celeiro): Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,056 [INFO] core.download - Limpeza pre-download: nenhum arquivo antigo para Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,056 [INFO] __main__.source.siscobra_celeiro - Iniciando download via form submit no navegador: Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,056 [INFO] core.download_api - Disparando download via form submit no navegador: pasta='Exportação Siscobra 0914' arquivo='Exportacao_Siscobra_0914_20260312.csv'
+2026-03-13 16:36:35,060 [INFO] core.download_api - Usando base URL configurada para o contexto same-origin do File Manager: https://nef.revo360.io:10024
+2026-03-13 16:36:35,061 [INFO] core.download_api - Garantindo contexto same-origin do File Manager na mesma aba: handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D url_original=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D base_url=https://nef.revo360.io:10024
+2026-03-13 16:36:35,159 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=867F8F3496BB3BE56DD3CB3823D1CA9D url=https://nef.revo360.io:10024/ readyState=complete
+2026-03-13 16:36:35,160 [INFO] core.download_api - Contexto do File Manager carregado na mesma guia: handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D handle_original=867F8F3496BB3BE56DD3CB3823D1CA9D handle_file_manager=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D mesma_aba=True aba_nova=False
+2026-03-13 16:36:35,163 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_0914_20260312.csv' no navegador autenticado: handle_atual=867F8F3496BB3BE56DD3CB3823D1CA9D handle_original=867F8F3496BB3BE56DD3CB3823D1CA9D handle_file_manager=867F8F3496BB3BE56DD3CB3823D1CA9D url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+0914%22%7D%5D%7D mesma_aba=True aba_nova=False base_url=https://nef.revo360.io:10024 endpoint=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-03-13 16:36:35,164 [INFO] core.download_api - Submetendo formulario de download na aba do File Manager: handle_file_manager=867F8F3496BB3BE56DD3CB3823D1CA9D action=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD
+2026-03-13 16:36:35,213 [INFO] core.download_api - Form submit de download disparado com sucesso: arquivo='Exportacao_Siscobra_0914_20260312.csv' action=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD
+2026-03-13 16:36:35,213 [INFO] __main__.source.siscobra_celeiro - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\revo360-bot\downloads
+2026-03-13 16:36:35,715 [INFO] core.download - Validacao do download concluida: Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,715 [INFO] __main__.source.siscobra_celeiro - Download via navegador concluido: Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,715 [INFO] __main__.source.siscobra_celeiro - Arquivo salvo em: C:\Projetos\revo360-bot\downloads\Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,716 [INFO] __main__.source.siscobra_celeiro - Tamanho final do arquivo salvo: 135615 bytes
+2026-03-13 16:36:35,716 [INFO] __main__.source.siscobra_celeiro - Tempo total do download: 0.66s
+2026-03-13 16:36:37,852 [INFO] __main__.source.siscobra_celeiro - Etapa download concluida com sucesso.
+2026-03-13 16:36:37,854 [INFO] __main__.source.siscobra_celeiro - Executando etapa prepare (try=1).
+2026-03-13 16:36:37,866 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv.tmp
+2026-03-13 16:36:38,050 [INFO] core.download - Cabecalho removido do CSV: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv.tmp
+2026-03-13 16:36:38,050 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618_excel.xlsx
+2026-03-13 16:36:38,050 [INFO] __main__.source.siscobra_celeiro - Prepare concluido: C:\Projetos\revo360-bot\downloads\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv
+2026-03-13 16:36:38,051 [INFO] __main__.source.siscobra_celeiro - Etapa prepare concluida com sucesso.
+2026-03-13 16:36:38,052 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_server (try=1).
+2026-03-13 16:36:38,245 [INFO] core.download - Arquivo copiado para servidor: Z:\control_desk\RETORNO\0914\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv
+2026-03-13 16:36:38,245 [INFO] __main__.source.siscobra_celeiro - Etapa send_server concluida com sucesso.
+2026-03-13 16:36:38,247 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_ftp (try=1).
+2026-03-13 16:36:38,258 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-03-13 16:36:38,384 [INFO] core.download - Autenticando no FTP
+2026-03-13 16:36:38,456 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-03-13 16:36:38,531 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-03-13 16:36:38,531 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-03-13 16:36:38,845 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv
+2026-03-13 16:36:38,880 [INFO] core.download - Iniciando envio ao FTP: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv
+2026-03-13 16:36:38,891 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-03-13 16:36:39,038 [INFO] core.download - Autenticando no FTP
+2026-03-13 16:36:39,110 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-03-13 16:36:39,181 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-03-13 16:36:39,182 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-03-13 16:36:39,218 [INFO] core.download - Enviando arquivo via STOR: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv (protecao=P, modo=PASV)
+2026-03-13 16:37:09,570 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-03-13 16:37:09,571 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-03-13 16:37:09,682 [INFO] core.download - Autenticando no FTP
+2026-03-13 16:37:09,749 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-03-13 16:37:09,818 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-03-13 16:37:09,818 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-03-13 16:37:09,890 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv tamanho_local=136421 tamanho_remoto=136421 ok=True
+2026-03-13 16:37:09,923 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv
+2026-03-13 16:37:09,924 [INFO] __main__.source.siscobra_celeiro - Etapa send_ftp concluida com sucesso.
+2026-03-13 16:37:09,926 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 16:37:12,887 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-03-13 16:37:15,876 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2beab57b2b2sm4028562eec.33 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 764, in login
+    raise last_exception
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 753, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 671, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2beab57b2b2sm4028562eec.33 - gsmtp')
+2026-03-13 16:37:15,879 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro concluido com sucesso na tentativa 1.
+2026-03-13 16:37:15,881 [INFO] __main__.source.siscobra_celeiro - Metricas do source: started=2026-03-13T16:36:18 finished=2026-03-13T16:37:15 duration_s=56.996 category=success final_stage=send_ftp
+2026-03-13 16:37:15,882 [INFO] __main__ - Source siscobra_celeiro finalizado com status=SUCCESS
+2026-03-13 16:37:15,882 [INFO] __main__ - Resumo final do ciclo por source (padrao observabilidade):
+2026-03-13 16:37:15,882 [INFO] __main__ - source=siscobra_celeiro enabled=True category=success status=SUCCESS final_stage=send_ftp started=2026-03-13T16:36:18 finished=2026-03-13T16:37:15 duration_s=56.996 expected=Exportacao_Siscobra_0914_20260312.csv resolved=Exportacao_Siscobra_0914_20260312.csv server=True ftp=True error=-
+2026-03-13 16:37:15,882 [INFO] __main__ - source=siscobra_planalto enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=True ftp=True error=-
+2026-03-13 16:37:15,882 [INFO] __main__ - Resumo do ciclo: status=SUCCESS started=2026-03-13T16:36:18 finished=2026-03-13T16:37:15 duration_s=57.002 enabled=2 success=1 failed=0 not_found=0 skipped=1 disabled=0
+2026-03-13 16:37:15,883 [INFO] __main__ - Resumo observabilidade persistido em C:\Projetos\revo360-bot\downloads\logs\cycle_summary_2026-03-12.json
+2026-03-13 16:37:15,883 [INFO] __main__ - Lock de instancia removido: C:\Projetos\revo360-bot\downloads\logs\revo360.lock

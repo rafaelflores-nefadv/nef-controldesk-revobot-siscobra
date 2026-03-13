@@ -1,0 +1,12 @@
+2026-03-13 12:39:33,761 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 12:39:33,761 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/3
+2026-03-13 12:39:33,762 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 12:39:33,762 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,763 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,764 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,765 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,765 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,766 [WARNING] test-revo360-pipeline.source.source_b - Falha ao persistir state em C:\Projetos\revo360-bot\downloads\.test_tmp\pipeline_checkpoint_4b406f88337f48afa0581a81cec6d729\logs\state_2026-03-12.json: [WinError 5] Acesso negado: 'C:\\Projetos\\revo360-bot\\downloads\\.test_tmp\\pipeline_checkpoint_4b406f88337f48afa0581a81cec6d729\\logs\\state_2026-03-12.tmp' -> 'C:\\Projetos\\revo360-bot\\downloads\\.test_tmp\\pipeline_checkpoint_4b406f88337f48afa0581a81cec6d729\\logs\\state_2026-03-12.json'
+2026-03-13 12:39:33,766 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,766 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,767 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.

@@ -1,0 +1,81 @@
+2026-03-13 15:35:36,070 [INFO] __main__ - Log iniciado em: C:\Projetos\revo360-bot\downloads\logs\execucao_20260313_153536.log
+2026-03-13 15:35:36,071 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-03-12 (server=True ftp=False).
+2026-03-13 15:35:36,072 [INFO] __main__ - Lock de instancia adquirido: C:\Projetos\revo360-bot\downloads\logs\revo360.lock
+2026-03-13 15:35:36,072 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-03-13 15:35:36,072 [INFO] __main__ - Inicio do ciclo 2026-03-12 em 2026-03-13T15:35:36
+2026-03-13 15:35:36,074 [INFO] __main__ - Ciclo 2026-03-12 carregado com targets: server=True ftp=False
+2026-03-13 15:35:36,074 [INFO] __main__ - Pre-validacao de configuracao concluida: 2 source(s) configurado(s).
+2026-03-13 15:35:36,075 [INFO] __main__ - Source selecionado manualmente: siscobra_planalto
+2026-03-13 15:35:36,075 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_planalto
+2026-03-13 15:35:36,075 [INFO] __main__ - Processando source 1/1: siscobra_planalto
+2026-03-13 15:35:36,076 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:35:36,077 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 15:35:36,077 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=3).
+2026-03-13 15:35:36,077 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 15:35:36,079 [INFO] WDM - ====== WebDriver manager ======
+2026-03-13 15:35:36,764 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-03-13 15:35:37,102 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-03-13 15:35:37,395 [INFO] WDM - Driver [C:\Users\rafael.flores\.wdm\drivers\chromedriver\win64\146.0.7680.76\chromedriver-win32/chromedriver.exe] found in cache
+2026-03-13 15:35:49,405 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 15:35:49,406 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 15:35:49,406 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportação Siscobra Planalto
+2026-03-13 15:35:49,406 [INFO] core.download_api - Executando listagem via navegacao do navegador para a pasta 'Exportação Siscobra Planalto'
+2026-03-13 15:35:49,420 [INFO] core.download_api - Usando base URL configurada para o contexto same-origin do File Manager: https://nef.revo360.io:10024
+2026-03-13 15:35:49,420 [INFO] core.download_api - Garantindo contexto same-origin do File Manager na mesma aba: handle_atual=66D13D13BCE0A2E1D36CB994394EB763 url_atual=https://nef.revo360.io/ url_original=https://nef.revo360.io/ base_url=https://nef.revo360.io:10024
+2026-03-13 15:35:49,602 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=66D13D13BCE0A2E1D36CB994394EB763 url=https://nef.revo360.io:10024/ readyState=complete
+2026-03-13 15:35:49,603 [INFO] core.download_api - Contexto do File Manager carregado na mesma guia: handle_atual=66D13D13BCE0A2E1D36CB994394EB763 handle_original=66D13D13BCE0A2E1D36CB994394EB763 handle_file_manager=66D13D13BCE0A2E1D36CB994394EB763 url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io/ mesma_aba=True aba_nova=False
+2026-03-13 15:35:49,607 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra Planalto' no navegador autenticado: handle_atual=66D13D13BCE0A2E1D36CB994394EB763 handle_original=66D13D13BCE0A2E1D36CB994394EB763 handle_file_manager=66D13D13BCE0A2E1D36CB994394EB763 url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io/ mesma_aba=True aba_nova=False base_url=https://nef.revo360.io:10024 endpoint=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-03-13 15:35:49,607 [INFO] core.download_api - Navegando na aba do File Manager para listar arquivos: handle_file_manager=66D13D13BCE0A2E1D36CB994394EB763 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D
+2026-03-13 15:35:49,691 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=66D13D13BCE0A2E1D36CB994394EB763 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D readyState=complete
+2026-03-13 15:35:49,697 [INFO] core.download_api - Payload bruto da listagem (primeiros 1000 caracteres): handle_atual=66D13D13BCE0A2E1D36CB994394EB763 url_atual=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D url_original=https://nef.revo360.io/ mesma_aba=True payload={"success":true,"errorCode":null,"errorText":"","result":[{"key":"Exportação Siscobra Planalto\\Exportacao_Siscobra_Planalto_20260312.csv","name":"Exportacao_Siscobra_Planalto_20260312.csv","dateModified":"2026-03-12T22:30:00.9848844Z","isDirectory":false,"size":46875,"hasSubDirectories":false}]}
+2026-03-13 15:35:49,697 [INFO] core.download_api - Listagem via navegacao do navegador concluida: 1 item(ns) em 'Exportação Siscobra Planalto'
+2026-03-13 15:35:49,697 [INFO] __main__.source.siscobra_planalto - Listagem via navegacao do navegador concluida: 1 item(ns) em 'Exportação Siscobra Planalto'
+2026-03-13 15:35:49,698 [ERROR] __main__.source.siscobra_planalto - Arquivo do ciclo 2026-03-12 ainda nao disponivel na pasta 'Exportação Siscobra Planalto'. Itens retornados=1. Exemplos recentes=Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 15:35:51,846 [ERROR] __main__.source.siscobra_planalto - Falha na etapa download: Arquivo CSV do ciclo 2026-03-12 ainda nao esta disponivel na pasta 'Exportação Siscobra Planalto'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1137, in _run_download_stage
+    raise RuntimeError(
+        f"Arquivo esperado nao encontrado na listagem: {expected_name}"
+    )
+RuntimeError: Arquivo esperado nao encontrado na listagem: Exportacao_Siscobra_PLANALTO_20260312.csv
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1154, in _run_download_stage
+    raise RuntimeError(
+        f"Arquivo CSV do ciclo {cycle_date.isoformat()} ainda nao esta disponivel na pasta '{remote_folder}'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360."
+    ) from exc
+RuntimeError: Arquivo CSV do ciclo 2026-03-12 ainda nao esta disponivel na pasta 'Exportação Siscobra Planalto'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+2026-03-13 15:35:51,851 [INFO] __main__.source.siscobra_planalto - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:35:51,851 [INFO] __main__.source.siscobra_planalto - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:35:51,851 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:35:51,853 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 15:35:54,621 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 15:35:57,526 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2beab3eec52sm4405695eec.14 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 764, in login
+    raise last_exception
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 753, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 671, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2beab3eec52sm4405695eec.14 - gsmtp')
+2026-03-13 15:35:57,528 [WARNING] __main__.source.siscobra_planalto - Source siscobra_planalto falhou. Nova tentativa em 1800 segundos.
+2026-03-13 15:40:22,879 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:35:36 finished=2026-03-13T15:40:22 duration_s=286.803 category=failed final_stage=download
+2026-03-13 15:40:22,879 [INFO] __main__ - Lock de instancia removido: C:\Projetos\revo360-bot\downloads\logs\revo360.lock
+2026-03-13 15:40:22,879 [INFO] __main__ - Execucao interrompida pelo usuario (Ctrl+C).

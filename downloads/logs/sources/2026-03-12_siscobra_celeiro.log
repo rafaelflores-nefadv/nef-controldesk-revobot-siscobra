@@ -1,0 +1,27 @@
+2026-03-13 16:36:18,885 [INFO] __main__.source.siscobra_celeiro - Iniciando pipeline do source=siscobra_celeiro
+2026-03-13 16:36:18,886 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro - tentativa 1/10
+2026-03-13 16:36:18,886 [INFO] __main__.source.siscobra_celeiro - Executando etapa download (try=1).
+2026-03-13 16:36:18,886 [INFO] __main__.source.siscobra_celeiro - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_celeiro)
+2026-03-13 16:36:34,757 [INFO] __main__.source.siscobra_celeiro - Login realizado com sucesso
+2026-03-13 16:36:34,757 [INFO] __main__.source.siscobra_celeiro - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 16:36:34,758 [INFO] __main__.source.siscobra_celeiro - Consultando pasta remota no navegador autenticado: Exportação Siscobra 0914
+2026-03-13 16:36:35,054 [INFO] __main__.source.siscobra_celeiro - Listagem via navegacao do navegador concluida: 74 item(ns) em 'Exportação Siscobra 0914'
+2026-03-13 16:36:35,055 [INFO] __main__.source.siscobra_celeiro - Arquivo selecionado para o ciclo 2026-03-12 (source=siscobra_celeiro): Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,056 [INFO] __main__.source.siscobra_celeiro - Iniciando download via form submit no navegador: Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,213 [INFO] __main__.source.siscobra_celeiro - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\revo360-bot\downloads
+2026-03-13 16:36:35,715 [INFO] __main__.source.siscobra_celeiro - Download via navegador concluido: Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,715 [INFO] __main__.source.siscobra_celeiro - Arquivo salvo em: C:\Projetos\revo360-bot\downloads\Exportacao_Siscobra_0914_20260312.csv
+2026-03-13 16:36:35,716 [INFO] __main__.source.siscobra_celeiro - Tamanho final do arquivo salvo: 135615 bytes
+2026-03-13 16:36:35,716 [INFO] __main__.source.siscobra_celeiro - Tempo total do download: 0.66s
+2026-03-13 16:36:37,852 [INFO] __main__.source.siscobra_celeiro - Etapa download concluida com sucesso.
+2026-03-13 16:36:37,854 [INFO] __main__.source.siscobra_celeiro - Executando etapa prepare (try=1).
+2026-03-13 16:36:38,050 [INFO] __main__.source.siscobra_celeiro - Prepare concluido: C:\Projetos\revo360-bot\downloads\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260312_163618.csv
+2026-03-13 16:36:38,051 [INFO] __main__.source.siscobra_celeiro - Etapa prepare concluida com sucesso.
+2026-03-13 16:36:38,052 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_server (try=1).
+2026-03-13 16:36:38,245 [INFO] __main__.source.siscobra_celeiro - Etapa send_server concluida com sucesso.
+2026-03-13 16:36:38,247 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_ftp (try=1).
+2026-03-13 16:37:09,924 [INFO] __main__.source.siscobra_celeiro - Etapa send_ftp concluida com sucesso.
+2026-03-13 16:37:09,926 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 16:37:12,887 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-03-13 16:37:15,879 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro concluido com sucesso na tentativa 1.
+2026-03-13 16:37:15,881 [INFO] __main__.source.siscobra_celeiro - Metricas do source: started=2026-03-13T16:36:18 finished=2026-03-13T16:37:15 duration_s=56.996 category=success final_stage=send_ftp

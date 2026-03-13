@@ -1,0 +1,237 @@
+2026-03-13 15:02:17,807 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:02:17,808 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 15:02:17,808 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 15:02:17,808 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 15:02:31,818 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 15:02:31,819 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 15:02:31,819 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportacao Siscobra Planalto
+2026-03-13 15:02:32,204 [ERROR] __main__.source.siscobra_planalto - Falha ao listar arquivos no navegador autenticado na pasta 'Exportacao Siscobra Planalto'
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1100, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1501, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+        result.get("text") or "",
+        pasta_label,
+        result.get("url") or "",
+    )
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1285, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 803, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+2026-03-13 15:02:34,353 [ERROR] __main__.source.siscobra_planalto - Falha na etapa download: Falha ao listar arquivos na pasta 'Exportacao Siscobra Planalto'.
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1100, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1501, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+        result.get("text") or "",
+        pasta_label,
+        result.get("url") or "",
+    )
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1285, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 803, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1121, in _run_download_stage
+    raise RuntimeError(
+        f"Falha ao listar arquivos na pasta '{remote_folder}'."
+    ) from exc
+RuntimeError: Falha ao listar arquivos na pasta 'Exportacao Siscobra Planalto'.
+2026-03-13 15:02:34,357 [INFO] __main__.source.siscobra_planalto - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:02:34,358 [INFO] __main__.source.siscobra_planalto - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:02:34,358 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:02:34,360 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 15:02:37,098 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 15:02:39,982 [WARNING] __main__.source.siscobra_planalto - Source siscobra_planalto falhou. Nova tentativa em 1800 segundos.
+2026-03-13 15:03:56,611 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:02:17 finished=2026-03-13T15:03:56 duration_s=98.803 category=failed final_stage=download
+2026-03-13 15:18:36,206 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:18:36,207 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 15:18:36,207 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=2).
+2026-03-13 15:18:36,207 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 15:18:49,531 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 15:18:49,531 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 15:18:49,531 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportacao Siscobra Planalto
+2026-03-13 15:18:49,823 [ERROR] __main__.source.siscobra_planalto - Falha ao listar arquivos no navegador autenticado na pasta 'Exportacao Siscobra Planalto'
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1100, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1499, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+        raw_text,
+        pasta_label,
+        result.get("url") or "",
+    )
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1286, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 804, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+2026-03-13 15:18:51,973 [ERROR] __main__.source.siscobra_planalto - Falha na etapa download: Falha ao listar arquivos na pasta 'Exportacao Siscobra Planalto'.
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1100, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1499, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+        raw_text,
+        pasta_label,
+        result.get("url") or "",
+    )
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1286, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 804, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1121, in _run_download_stage
+    raise RuntimeError(
+        f"Falha ao listar arquivos na pasta '{remote_folder}'."
+    ) from exc
+RuntimeError: Falha ao listar arquivos na pasta 'Exportacao Siscobra Planalto'.
+2026-03-13 15:18:51,977 [INFO] __main__.source.siscobra_planalto - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:18:51,977 [INFO] __main__.source.siscobra_planalto - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:18:51,978 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:18:51,980 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 15:18:54,583 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 15:18:57,420 [WARNING] __main__.source.siscobra_planalto - Source siscobra_planalto falhou. Nova tentativa em 1800 segundos.
+2026-03-13 15:21:00,148 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:18:36 finished=2026-03-13T15:21:00 duration_s=143.946 category=failed final_stage=download
+2026-03-13 15:35:36,076 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:35:36,077 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 15:35:36,077 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=3).
+2026-03-13 15:35:36,077 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 15:35:49,405 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 15:35:49,406 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 15:35:49,406 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportação Siscobra Planalto
+2026-03-13 15:35:49,697 [INFO] __main__.source.siscobra_planalto - Listagem via navegacao do navegador concluida: 1 item(ns) em 'Exportação Siscobra Planalto'
+2026-03-13 15:35:49,698 [ERROR] __main__.source.siscobra_planalto - Arquivo do ciclo 2026-03-12 ainda nao disponivel na pasta 'Exportação Siscobra Planalto'. Itens retornados=1. Exemplos recentes=Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 15:35:51,846 [ERROR] __main__.source.siscobra_planalto - Falha na etapa download: Arquivo CSV do ciclo 2026-03-12 ainda nao esta disponivel na pasta 'Exportação Siscobra Planalto'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1137, in _run_download_stage
+    raise RuntimeError(
+        f"Arquivo esperado nao encontrado na listagem: {expected_name}"
+    )
+RuntimeError: Arquivo esperado nao encontrado na listagem: Exportacao_Siscobra_PLANALTO_20260312.csv
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1154, in _run_download_stage
+    raise RuntimeError(
+        f"Arquivo CSV do ciclo {cycle_date.isoformat()} ainda nao esta disponivel na pasta '{remote_folder}'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360."
+    ) from exc
+RuntimeError: Arquivo CSV do ciclo 2026-03-12 ainda nao esta disponivel na pasta 'Exportação Siscobra Planalto'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+2026-03-13 15:35:51,851 [INFO] __main__.source.siscobra_planalto - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:35:51,851 [INFO] __main__.source.siscobra_planalto - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:35:51,851 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:35:51,853 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 15:35:54,621 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 15:35:57,528 [WARNING] __main__.source.siscobra_planalto - Source siscobra_planalto falhou. Nova tentativa em 1800 segundos.
+2026-03-13 15:40:22,879 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:35:36 finished=2026-03-13T15:40:22 duration_s=286.803 category=failed final_stage=download
+2026-03-13 15:40:27,651 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 15:40:27,652 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 15:40:27,653 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=4).
+2026-03-13 15:40:27,653 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 15:40:42,458 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 15:40:42,458 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 15:40:42,458 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportação Siscobra Planalto
+2026-03-13 15:40:42,800 [INFO] __main__.source.siscobra_planalto - Listagem via navegacao do navegador concluida: 1 item(ns) em 'Exportação Siscobra Planalto'
+2026-03-13 15:40:42,800 [INFO] __main__.source.siscobra_planalto - Arquivo selecionado para o ciclo 2026-03-12 (source=siscobra_planalto): Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 15:40:42,801 [INFO] __main__.source.siscobra_planalto - Iniciando download via form submit no navegador: Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 15:40:42,980 [INFO] __main__.source.siscobra_planalto - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\revo360-bot\downloads
+2026-03-13 15:40:43,482 [INFO] __main__.source.siscobra_planalto - Download via navegador concluido: Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 15:40:43,482 [INFO] __main__.source.siscobra_planalto - Arquivo salvo em: C:\Projetos\revo360-bot\downloads\Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 15:40:43,483 [INFO] __main__.source.siscobra_planalto - Tamanho final do arquivo salvo: 46875 bytes
+2026-03-13 15:40:43,483 [INFO] __main__.source.siscobra_planalto - Tempo total do download: 0.68s
+2026-03-13 15:40:45,642 [INFO] __main__.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 15:40:45,644 [INFO] __main__.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 15:40:45,751 [INFO] __main__.source.siscobra_planalto - Prepare concluido: C:\Projetos\revo360-bot\downloads\LOCAL_PLANALTO_190_NABARRETEFERRO_ACIONAMENTOS_20260312_150217.csv
+2026-03-13 15:40:45,752 [INFO] __main__.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 15:40:45,753 [INFO] __main__.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 15:40:47,247 [INFO] __main__.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 15:40:47,249 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 15:40:47,250 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 15:40:49,907 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 15:40:52,502 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 15:40:52,502 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 15:40:55,135 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 15:40:57,793 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T15:40:27 finished=2026-03-13T15:40:57 duration_s=30.14 category=failed final_stage=send_server
+2026-03-13 16:03:53,985 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 16:03:53,986 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 16:03:53,986 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 16:03:53,986 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 16:04:07,847 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 16:04:07,848 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 16:04:07,848 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportação Siscobra Planalto
+2026-03-13 16:04:08,126 [INFO] __main__.source.siscobra_planalto - Listagem via navegacao do navegador concluida: 1 item(ns) em 'Exportação Siscobra Planalto'
+2026-03-13 16:04:08,126 [INFO] __main__.source.siscobra_planalto - Arquivo selecionado para o ciclo 2026-03-12 (source=siscobra_planalto): Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:04:08,127 [INFO] __main__.source.siscobra_planalto - Iniciando download via form submit no navegador: Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:04:08,296 [INFO] __main__.source.siscobra_planalto - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\revo360-bot\downloads
+2026-03-13 16:04:08,798 [INFO] __main__.source.siscobra_planalto - Download via navegador concluido: Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:04:08,798 [INFO] __main__.source.siscobra_planalto - Arquivo salvo em: C:\Projetos\revo360-bot\downloads\Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:04:08,798 [INFO] __main__.source.siscobra_planalto - Tamanho final do arquivo salvo: 46875 bytes
+2026-03-13 16:04:08,798 [INFO] __main__.source.siscobra_planalto - Tempo total do download: 0.67s
+2026-03-13 16:04:10,949 [INFO] __main__.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 16:04:10,951 [INFO] __main__.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 16:04:11,052 [INFO] __main__.source.siscobra_planalto - Prepare concluido: C:\Projetos\revo360-bot\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260312_160353.csv
+2026-03-13 16:04:11,052 [INFO] __main__.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 16:04:11,053 [INFO] __main__.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 16:04:11,115 [INFO] __main__.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 16:04:11,116 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-03-13 16:04:11,117 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 16:04:14,790 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 16:04:17,526 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 16:04:17,529 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T16:03:53 finished=2026-03-13T16:04:17 duration_s=23.543 category=success final_stage=send_server
+2026-03-13 16:18:26,248 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-03-13 16:18:26,249 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-03-13 16:18:26,249 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=1).
+2026-03-13 16:18:26,249 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-03-12 (source=siscobra_planalto)
+2026-03-13 16:18:39,646 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-03-13 16:18:39,646 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 16:18:39,646 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportação Siscobra Planalto
+2026-03-13 16:18:39,945 [INFO] __main__.source.siscobra_planalto - Listagem via navegacao do navegador concluida: 1 item(ns) em 'Exportação Siscobra Planalto'
+2026-03-13 16:18:39,945 [INFO] __main__.source.siscobra_planalto - Arquivo selecionado para o ciclo 2026-03-12 (source=siscobra_planalto): Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:18:39,947 [INFO] __main__.source.siscobra_planalto - Iniciando download via form submit no navegador: Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:18:40,115 [INFO] __main__.source.siscobra_planalto - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\revo360-bot\downloads
+2026-03-13 16:18:40,617 [INFO] __main__.source.siscobra_planalto - Download via navegador concluido: Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:18:40,617 [INFO] __main__.source.siscobra_planalto - Arquivo salvo em: C:\Projetos\revo360-bot\downloads\Exportacao_Siscobra_Planalto_20260312.csv
+2026-03-13 16:18:40,617 [INFO] __main__.source.siscobra_planalto - Tamanho final do arquivo salvo: 46875 bytes
+2026-03-13 16:18:40,617 [INFO] __main__.source.siscobra_planalto - Tempo total do download: 0.67s
+2026-03-13 16:18:42,752 [INFO] __main__.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-03-13 16:18:42,754 [INFO] __main__.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-03-13 16:18:42,852 [INFO] __main__.source.siscobra_planalto - Prepare concluido: C:\Projetos\revo360-bot\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260312_161826.csv
+2026-03-13 16:18:42,852 [INFO] __main__.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-03-13 16:18:42,854 [INFO] __main__.source.siscobra_planalto - Executando etapa send_server (try=1).
+2026-03-13 16:18:42,919 [INFO] __main__.source.siscobra_planalto - Etapa send_server concluida com sucesso.
+2026-03-13 16:18:42,920 [INFO] __main__.source.siscobra_planalto - Executando etapa send_ftp (try=1).
+2026-03-13 16:19:14,479 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp concluida com sucesso.
+2026-03-13 16:19:14,480 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 16:19:17,688 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-03-13 16:19:20,596 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-03-13 16:19:20,599 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-03-13T16:18:26 finished=2026-03-13T16:19:20 duration_s=54.352 category=success final_stage=send_ftp

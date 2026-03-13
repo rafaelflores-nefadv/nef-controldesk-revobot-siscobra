@@ -1,0 +1,59 @@
+2026-03-13 13:00:13,789 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 13:00:13,789 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 13:00:13,790 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 13:00:13,790 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 13:00:13,791 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 13:00:13,792 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 13:00:13,792 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 13:00:13,793 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 13:00:13,793 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 13:00:13,793 [ERROR] test-revo360-pipeline.source.source_b - Falha na etapa send_ftp: ftp indisponivel
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1211, in _run_single_stage
+    _run_send_ftp_stage(logger, state)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Projetos\revo360-bot\tests\test_pipeline_checkpoint.py", line 634, in ftp_by_source
+    raise RuntimeError("ftp indisponivel")
+RuntimeError: ftp indisponivel
+2026-03-13 13:00:13,795 [ERROR] test-revo360-pipeline.source.source_b - Source source_b falhou definitivamente apos 1 tentativa(s).
+2026-03-13 13:00:13,809 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 13:00:13,810 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 13:00:13,810 [INFO] test-revo360-pipeline.source.source_b - Etapa download ja concluida em tentativa anterior. Pulando.
+2026-03-13 13:00:13,811 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare ja concluida em tentativa anterior. Pulando.
+2026-03-13 13:00:13,811 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server ja concluida em tentativa anterior. Pulando.
+2026-03-13 13:00:13,811 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=2).
+2026-03-13 13:00:13,811 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 13:00:13,812 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.
+2026-03-13 13:00:13,834 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 13:00:13,835 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/3
+2026-03-13 13:00:13,835 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 13:00:13,836 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 13:00:13,837 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 13:00:13,837 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 13:00:13,838 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 13:00:13,839 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 13:00:13,840 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 13:00:13,840 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 13:00:13,841 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.
+2026-03-13 13:00:13,856 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 13:00:13,858 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/3
+2026-03-13 13:00:13,858 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 13:00:13,859 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 13:00:13,860 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 13:00:13,860 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 13:00:13,861 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 13:00:13,862 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 13:00:13,862 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 13:00:13,863 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 13:00:13,864 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.

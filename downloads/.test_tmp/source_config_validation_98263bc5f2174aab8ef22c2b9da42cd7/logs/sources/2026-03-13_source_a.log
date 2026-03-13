@@ -1,0 +1,69 @@
+2026-03-13 12:59:22,351 [INFO] test-revo360-source-config.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:59:22,352 [INFO] test-revo360-source-config.source.source_a - Source source_a - tentativa 1/1
+2026-03-13 12:59:22,352 [INFO] test-revo360-source-config.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:59:22,352 [INFO] test-revo360-source-config.source.source_a - Iniciando login no REVO360 para o ciclo 2026-03-13 (source=source_a)
+2026-03-13 12:59:41,625 [INFO] test-revo360-source-config.source.source_a - Login realizado com sucesso
+2026-03-13 12:59:41,626 [INFO] test-revo360-source-config.source.source_a - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-03-13 12:59:41,626 [INFO] test-revo360-source-config.source.source_a - Consultando pasta remota no navegador autenticado: Pasta A
+2026-03-13 12:59:42,073 [ERROR] test-revo360-source-config.source.source_a - Falha ao listar arquivos no navegador autenticado na pasta 'Pasta A'
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 999, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1501, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+        result.get("text") or "",
+        pasta_label,
+        result.get("url") or "",
+    )
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1285, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 803, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+2026-03-13 12:59:44,281 [ERROR] test-revo360-source-config.source.source_a - Falha na etapa download: Falha ao listar arquivos na pasta 'Pasta A'.
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 999, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1501, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+        result.get("text") or "",
+        pasta_label,
+        result.get("url") or "",
+    )
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 1285, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Projetos\revo360-bot\src\core\download_api.py", line 803, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1202, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1020, in _run_download_stage
+    raise RuntimeError(
+        f"Falha ao listar arquivos na pasta '{remote_folder}'."
+    ) from exc
+RuntimeError: Falha ao listar arquivos na pasta 'Pasta A'.
+2026-03-13 12:59:44,283 [INFO] test-revo360-source-config.source.source_a - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 12:59:44,283 [INFO] test-revo360-source-config.source.source_a - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 12:59:44,283 [INFO] test-revo360-source-config.source.source_a - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 12:59:44,283 [INFO] test-revo360-source-config.source.source_a - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-03-13 12:59:47,327 [INFO] test-revo360-source-config.source.source_a - Resumo enviado ao Google Chat.
+2026-03-13 12:59:50,244 [ERROR] test-revo360-source-config.source.source_a - Source source_a falhou definitivamente apos 1 tentativa(s).
+2026-03-13 12:59:50,272 [INFO] test-revo360-source-config.source.source_a - Iniciando pipeline do source=source_a
+2026-03-13 12:59:50,273 [INFO] test-revo360-source-config.source.source_a - Source source_a - tentativa 1/1
+2026-03-13 12:59:50,273 [INFO] test-revo360-source-config.source.source_a - Executando etapa download (try=1).
+2026-03-13 12:59:50,274 [INFO] test-revo360-source-config.source.source_a - Etapa download concluida com sucesso.
+2026-03-13 12:59:50,275 [INFO] test-revo360-source-config.source.source_a - Executando etapa prepare (try=1).
+2026-03-13 12:59:50,275 [INFO] test-revo360-source-config.source.source_a - Etapa prepare concluida com sucesso.
+2026-03-13 12:59:50,276 [INFO] test-revo360-source-config.source.source_a - Executando etapa send_server (try=1).
+2026-03-13 12:59:50,276 [INFO] test-revo360-source-config.source.source_a - Etapa send_server concluida com sucesso.
+2026-03-13 12:59:50,277 [INFO] test-revo360-source-config.source.source_a - Executando etapa send_ftp (try=1).
+2026-03-13 12:59:50,278 [INFO] test-revo360-source-config.source.source_a - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:59:50,279 [INFO] test-revo360-source-config.source.source_a - Source source_a concluido com sucesso na tentativa 1.

@@ -1,0 +1,49 @@
+2026-03-13 12:39:33,576 [INFO] test-revo360-pipeline.source.default_0914 - Iniciando pipeline do source=default_0914
+2026-03-13 12:39:33,577 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 - tentativa 1/3
+2026-03-13 12:39:33,577 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa download (try=1).
+2026-03-13 12:39:33,578 [INFO] test-revo360-pipeline.source.default_0914 - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,579 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,590 [INFO] test-revo360-pipeline.source.default_0914 - Prepare concluido: C:\Projetos\revo360-bot\downloads\.test_tmp\pipeline_checkpoint_9db0f5cfbc4a4079a1138f8b49ca4cf1\downloads\LOCAL_TEST_20260225_123933.csv
+2026-03-13 12:39:33,591 [INFO] test-revo360-pipeline.source.default_0914 - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,592 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,592 [ERROR] test-revo360-pipeline.source.default_0914 - Falha na etapa send_server: server indisponivel
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in executar_fluxo_por_etapas
+    _run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1148, in _run_single_stage
+    _run_send_server_stage(logger, state)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Projetos\revo360-bot\tests\test_pipeline_checkpoint.py", line 306, in flaky_server
+    raise RuntimeError("server indisponivel")
+RuntimeError: server indisponivel
+2026-03-13 12:39:33,594 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,594 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,596 [WARNING] test-revo360-pipeline.source.default_0914 - Source default_0914 falhou. Nova tentativa em 0 segundos.
+2026-03-13 12:39:33,596 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 - tentativa 2/3
+2026-03-13 12:39:33,596 [INFO] test-revo360-pipeline.source.default_0914 - Etapa download ja concluida em tentativa anterior. Pulando.
+2026-03-13 12:39:33,596 [INFO] test-revo360-pipeline.source.default_0914 - Etapa prepare ja concluida em tentativa anterior. Pulando.
+2026-03-13 12:39:33,597 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_server (try=2).
+2026-03-13 12:39:33,597 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,598 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_ftp ja concluida em tentativa anterior. Pulando.
+2026-03-13 12:39:33,598 [INFO] test-revo360-pipeline.source.default_0914 - Notificacao suprimida na tentativa intermediaria do source default_0914 (2/3).
+2026-03-13 12:39:33,598 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 concluido com sucesso na tentativa 2.
+2026-03-13 12:39:33,611 [INFO] test-revo360-pipeline.source.default_0914 - Iniciando pipeline do source=default_0914
+2026-03-13 12:39:33,613 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 - tentativa 1/3
+2026-03-13 12:39:33,613 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa download (try=1).
+2026-03-13 12:39:33,613 [INFO] test-revo360-pipeline.source.default_0914 - Etapa download concluida com sucesso.
+2026-03-13 12:39:33,614 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa prepare (try=1).
+2026-03-13 12:39:33,615 [INFO] test-revo360-pipeline.source.default_0914 - Etapa prepare concluida com sucesso.
+2026-03-13 12:39:33,616 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_server (try=1).
+2026-03-13 12:39:33,616 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_server concluida com sucesso.
+2026-03-13 12:39:33,617 [INFO] test-revo360-pipeline.source.default_0914 - Executando etapa send_ftp (try=1).
+2026-03-13 12:39:33,617 [INFO] test-revo360-pipeline.source.default_0914 - Etapa send_ftp concluida com sucesso.
+2026-03-13 12:39:33,619 [INFO] test-revo360-pipeline.source.default_0914 - Source default_0914 concluido com sucesso na tentativa 1.

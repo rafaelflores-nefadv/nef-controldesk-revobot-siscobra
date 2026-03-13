@@ -1,0 +1,102 @@
+2026-03-13 15:10:38,153 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 15:10:38,154 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 15:10:38,154 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 15:10:38,154 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 15:10:38,155 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 15:10:38,156 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 15:10:38,157 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 15:10:38,158 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 15:10:38,159 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 15:10:38,159 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 15:10:38,160 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.
+2026-03-13 15:10:38,162 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T15:10:38 finished=2026-03-13T15:10:38 duration_s=0.008 category=success final_stage=send_ftp
+2026-03-13 15:10:38,187 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 15:10:38,188 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 15:10:38,188 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 15:10:38,188 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 15:10:38,189 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 15:10:38,190 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 15:10:38,191 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 15:10:38,191 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 15:10:38,192 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 15:10:38,192 [ERROR] test-revo360-pipeline.source.source_b - Falha na etapa send_ftp: ftp indisponivel
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1312, in _run_single_stage
+    _run_send_ftp_stage(logger, state)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Projetos\revo360-bot\tests\test_pipeline_checkpoint.py", line 638, in ftp_by_source
+    raise RuntimeError("ftp indisponivel")
+RuntimeError: ftp indisponivel
+2026-03-13 15:10:38,194 [ERROR] test-revo360-pipeline.source.source_b - Source source_b falhou definitivamente apos 1 tentativa(s).
+2026-03-13 15:10:38,196 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T15:10:38 finished=2026-03-13T15:10:38 duration_s=0.008 category=failed final_stage=send_ftp
+2026-03-13 15:10:38,214 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 15:10:38,216 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 15:10:38,216 [INFO] test-revo360-pipeline.source.source_b - Etapa download ja concluida em tentativa anterior. Pulando.
+2026-03-13 15:10:38,216 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare ja concluida em tentativa anterior. Pulando.
+2026-03-13 15:10:38,216 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server ja concluida em tentativa anterior. Pulando.
+2026-03-13 15:10:38,216 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=2).
+2026-03-13 15:10:38,216 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 15:10:38,217 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.
+2026-03-13 15:10:38,219 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T15:10:38 finished=2026-03-13T15:10:38 duration_s=0.004 category=failed final_stage=send_ftp
+2026-03-13 15:10:38,245 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 15:10:38,246 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/3
+2026-03-13 15:10:38,247 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 15:10:38,247 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 15:10:38,248 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 15:10:38,249 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 15:10:38,250 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 15:10:38,250 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 15:10:38,251 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 15:10:38,251 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 15:10:38,252 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.
+2026-03-13 15:10:38,254 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T15:10:38 finished=2026-03-13T15:10:38 duration_s=0.008 category=success final_stage=send_ftp
+2026-03-13 15:10:38,271 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 15:10:38,272 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/3
+2026-03-13 15:10:38,272 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 15:10:38,273 [INFO] test-revo360-pipeline.source.source_b - Etapa download concluida com sucesso.
+2026-03-13 15:10:38,274 [INFO] test-revo360-pipeline.source.source_b - Executando etapa prepare (try=1).
+2026-03-13 15:10:38,274 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare concluida com sucesso.
+2026-03-13 15:10:38,275 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_server (try=1).
+2026-03-13 15:10:38,275 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server concluida com sucesso.
+2026-03-13 15:10:38,277 [INFO] test-revo360-pipeline.source.source_b - Executando etapa send_ftp (try=1).
+2026-03-13 15:10:38,277 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp concluida com sucesso.
+2026-03-13 15:10:38,278 [INFO] test-revo360-pipeline.source.source_b - Source source_b concluido com sucesso na tentativa 1.
+2026-03-13 15:10:38,280 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T15:10:38 finished=2026-03-13T15:10:38 duration_s=0.008 category=success final_stage=send_ftp
+2026-03-13 15:10:38,315 [INFO] test-revo360-pipeline.source.source_b - Iniciando pipeline do source=source_b
+2026-03-13 15:10:38,316 [INFO] test-revo360-pipeline.source.source_b - Source source_b - tentativa 1/1
+2026-03-13 15:10:38,316 [INFO] test-revo360-pipeline.source.source_b - Executando etapa download (try=1).
+2026-03-13 15:10:38,317 [ERROR] test-revo360-pipeline.source.source_b - Falha na etapa download: arquivo esperado nao encontrado
+Traceback (most recent call last):
+  File "C:\Projetos\revo360-bot\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\revo360-bot\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "C:\Projetos\revo360-bot\tests\test_pipeline_checkpoint.py", line 726, in download_by_source
+    raise RuntimeError("arquivo esperado nao encontrado")
+RuntimeError: arquivo esperado nao encontrado
+2026-03-13 15:10:38,319 [INFO] test-revo360-pipeline.source.source_b - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:10:38,319 [INFO] test-revo360-pipeline.source.source_b - Etapa send_server bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:10:38,319 [INFO] test-revo360-pipeline.source.source_b - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-03-13 15:10:38,319 [ERROR] test-revo360-pipeline.source.source_b - Source source_b falhou definitivamente apos 1 tentativa(s).
+2026-03-13 15:10:38,321 [INFO] test-revo360-pipeline.source.source_b - Metricas do source: started=2026-03-13T15:10:38 finished=2026-03-13T15:10:38 duration_s=0.005 category=not_found final_stage=download
