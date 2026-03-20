@@ -82,7 +82,7 @@ DOWNLOAD_SOURCES = [
         "prepared_prefix": "LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_",
         "copy_dir": r"Z:\\control_desk\\RETORNO\\0914",
         "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
-        "send_to_server": True,
+        "send_to_server": False,
         "send_to_ftp": True,
     },
     {
@@ -93,7 +93,18 @@ DOWNLOAD_SOURCES = [
         "prepared_prefix": "LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_",
         "copy_dir": r"Z:\\control_desk\\RETORNO\\3953",
         "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
-        "send_to_server": True,
+        "send_to_server": False,
+        "send_to_ftp": True,
+    },
+    {
+        "id": "siscobra_sudoeste",
+        "enabled": True,
+        "remote_folder": "Exportação Siscobra Sudoeste",
+        "filename_template": "Exportacao_Siscobra_Sudoeste_{date:%Y%m%d}.csv",
+        "prepared_prefix": "LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_",
+        "copy_dir": r"Z:\\control_desk\\RETORNO\\0804",
+        "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+        "send_to_server": False,
         "send_to_ftp": True,
     }
 ]
