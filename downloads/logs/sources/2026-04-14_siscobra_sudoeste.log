@@ -1,0 +1,320 @@
+2026-04-15 10:50:18,569 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 10:50:18,571 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 10:50:18,571 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=1).
+2026-04-15 10:50:18,571 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 10:50:46,213 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 76, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 88, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 10:50:46,218 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:50:46,218 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 10:50:46,220 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:50:46,221 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:50:48,355 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:50:50,475 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:50:52,621 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:50:53,798 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 10:50:56,091 [WARNING] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste falhou. Nova tentativa em 1800 segundos.
+2026-04-15 10:51:48,982 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T10:50:18 finished=2026-04-15T10:51:48 duration_s=90.411 category=failed final_stage=download
+2026-04-15 10:51:53,390 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 10:51:53,391 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 10:51:53,391 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=2).
+2026-04-15 10:51:53,391 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 10:52:21,698 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 76, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 88, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 10:52:21,703 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:52:21,703 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 10:52:21,705 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:52:21,706 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:52:23,840 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:52:25,976 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:52:28,119 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:52:29,195 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 10:52:31,287 [WARNING] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste falhou. Nova tentativa em 1800 segundos.
+2026-04-15 10:55:07,152 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T10:51:53 finished=2026-04-15T10:55:07 duration_s=193.761 category=failed final_stage=download
+2026-04-15 10:55:09,934 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 10:55:09,936 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 10:55:09,936 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=3).
+2026-04-15 10:55:09,936 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 10:55:38,617 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 76, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 88, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 10:55:38,622 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:55:38,623 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 10:55:38,624 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:55:38,625 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:55:40,752 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:55:42,880 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:55:45,039 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:55:46,314 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 10:55:49,780 [WARNING] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste falhou. Nova tentativa em 1800 segundos.
+2026-04-15 10:56:55,637 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T10:55:09 finished=2026-04-15T10:56:55 duration_s=105.701 category=failed final_stage=download
+2026-04-15 10:57:01,879 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 10:57:01,880 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 10:57:01,880 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=4).
+2026-04-15 10:57:01,880 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 10:57:30,584 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 76, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 88, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 10:57:30,589 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:57:30,589 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 10:57:30,590 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:57:30,592 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:57:32,721 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:57:34,866 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:57:36,981 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:57:38,233 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 10:57:40,629 [WARNING] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste falhou. Nova tentativa em 1800 segundos.
+2026-04-15 11:02:47,422 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T10:57:01 finished=2026-04-15T11:02:47 duration_s=345.542 category=failed final_stage=download
+2026-04-15 11:02:54,321 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 11:02:54,323 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 11:02:54,323 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=5).
+2026-04-15 11:02:54,324 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 11:03:22,978 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 76, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 88, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 11:03:22,982 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 11:03:22,982 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 11:03:22,984 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 11:03:22,985 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 11:03:25,095 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:03:27,209 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:03:29,497 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:03:30,918 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T11:02:54 finished=2026-04-15T11:03:30 duration_s=36.594 category=failed final_stage=download
+2026-04-15 11:06:17,242 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 11:06:17,244 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 11:06:17,244 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=6).
+2026-04-15 11:06:17,244 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 11:06:48,211 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 125, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 137, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 11:06:48,216 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 11:06:48,216 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 11:06:48,217 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 11:06:48,218 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 11:06:50,370 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:06:52,520 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:06:54,659 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:06:55,742 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 11:06:58,016 [WARNING] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste falhou. Nova tentativa em 1800 segundos.
+2026-04-15 11:09:51,572 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T11:06:17 finished=2026-04-15T11:09:51 duration_s=214.328 category=failed final_stage=download
+2026-04-15 11:09:57,041 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 11:09:57,043 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 11:09:57,043 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=7).
+2026-04-15 11:09:57,043 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 11:10:10,269 [INFO] __main__.source.siscobra_sudoeste - Login realizado com sucesso
+2026-04-15 11:10:10,269 [INFO] __main__.source.siscobra_sudoeste - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-04-15 11:10:10,269 [INFO] __main__.source.siscobra_sudoeste - Consultando pasta remota no navegador autenticado: Exportação Siscobra Sudoeste
+2026-04-15 11:10:10,571 [INFO] __main__.source.siscobra_sudoeste - Listagem via navegacao do navegador concluida: 30 item(ns) em 'Exportação Siscobra Sudoeste'
+2026-04-15 11:10:10,572 [INFO] __main__.source.siscobra_sudoeste - Arquivo selecionado para o ciclo 2026-04-14 (source=siscobra_sudoeste): Exportacao_Siscobra_Sudoeste_20260414.csv
+2026-04-15 11:10:10,573 [INFO] __main__.source.siscobra_sudoeste - Iniciando download via form submit no navegador: Exportacao_Siscobra_Sudoeste_20260414.csv
+2026-04-15 11:10:10,752 [INFO] __main__.source.siscobra_sudoeste - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\nef-controldesk-revobot-siscobra\downloads
+2026-04-15 11:10:11,254 [INFO] __main__.source.siscobra_sudoeste - Download via navegador concluido: Exportacao_Siscobra_Sudoeste_20260414.csv
+2026-04-15 11:10:11,254 [INFO] __main__.source.siscobra_sudoeste - Arquivo salvo em: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Sudoeste_20260414.csv
+2026-04-15 11:10:11,255 [INFO] __main__.source.siscobra_sudoeste - Tamanho final do arquivo salvo: 114313 bytes
+2026-04-15 11:10:11,255 [INFO] __main__.source.siscobra_sudoeste - Tempo total do download: 0.68s
+2026-04-15 11:10:13,399 [INFO] __main__.source.siscobra_sudoeste - Etapa download concluida com sucesso.
+2026-04-15 11:10:13,401 [INFO] __main__.source.siscobra_sudoeste - Executando etapa prepare (try=1).
+2026-04-15 11:10:13,601 [INFO] __main__.source.siscobra_sudoeste - Prepare concluido: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv
+2026-04-15 11:10:13,601 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare concluida com sucesso.
+2026-04-15 11:10:13,602 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 11:10:13,603 [INFO] __main__.source.siscobra_sudoeste - Executando etapa send_ftp (try=1).
+2026-04-15 11:10:45,243 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp concluida com sucesso.
+2026-04-15 11:10:45,244 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 11:10:47,381 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:10:49,532 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:10:51,684 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:10:52,951 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 11:10:55,586 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste concluido com sucesso na tentativa 1.
+2026-04-15 11:10:55,587 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 11:10:57,744 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:10:59,897 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:11:02,055 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 11:11:03,203 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 11:11:05,494 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T11:09:57 finished=2026-04-15T11:11:05 duration_s=68.452 category=failed final_stage=send_ftp

@@ -1,0 +1,136 @@
+2026-04-15 10:48:27,747 [INFO] __main__ - Log iniciado em: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260415_104827.log
+2026-04-15 10:48:27,749 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-04-14 (server=False ftp=True).
+2026-04-15 10:48:27,750 [INFO] __main__ - Lock de instancia adquirido: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-04-15 10:48:27,750 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-04-15 10:48:27,750 [INFO] __main__ - Inicio do ciclo 2026-04-14 em 2026-04-15T10:48:27
+2026-04-15 10:48:27,765 [WARNING] __main__.source.siscobra_planalto - Checkpoint invalido para download: arquivo nao existe em disco (C:\Projetos\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Planalto_20260414.csv).
+2026-04-15 10:48:27,766 [WARNING] __main__.source.siscobra_planalto - Checkpoint invalido para prepare: arquivo nao existe em disco (C:\Projetos\nef-controldesk-revobot-siscobra\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv).
+2026-04-15 10:48:27,769 [INFO] __main__ - Ciclo 2026-04-14 carregado com targets: server=False ftp=True
+2026-04-15 10:48:27,769 [INFO] __main__ - Pre-validacao de configuracao concluida: 3 source(s) configurado(s).
+2026-04-15 10:48:27,769 [INFO] __main__ - Source selecionado manualmente: siscobra_planalto
+2026-04-15 10:48:27,770 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_planalto
+2026-04-15 10:48:27,770 [INFO] __main__ - Processando source 1/1: siscobra_planalto
+2026-04-15 10:48:27,772 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-04-15 10:48:27,774 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-04-15 10:48:27,774 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=1).
+2026-04-15 10:48:27,775 [INFO] __main__.source.siscobra_planalto - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_planalto)
+2026-04-15 10:48:27,775 [INFO] WDM - ====== WebDriver manager ======
+2026-04-15 10:48:28,600 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-04-15 10:48:28,910 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-04-15 10:48:29,213 [INFO] WDM - Driver [C:\Users\rafael.flores\.wdm\drivers\chromedriver\win64\147.0.7727.56\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-15 10:48:49,180 [INFO] __main__.source.siscobra_planalto - Login realizado com sucesso
+2026-04-15 10:48:49,180 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-04-15 10:48:49,180 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota no navegador autenticado: Exportação Siscobra Planalto
+2026-04-15 10:48:49,180 [INFO] core.download_api - Executando listagem via navegacao do navegador para a pasta 'Exportação Siscobra Planalto'
+2026-04-15 10:48:49,185 [INFO] core.download_api - Usando base URL configurada para o contexto same-origin do File Manager: https://nef.revo360.io:10024
+2026-04-15 10:48:49,185 [INFO] core.download_api - Garantindo contexto same-origin do File Manager na mesma aba: handle_atual=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io/ url_original=https://nef.revo360.io/ base_url=https://nef.revo360.io:10024
+2026-04-15 10:48:49,396 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=29E4C004AFE18AF14165F9D783ACE076 url=https://nef.revo360.io:10024/ readyState=complete
+2026-04-15 10:48:49,397 [INFO] core.download_api - Contexto do File Manager carregado na mesma guia: handle_atual=29E4C004AFE18AF14165F9D783ACE076 handle_original=29E4C004AFE18AF14165F9D783ACE076 handle_file_manager=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io/ mesma_aba=True aba_nova=False
+2026-04-15 10:48:49,403 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra Planalto' no navegador autenticado: handle_atual=29E4C004AFE18AF14165F9D783ACE076 handle_original=29E4C004AFE18AF14165F9D783ACE076 handle_file_manager=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io/ mesma_aba=True aba_nova=False base_url=https://nef.revo360.io:10024 endpoint=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-04-15 10:48:49,403 [INFO] core.download_api - Navegando na aba do File Manager para listar arquivos: handle_file_manager=29E4C004AFE18AF14165F9D783ACE076 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D
+2026-04-15 10:48:49,512 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=29E4C004AFE18AF14165F9D783ACE076 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D readyState=complete
+2026-04-15 10:48:49,519 [INFO] core.download_api - Payload bruto da listagem (primeiros 1000 caracteres): handle_atual=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D url_original=https://nef.revo360.io/ mesma_aba=True payload={"success":true,"errorCode":null,"errorText":"","result":[{"key":"Exportação Siscobra Planalto\\Exportacao_Siscobra_Planalto_20260312.csv","name":"Exportacao_Siscobra_Planalto_20260312.csv","dateModified":"2026-03-12T22:30:00.9848844Z","isDirectory":false,"size":46875,"hasSubDirectories":false},{"key":"Exportação Siscobra Planalto\\Exportacao_Siscobra_Planalto_20260313.csv","name":"Exportacao_Siscobra_Planalto_20260313.csv","dateModified":"2026-03-13T22:30:02.7981838Z","isDirectory":false,"size":128095,"hasSubDirectories":false},{"key":"Exportação Siscobra Planalto\\Exportacao_Siscobra_Planalto_20260314.csv","name":"Exportacao_Siscobra_Planalto_20260314.csv","dateModified":"2026-03-14T22:30:00.7696369Z","isDirectory":false,"size":190,"hasSubDirectories":false},{"key":"Exportação Siscobra Planalto\\Exportacao_Siscobra_Planalto_20260315.csv","name":"Exportacao_Siscobra_Planalto_20260315.csv","dateModified":"2026-03-15T22:30:00.7843582Z","isDirectory":false,"size":190,"hasSubDirectories":
+2026-04-15 10:48:49,519 [INFO] core.download_api - Listagem via navegacao do navegador concluida: 34 item(ns) em 'Exportação Siscobra Planalto'
+2026-04-15 10:48:49,519 [INFO] __main__.source.siscobra_planalto - Listagem via navegacao do navegador concluida: 34 item(ns) em 'Exportação Siscobra Planalto'
+2026-04-15 10:48:49,519 [INFO] __main__.source.siscobra_planalto - Arquivo selecionado para o ciclo 2026-04-14 (source=siscobra_planalto): Exportacao_Siscobra_Planalto_20260414.csv
+2026-04-15 10:48:49,520 [INFO] core.download - Limpeza pre-download: nenhum arquivo antigo para Exportacao_Siscobra_Planalto_20260414.csv
+2026-04-15 10:48:49,520 [INFO] __main__.source.siscobra_planalto - Iniciando download via form submit no navegador: Exportacao_Siscobra_Planalto_20260414.csv
+2026-04-15 10:48:49,521 [INFO] core.download_api - Disparando download via form submit no navegador: pasta='Exportação Siscobra Planalto' arquivo='Exportacao_Siscobra_Planalto_20260414.csv'
+2026-04-15 10:48:49,526 [INFO] core.download_api - Usando base URL configurada para o contexto same-origin do File Manager: https://nef.revo360.io:10024
+2026-04-15 10:48:49,526 [INFO] core.download_api - Garantindo contexto same-origin do File Manager na mesma aba: handle_atual=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D url_original=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D base_url=https://nef.revo360.io:10024
+2026-04-15 10:48:49,643 [INFO] core.download_api - Contexto same-origin do File Manager validado: handle=29E4C004AFE18AF14165F9D783ACE076 url=https://nef.revo360.io:10024/ readyState=complete
+2026-04-15 10:48:49,644 [INFO] core.download_api - Contexto do File Manager carregado na mesma guia: handle_atual=29E4C004AFE18AF14165F9D783ACE076 handle_original=29E4C004AFE18AF14165F9D783ACE076 handle_file_manager=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D mesma_aba=True aba_nova=False
+2026-04-15 10:48:49,650 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_Planalto_20260414.csv' no navegador autenticado: handle_atual=29E4C004AFE18AF14165F9D783ACE076 handle_original=29E4C004AFE18AF14165F9D783ACE076 handle_file_manager=29E4C004AFE18AF14165F9D783ACE076 url_atual=https://nef.revo360.io:10024/ url_original=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D mesma_aba=True aba_nova=False base_url=https://nef.revo360.io:10024 endpoint=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-04-15 10:48:49,651 [INFO] core.download_api - Submetendo formulario de download na aba do File Manager: handle_file_manager=29E4C004AFE18AF14165F9D783ACE076 action=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD
+2026-04-15 10:48:49,707 [INFO] core.download_api - Form submit de download disparado com sucesso: arquivo='Exportacao_Siscobra_Planalto_20260414.csv' action=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD
+2026-04-15 10:48:49,708 [INFO] __main__.source.siscobra_planalto - Download disparado. Aguardando arquivo no diretorio configurado: C:\Projetos\nef-controldesk-revobot-siscobra\downloads
+2026-04-15 10:48:50,213 [INFO] core.download - Validacao do download concluida: Exportacao_Siscobra_Planalto_20260414.csv
+2026-04-15 10:48:50,213 [INFO] __main__.source.siscobra_planalto - Download via navegador concluido: Exportacao_Siscobra_Planalto_20260414.csv
+2026-04-15 10:48:50,214 [INFO] __main__.source.siscobra_planalto - Arquivo salvo em: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Planalto_20260414.csv
+2026-04-15 10:48:50,214 [INFO] __main__.source.siscobra_planalto - Tamanho final do arquivo salvo: 277849 bytes
+2026-04-15 10:48:50,214 [INFO] __main__.source.siscobra_planalto - Tempo total do download: 0.69s
+2026-04-15 10:48:52,374 [INFO] __main__.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-04-15 10:48:52,376 [INFO] __main__.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-04-15 10:48:52,388 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv.tmp
+2026-04-15 10:48:52,791 [INFO] core.download - Cabecalho removido do CSV: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv.tmp
+2026-04-15 10:48:52,791 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129_excel.xlsx
+2026-04-15 10:48:52,792 [INFO] __main__.source.siscobra_planalto - Prepare concluido: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv
+2026-04-15 10:48:52,792 [INFO] __main__.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-04-15 10:48:52,793 [INFO] __main__.source.siscobra_planalto - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 10:48:52,794 [INFO] __main__.source.siscobra_planalto - Executando etapa send_ftp (try=1).
+2026-04-15 10:48:52,808 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-04-15 10:48:52,921 [INFO] core.download - Autenticando no FTP
+2026-04-15 10:48:53,017 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-04-15 10:48:53,082 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-04-15 10:48:53,083 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-04-15 10:48:53,387 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv
+2026-04-15 10:48:53,421 [INFO] core.download - Iniciando envio ao FTP: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv
+2026-04-15 10:48:53,438 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-04-15 10:48:53,551 [INFO] core.download - Autenticando no FTP
+2026-04-15 10:48:53,618 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-04-15 10:48:53,691 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-04-15 10:48:53,691 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-04-15 10:48:53,729 [INFO] core.download - Enviando arquivo via STOR: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv (protecao=P, modo=PASV)
+2026-04-15 10:49:24,104 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-04-15 10:49:24,105 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-04-15 10:49:24,230 [INFO] core.download - Autenticando no FTP
+2026-04-15 10:49:24,301 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-04-15 10:49:24,368 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-04-15 10:49:24,368 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-04-15 10:49:24,449 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv tamanho_local=279491 tamanho_remoto=279491 ok=True
+2026-04-15 10:49:24,485 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260414_103129.csv
+2026-04-15 10:49:24,486 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp concluida com sucesso.
+2026-04-15 10:49:24,488 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:49:26,628 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:49:28,751 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:49:30,880 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:49:32,489 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-04-15 10:49:34,950 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-12c5e6b6a05sm2353154c88.14 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 764, in login
+    raise last_exception
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 753, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 671, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-12c5e6b6a05sm2353154c88.14 - gsmtp')
+2026-04-15 10:49:34,953 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-04-15 10:49:34,953 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:49:37,061 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:49:39,198 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:49:41,311 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:49:42,492 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-04-15 10:49:44,583 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-12c5e62f990sm2121877c88.4 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 764, in login
+    raise last_exception
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 753, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 671, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a92af1059eb24-12c5e62f990sm2121877c88.4 - gsmtp')
+2026-04-15 10:49:44,587 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-04-15T10:48:27 finished=2026-04-15T10:49:44 duration_s=76.814 category=failed final_stage=send_ftp
+2026-04-15 10:49:44,587 [INFO] __main__ - Source siscobra_planalto finalizado com status=SUCCESS
+2026-04-15 10:49:44,587 [INFO] __main__ - Resumo final do ciclo por source (padrao observabilidade):
+2026-04-15 10:49:44,587 [INFO] __main__ - source=siscobra_celeiro enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=False ftp=True error=-
+2026-04-15 10:49:44,587 [INFO] __main__ - source=siscobra_planalto enabled=True category=failed status=SUCCESS final_stage=send_ftp started=2026-04-15T10:31:29 finished=2026-04-15T10:49:44 duration_s=76.814 expected=Exportacao_Siscobra_Planalto_20260414.csv resolved=Exportacao_Siscobra_Planalto_20260414.csv server=False ftp=True error=-
+2026-04-15 10:49:44,588 [INFO] __main__ - source=siscobra_sudoeste enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=False ftp=True error=-
+2026-04-15 10:49:44,588 [INFO] __main__ - Resumo do ciclo: status=SUCCESS started=2026-04-15T10:48:27 finished=2026-04-15T10:49:44 duration_s=76.837 enabled=3 success=0 failed=1 not_found=0 skipped=2 disabled=0
+2026-04-15 10:49:44,588 [INFO] __main__ - Resumo observabilidade persistido em C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\cycle_summary_2026-04-14.json
+2026-04-15 10:49:44,589 [INFO] __main__ - Lock de instancia removido: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock

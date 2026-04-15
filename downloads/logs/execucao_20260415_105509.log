@@ -1,0 +1,81 @@
+2026-04-15 10:55:09,914 [INFO] __main__ - Log iniciado em: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260415_105509.log
+2026-04-15 10:55:09,916 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-04-14 (server=False ftp=True).
+2026-04-15 10:55:09,916 [INFO] __main__ - Lock de instancia adquirido: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-04-15 10:55:09,917 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-04-15 10:55:09,917 [INFO] __main__ - Inicio do ciclo 2026-04-14 em 2026-04-15T10:55:09
+2026-04-15 10:55:09,932 [INFO] __main__ - Ciclo 2026-04-14 carregado com targets: server=False ftp=True
+2026-04-15 10:55:09,932 [INFO] __main__ - Pre-validacao de configuracao concluida: 3 source(s) configurado(s).
+2026-04-15 10:55:09,932 [INFO] __main__ - Source selecionado manualmente: siscobra_sudoeste
+2026-04-15 10:55:09,933 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_sudoeste
+2026-04-15 10:55:09,933 [INFO] __main__ - Processando source 1/1: siscobra_sudoeste
+2026-04-15 10:55:09,934 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-04-15 10:55:09,936 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-04-15 10:55:09,936 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=3).
+2026-04-15 10:55:09,936 [INFO] __main__.source.siscobra_sudoeste - Iniciando login no REVO360 para o ciclo 2026-04-14 (source=siscobra_sudoeste)
+2026-04-15 10:55:09,937 [INFO] WDM - ====== WebDriver manager ======
+2026-04-15 10:55:10,739 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-04-15 10:55:11,038 [INFO] WDM - Get LATEST chromedriver version for google-chrome
+2026-04-15 10:55:11,341 [INFO] WDM - Driver [C:\Users\rafael.flores\.wdm\drivers\chromedriver\win64\147.0.7727.56\chromedriver-win32/chromedriver.exe] found in cache
+2026-04-15 10:55:38,617 [ERROR] __main__.source.siscobra_sudoeste - Falha na etapa download: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 76, in realizar_login
+    wait.until(
+    ~~~~~~~~~~^
+        lambda d: (
+        ^^^^^^^^^^^
+    ...<7 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\rafael.flores\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\main.py", line 1094, in _run_download_stage
+    realizar_login(driver, wait)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\login.py", line 88, in realizar_login
+    raise RuntimeError(
+        f"Falha no login: autenticacao nao confirmada. URL atual: {driver.current_url}"
+    ) from exc
+RuntimeError: Falha no login: autenticacao nao confirmada. URL atual: https://nef.revo360.io/login.html
+2026-04-15 10:55:38,622 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:55:38,623 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-15 10:55:38,624 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-15 10:55:38,625 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-15 10:55:40,752 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:55:42,880 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:55:45,039 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-15 10:55:46,314 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-04-15 10:55:49,778 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-958653186fcsm872536241.4 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Projetos\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 764, in login
+    raise last_exception
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 753, in login
+    (code, resp) = self.auth(
+                   ~~~~~~~~~^
+        authmethod, getattr(self, method_name),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        initial_response_ok=initial_response_ok)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\smtplib.py", line 671, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials a1e0cc1a2514c-958653186fcsm872536241.4 - gsmtp')
+2026-04-15 10:55:49,780 [WARNING] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste falhou. Nova tentativa em 1800 segundos.
+2026-04-15 10:56:55,637 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-04-15T10:55:09 finished=2026-04-15T10:56:55 duration_s=105.701 category=failed final_stage=download
+2026-04-15 10:56:55,637 [INFO] __main__ - Lock de instancia removido: C:\Projetos\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-04-15 10:56:55,637 [INFO] __main__ - Execucao interrompida pelo usuario (Ctrl+C).

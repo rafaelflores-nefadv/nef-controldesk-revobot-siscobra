@@ -60,7 +60,7 @@ COPY_TO_FTP = True
 # FTP CONFIG
 FTP_HOST = "172.25.68.13"
 FTP_USER = "silva_cunha"
-FTP_PASSWORD = "Nef2025*"
+FTP_PASSWORD = "@Nefadv*1966"
 FTP_DIR = "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO"
 FTP_USE_TLS = True
 FTP_PORT = 990
