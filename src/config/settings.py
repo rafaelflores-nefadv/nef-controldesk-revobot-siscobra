@@ -77,8 +77,8 @@ DOWNLOAD_SOURCES = [
     {
         "id": "siscobra_celeiro",
         "enabled": True,
-        "remote_folder": "Exportação Siscobra 0914",
-        "filename_template": "Exportacao_Siscobra_0914_{date:%Y%m%d}.csv",
+        "remote_folder": "Exportação Siscobra Celeiro",
+        "filename_template": "Exportacao_Siscobra_Celeiro_{date:%Y%m%d}.csv",
         "prepared_prefix": "LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_",
         "copy_dir": r"Z:\\control_desk\\RETORNO\\0914",
         "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",

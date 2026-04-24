@@ -1,0 +1,326 @@
+{
+  "schema_version": 2,
+  "date": "2026-04-23",
+  "run_id": "083301",
+  "targets": {
+    "server": false,
+    "ftp": true
+  },
+  "entered_retry": true,
+  "sources": [
+    {
+      "id": "siscobra_celeiro",
+      "enabled": true,
+      "remote_folder": "Exportação Siscobra Celeiro",
+      "filename_template": "Exportacao_Siscobra_Celeiro_{date:%Y%m%d}.csv",
+      "prepared_prefix": "LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_",
+      "copy_dir": "Z:\\\\control_desk\\\\RETORNO\\\\0914",
+      "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+      "send_to_server": false,
+      "send_to_ftp": true
+    },
+    {
+      "id": "siscobra_planalto",
+      "enabled": true,
+      "remote_folder": "Exportação Siscobra Planalto",
+      "filename_template": "Exportacao_Siscobra_Planalto_{date:%Y%m%d}.csv",
+      "prepared_prefix": "LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_",
+      "copy_dir": "Z:\\\\control_desk\\\\RETORNO\\\\3953",
+      "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+      "send_to_server": false,
+      "send_to_ftp": true
+    },
+    {
+      "id": "siscobra_sudoeste",
+      "enabled": true,
+      "remote_folder": "Exportação Siscobra Sudoeste",
+      "filename_template": "Exportacao_Siscobra_Sudoeste_{date:%Y%m%d}.csv",
+      "prepared_prefix": "LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_",
+      "copy_dir": "Z:\\\\control_desk\\\\RETORNO\\\\0804",
+      "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+      "send_to_server": false,
+      "send_to_ftp": true
+    }
+  ],
+  "items": {
+    "siscobra_celeiro": {
+      "source_id": "siscobra_celeiro",
+      "source": {
+        "id": "siscobra_celeiro",
+        "enabled": true,
+        "remote_folder": "Exportação Siscobra Celeiro",
+        "filename_template": "Exportacao_Siscobra_Celeiro_{date:%Y%m%d}.csv",
+        "prepared_prefix": "LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_",
+        "copy_dir": "Z:\\\\control_desk\\\\RETORNO\\\\0914",
+        "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+        "send_to_server": false,
+        "send_to_ftp": true
+      },
+      "run_id": "083301",
+      "targets": {
+        "server": false,
+        "ftp": true
+      },
+      "entered_retry": true,
+      "status": "SUCCESS",
+      "last_error": null,
+      "paths": {
+        "downloaded": "C:\\Users\\paulo.silva\\projetos\\nef-controldesk-revobot-siscobra\\downloads\\Exportacao_Siscobra_Celeiro_20260423.csv",
+        "prepared": "C:\\Users\\paulo.silva\\projetos\\nef-controldesk-revobot-siscobra\\downloads\\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260423_083301.csv"
+      },
+      "file": {
+        "expected_name": "Exportacao_Siscobra_Celeiro_20260423.csv",
+        "resolved_name": "Exportacao_Siscobra_Celeiro_20260423.csv",
+        "found_in_listing": true,
+        "listed_count": 114,
+        "listed_at": "2026-04-24T08:34:18"
+      },
+      "stages": {
+        "download": {
+          "ok": true,
+          "enabled": true,
+          "tries": 2,
+          "last_error": null,
+          "last_attempt_ts": "2026-04-24T08:33:59"
+        },
+        "prepare": {
+          "ok": true,
+          "enabled": true,
+          "tries": 1,
+          "last_error": null,
+          "last_attempt_ts": "2026-04-24T08:34:21"
+        },
+        "send_server": {
+          "ok": true,
+          "enabled": false,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "send_ftp": {
+          "ok": true,
+          "enabled": true,
+          "tries": 1,
+          "last_error": null,
+          "last_attempt_ts": "2026-04-24T08:34:21"
+        }
+      },
+      "source_signature": {
+        "name": "Exportacao_Siscobra_Celeiro_20260423.csv",
+        "size": 214623,
+        "mtime": 1777034058
+      },
+      "timestamps": {
+        "created_at": "2026-04-24T08:33:01",
+        "updated_at": "2026-04-24T08:35:14"
+      },
+      "metrics": {
+        "started_at": "2026-04-24T08:33:01",
+        "finished_at": "2026-04-24T08:35:14",
+        "duration_seconds": 74.547,
+        "result_category": "failed",
+        "final_stage": "send_ftp",
+        "skipped_reason": null
+      }
+    },
+    "siscobra_planalto": {
+      "source_id": "siscobra_planalto",
+      "source": {
+        "id": "siscobra_planalto",
+        "enabled": true,
+        "remote_folder": "Exportação Siscobra Planalto",
+        "filename_template": "Exportacao_Siscobra_Planalto_{date:%Y%m%d}.csv",
+        "prepared_prefix": "LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_",
+        "copy_dir": "Z:\\\\control_desk\\\\RETORNO\\\\3953",
+        "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+        "send_to_server": false,
+        "send_to_ftp": true
+      },
+      "run_id": "083301",
+      "targets": {
+        "server": false,
+        "ftp": true
+      },
+      "entered_retry": false,
+      "status": "PENDING",
+      "last_error": null,
+      "paths": {
+        "downloaded": null,
+        "prepared": null
+      },
+      "file": {
+        "expected_name": null,
+        "resolved_name": null,
+        "found_in_listing": null,
+        "listed_count": 0,
+        "listed_at": null
+      },
+      "stages": {
+        "download": {
+          "ok": false,
+          "enabled": true,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "prepare": {
+          "ok": false,
+          "enabled": true,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "send_server": {
+          "ok": true,
+          "enabled": false,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "send_ftp": {
+          "ok": false,
+          "enabled": true,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        }
+      },
+      "source_signature": {
+        "name": null,
+        "size": null,
+        "mtime": null
+      },
+      "timestamps": {
+        "created_at": "2026-04-24T08:33:01",
+        "updated_at": "2026-04-24T08:33:59"
+      },
+      "metrics": {
+        "started_at": null,
+        "finished_at": null,
+        "duration_seconds": null,
+        "result_category": null,
+        "final_stage": null,
+        "skipped_reason": null
+      }
+    },
+    "siscobra_sudoeste": {
+      "source_id": "siscobra_sudoeste",
+      "source": {
+        "id": "siscobra_sudoeste",
+        "enabled": true,
+        "remote_folder": "Exportação Siscobra Sudoeste",
+        "filename_template": "Exportacao_Siscobra_Sudoeste_{date:%Y%m%d}.csv",
+        "prepared_prefix": "LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_",
+        "copy_dir": "Z:\\\\control_desk\\\\RETORNO\\\\0804",
+        "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+        "send_to_server": false,
+        "send_to_ftp": true
+      },
+      "run_id": "083301",
+      "targets": {
+        "server": false,
+        "ftp": true
+      },
+      "entered_retry": false,
+      "status": "PENDING",
+      "last_error": null,
+      "paths": {
+        "downloaded": null,
+        "prepared": null
+      },
+      "file": {
+        "expected_name": null,
+        "resolved_name": null,
+        "found_in_listing": null,
+        "listed_count": 0,
+        "listed_at": null
+      },
+      "stages": {
+        "download": {
+          "ok": false,
+          "enabled": true,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "prepare": {
+          "ok": false,
+          "enabled": true,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "send_server": {
+          "ok": true,
+          "enabled": false,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        },
+        "send_ftp": {
+          "ok": false,
+          "enabled": true,
+          "tries": 0,
+          "last_error": null,
+          "last_attempt_ts": null
+        }
+      },
+      "source_signature": {
+        "name": null,
+        "size": null,
+        "mtime": null
+      },
+      "timestamps": {
+        "created_at": "2026-04-24T08:33:01",
+        "updated_at": "2026-04-24T08:33:59"
+      },
+      "metrics": {
+        "started_at": null,
+        "finished_at": null,
+        "duration_seconds": null,
+        "result_category": null,
+        "final_stage": null,
+        "skipped_reason": null
+      }
+    }
+  },
+  "paths": {
+    "downloaded": "C:\\Users\\paulo.silva\\projetos\\nef-controldesk-revobot-siscobra\\downloads\\Exportacao_Siscobra_Celeiro_20260423.csv",
+    "prepared": "C:\\Users\\paulo.silva\\projetos\\nef-controldesk-revobot-siscobra\\downloads\\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260423_083301.csv"
+  },
+  "stages": {
+    "download": {
+      "ok": true,
+      "enabled": true,
+      "tries": 2,
+      "last_error": null,
+      "last_attempt_ts": "2026-04-24T08:33:59"
+    },
+    "prepare": {
+      "ok": true,
+      "enabled": true,
+      "tries": 1,
+      "last_error": null,
+      "last_attempt_ts": "2026-04-24T08:34:21"
+    },
+    "send_server": {
+      "ok": true,
+      "enabled": false,
+      "tries": 0,
+      "last_error": null,
+      "last_attempt_ts": null
+    },
+    "send_ftp": {
+      "ok": true,
+      "enabled": true,
+      "tries": 1,
+      "last_error": null,
+      "last_attempt_ts": "2026-04-24T08:34:21"
+    }
+  },
+  "source_signature": {
+    "name": "Exportacao_Siscobra_Celeiro_20260423.csv",
+    "size": 214623,
+    "mtime": 1777034058
+  }
+}

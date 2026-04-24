@@ -1,0 +1,84 @@
+2026-04-24 08:33:01,913 [INFO] __main__.source.siscobra_celeiro - Iniciando pipeline do source=siscobra_celeiro
+2026-04-24 08:33:01,915 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro - tentativa 1/10
+2026-04-24 08:33:01,917 [INFO] __main__.source.siscobra_celeiro - Executando etapa download (try=1).
+2026-04-24 08:33:01,918 [INFO] __main__.source.siscobra_celeiro - Iniciando login no REVO360 para o ciclo 2026-04-23 (source=siscobra_celeiro)
+2026-04-24 08:33:21,507 [INFO] __main__.source.siscobra_celeiro - Login realizado com sucesso
+2026-04-24 08:33:21,508 [INFO] __main__.source.siscobra_celeiro - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-04-24 08:33:21,508 [INFO] __main__.source.siscobra_celeiro - Consultando pasta remota no navegador autenticado: Exportação Siscobra 0914
+2026-04-24 08:33:21,882 [ERROR] __main__.source.siscobra_celeiro - Falha ao listar arquivos no navegador autenticado na pasta 'Exportação Siscobra 0914'
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\main.py", line 1100, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 1499, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 1286, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 804, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+2026-04-24 08:33:24,096 [ERROR] __main__.source.siscobra_celeiro - Falha na etapa download: Falha ao listar arquivos na pasta 'Exportação Siscobra 0914'.
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\main.py", line 1100, in _run_download_stage
+    itens = listar_arquivos_api_no_browser(driver, remote_folder)
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 1499, in listar_arquivos_api_no_browser
+    itens = _parse_listing_text_no_browser(
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 1286, in _parse_listing_text_no_browser
+    return _extrair_itens_listagem(payload)
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 804, in _extrair_itens_listagem
+    raise FileManagerApiError(f"API File Manager retornou erro: {detail}")
+core.download_api.FileManagerApiError: API File Manager retornou erro: erro desconhecido
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\main.py", line 1303, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+  File "C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\main.py", line 1121, in _run_download_stage
+    raise RuntimeError(
+RuntimeError: Falha ao listar arquivos na pasta 'Exportação Siscobra 0914'.
+2026-04-24 08:33:24,102 [INFO] __main__.source.siscobra_celeiro - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-24 08:33:24,103 [INFO] __main__.source.siscobra_celeiro - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-24 08:33:24,105 [INFO] __main__.source.siscobra_celeiro - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-04-24 08:33:24,108 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-24 08:33:26,230 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:33:28,402 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:33:30,517 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:33:31,652 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-04-24 08:33:35,001 [WARNING] __main__.source.siscobra_celeiro - Source siscobra_celeiro falhou. Nova tentativa em 1800 segundos.
+2026-04-24 08:33:56,252 [INFO] __main__.source.siscobra_celeiro - Metricas do source: started=2026-04-24T08:33:01 finished=2026-04-24T08:33:56 duration_s=54.328 category=failed final_stage=download
+2026-04-24 08:33:59,719 [INFO] __main__.source.siscobra_celeiro - Iniciando pipeline do source=siscobra_celeiro
+2026-04-24 08:33:59,722 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro - tentativa 1/10
+2026-04-24 08:33:59,723 [INFO] __main__.source.siscobra_celeiro - Executando etapa download (try=2).
+2026-04-24 08:33:59,723 [INFO] __main__.source.siscobra_celeiro - Iniciando login no REVO360 para o ciclo 2026-04-23 (source=siscobra_celeiro)
+2026-04-24 08:34:17,785 [INFO] __main__.source.siscobra_celeiro - Login realizado com sucesso
+2026-04-24 08:34:17,786 [INFO] __main__.source.siscobra_celeiro - File Manager sera consultado via navegacao e form submit no navegador autenticado
+2026-04-24 08:34:17,786 [INFO] __main__.source.siscobra_celeiro - Consultando pasta remota no navegador autenticado: Exportação Siscobra Celeiro
+2026-04-24 08:34:18,150 [INFO] __main__.source.siscobra_celeiro - Listagem via navegacao do navegador concluida: 114 item(ns) em 'Exportação Siscobra Celeiro'
+2026-04-24 08:34:18,164 [INFO] __main__.source.siscobra_celeiro - Arquivo selecionado para o ciclo 2026-04-23 (source=siscobra_celeiro): Exportacao_Siscobra_Celeiro_20260423.csv
+2026-04-24 08:34:18,166 [INFO] __main__.source.siscobra_celeiro - Iniciando download via form submit no navegador: Exportacao_Siscobra_Celeiro_20260423.csv
+2026-04-24 08:34:18,385 [INFO] __main__.source.siscobra_celeiro - Download disparado. Aguardando arquivo no diretorio configurado: C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\downloads
+2026-04-24 08:34:18,900 [INFO] __main__.source.siscobra_celeiro - Download via navegador concluido: Exportacao_Siscobra_Celeiro_20260423.csv
+2026-04-24 08:34:18,901 [INFO] __main__.source.siscobra_celeiro - Arquivo salvo em: C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Celeiro_20260423.csv
+2026-04-24 08:34:18,902 [INFO] __main__.source.siscobra_celeiro - Tamanho final do arquivo salvo: 214623 bytes
+2026-04-24 08:34:18,903 [INFO] __main__.source.siscobra_celeiro - Tempo total do download: 0.73s
+2026-04-24 08:34:21,332 [INFO] __main__.source.siscobra_celeiro - Etapa download concluida com sucesso.
+2026-04-24 08:34:21,334 [INFO] __main__.source.siscobra_celeiro - Executando etapa prepare (try=1).
+2026-04-24 08:34:21,855 [INFO] __main__.source.siscobra_celeiro - Prepare concluido: C:\Users\paulo.silva\projetos\nef-controldesk-revobot-siscobra\downloads\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260423_083301.csv
+2026-04-24 08:34:21,855 [INFO] __main__.source.siscobra_celeiro - Etapa prepare concluida com sucesso.
+2026-04-24 08:34:21,860 [INFO] __main__.source.siscobra_celeiro - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-04-24 08:34:21,866 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_ftp (try=1).
+2026-04-24 08:34:54,103 [INFO] __main__.source.siscobra_celeiro - Etapa send_ftp concluida com sucesso.
+2026-04-24 08:34:54,109 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-24 08:34:56,243 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:34:58,394 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:35:00,554 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:35:01,401 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-04-24 08:35:03,769 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro concluido com sucesso na tentativa 1.
+2026-04-24 08:35:03,785 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-04-24 08:35:05,949 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:35:08,097 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:35:10,237 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by NewConnectionError("HTTPConnection(host='69.6.221.156', port=3000): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-04-24 08:35:11,169 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-04-24 08:35:14,257 [INFO] __main__.source.siscobra_celeiro - Metricas do source: started=2026-04-24T08:33:59 finished=2026-04-24T08:35:14 duration_s=74.547 category=failed final_stage=send_ftp
