@@ -1,0 +1,336 @@
+2026-05-13 10:21:45,842 [INFO] __main__ - Log iniciado em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260513_102145.log
+2026-05-13 10:21:45,847 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-05-12 (server=True ftp=True).
+2026-05-13 10:21:45,850 [INFO] __main__ - Lock de instancia adquirido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-05-13 10:21:45,853 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-05-13 10:21:45,854 [INFO] __main__ - Inicio do ciclo 2026-05-12 em 2026-05-13T10:21:45
+2026-05-13 10:21:45,858 [INFO] __main__ - Ciclo 2026-05-12 carregado com targets: server=True ftp=True
+2026-05-13 10:21:45,859 [INFO] __main__ - Pre-validacao de configuracao concluida: 4 source(s) configurado(s).
+2026-05-13 10:21:45,859 [INFO] __main__ - Sources habilitados para este ciclo (4): siscobra_celeiro, siscobra_planalto, siscobra_sudoeste, siscobra_centro_sul
+2026-05-13 10:21:45,860 [INFO] __main__ - Processando source 1/4: siscobra_celeiro
+2026-05-13 10:21:45,865 [INFO] __main__.source.siscobra_celeiro - Iniciando pipeline do source=siscobra_celeiro
+2026-05-13 10:21:45,870 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro - tentativa 1/10
+2026-05-13 10:21:45,871 [INFO] __main__.source.siscobra_celeiro - Executando etapa download (try=1).
+2026-05-13 10:21:45,872 [INFO] __main__.source.siscobra_celeiro - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_celeiro)
+2026-05-13 10:21:45,872 [INFO] core.download_api - Iniciando autenticacao HTTP no REVO360: https://nef.revo360.io/api/revolutionService/loginUserCRM
+2026-05-13 10:21:51,244 [INFO] core.download_api - Login HTTP no REVO360 concluido: usuario=rafael.flores endpoint_file_manager=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-05-13 10:21:51,246 [INFO] __main__.source.siscobra_celeiro - Login HTTP realizado com sucesso
+2026-05-13 10:21:51,254 [INFO] __main__.source.siscobra_celeiro - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:21:51,254 [INFO] __main__.source.siscobra_celeiro - Consultando pasta remota via API HTTP: Exportação Siscobra Celeiro
+2026-05-13 10:21:51,254 [INFO] core.download_api - Executando diagnostico de autenticacao HTTP da API File Manager na raiz '..\UPLOAD'
+2026-05-13 10:21:51,255 [INFO] core.download_api - Executando diagnostico da sessao HTTP da API (tentativa 1/3)
+2026-05-13 10:21:51,255 [INFO] core.download_api - listagem da pasta '..\UPLOAD': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": []}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:21:51,414 [INFO] core.download_api - listagem da pasta '..\UPLOAD': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:21:51,415 [INFO] core.download_api - Diagnostico da sessao HTTP da API concluido: raiz acessivel com 28 item(ns)
+2026-05-13 10:21:51,415 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra Celeiro' (tentativa 1/3)
+2026-05-13 10:21:51,416 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Celeiro': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Celeiro%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Celeiro%22%7D%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": [{"key": "Exportação Siscobra Celeiro", "name": "Exportação Siscobra Celeiro"}]}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:21:51,497 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Celeiro': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Celeiro%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Celeiro%22%7D%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:21:51,498 [INFO] core.download_api - Listagem via API concluida para 'Exportação Siscobra Celeiro': 133 item(ns)
+2026-05-13 10:21:51,498 [INFO] __main__.source.siscobra_celeiro - Listagem via API HTTP concluida: 133 item(ns) em 'Exportação Siscobra Celeiro'
+2026-05-13 10:21:51,499 [INFO] __main__.source.siscobra_celeiro - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_celeiro): Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,499 [INFO] core.download_api - Carteira iniciada para download via API: Exportação Siscobra Celeiro
+2026-05-13 10:21:51,499 [INFO] core.download_api - Arquivo solicitado via API: Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,500 [INFO] core.download_api - Iniciando download HTTP direto do arquivo 'Exportacao_Siscobra_Celeiro_20260512.csv' para C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,500 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_Celeiro_20260512.csv' (tentativa 1/3)
+2026-05-13 10:21:51,859 [INFO] core.download_api - Download HTTP direto concluido com sucesso: arquivo=Exportacao_Siscobra_Celeiro_20260512.csv caminho=C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Celeiro_20260512.csv tamanho=635169 bytes
+2026-05-13 10:21:51,860 [INFO] __main__.source.siscobra_celeiro - Download HTTP direto concluido: Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,861 [INFO] __main__.source.siscobra_celeiro - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,861 [INFO] __main__.source.siscobra_celeiro - Tamanho final do arquivo salvo: 635169 bytes
+2026-05-13 10:21:51,861 [INFO] __main__.source.siscobra_celeiro - Tempo total do download: 0.36s
+2026-05-13 10:21:51,864 [INFO] __main__.source.siscobra_celeiro - Etapa download concluida com sucesso.
+2026-05-13 10:21:51,867 [INFO] __main__.source.siscobra_celeiro - Executando etapa prepare (try=1).
+2026-05-13 10:21:51,905 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:21:53,325 [INFO] core.download - Cabecalho removido do CSV: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:21:53,325 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145_excel.xlsx
+2026-05-13 10:21:53,327 [INFO] __main__.source.siscobra_celeiro - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:21:53,327 [INFO] __main__.source.siscobra_celeiro - Etapa prepare concluida com sucesso.
+2026-05-13 10:21:53,330 [INFO] __main__.source.siscobra_celeiro - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:21:53,332 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_ftp (try=1).
+2026-05-13 10:21:53,344 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:21:53,486 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:21:53,598 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:21:53,670 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:21:53,671 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:21:54,032 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:21:54,071 [INFO] core.download - Iniciando envio ao FTP: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:21:54,082 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:21:54,220 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:21:54,295 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:21:54,368 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:21:54,368 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:21:54,406 [INFO] core.download - Enviando arquivo via STOR: LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv (protecao=P, modo=PASV)
+2026-05-13 10:22:24,926 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-05-13 10:22:24,927 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:22:25,047 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:22:25,133 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:22:25,208 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:22:25,208 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:22:25,292 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv tamanho_local=638701 tamanho_remoto=638701 ok=True
+2026-05-13 10:22:25,329 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:22:25,330 [INFO] __main__.source.siscobra_celeiro - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:22:25,333 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:22:35,342 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32f6b0d0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:22:45,347 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32f6ba00>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:22:55,354 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a33058340>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:22:56,355 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-05-13 10:22:58,809 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f8884752ccsm21758657eec.17 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f8884752ccsm21758657eec.17 - gsmtp')
+2026-05-13 10:22:58,834 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro concluido com sucesso na tentativa 1.
+2026-05-13 10:22:58,839 [INFO] __main__.source.siscobra_celeiro - Metricas do source: started=2026-05-13T10:21:45 finished=2026-05-13T10:22:58 duration_s=72.969 category=success final_stage=send_ftp
+2026-05-13 10:22:58,840 [INFO] __main__ - Source siscobra_celeiro finalizado com status=SUCCESS
+2026-05-13 10:22:58,840 [INFO] __main__ - Processando source 2/4: siscobra_planalto
+2026-05-13 10:22:58,844 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-05-13 10:22:58,847 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-05-13 10:22:58,848 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=1).
+2026-05-13 10:22:58,849 [INFO] __main__.source.siscobra_planalto - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_planalto)
+2026-05-13 10:22:58,849 [INFO] core.download_api - Iniciando autenticacao HTTP no REVO360: https://nef.revo360.io/api/revolutionService/loginUserCRM
+2026-05-13 10:23:02,456 [INFO] core.download_api - Login HTTP no REVO360 concluido: usuario=rafael.flores endpoint_file_manager=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-05-13 10:23:02,457 [INFO] __main__.source.siscobra_planalto - Login HTTP realizado com sucesso
+2026-05-13 10:23:02,466 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:23:02,466 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota via API HTTP: Exportação Siscobra Planalto
+2026-05-13 10:23:02,466 [INFO] core.download_api - Executando diagnostico de autenticacao HTTP da API File Manager na raiz '..\UPLOAD'
+2026-05-13 10:23:02,467 [INFO] core.download_api - Executando diagnostico da sessao HTTP da API (tentativa 1/3)
+2026-05-13 10:23:02,467 [INFO] core.download_api - listagem da pasta '..\UPLOAD': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": []}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:23:02,618 [INFO] core.download_api - listagem da pasta '..\UPLOAD': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:23:02,619 [INFO] core.download_api - Diagnostico da sessao HTTP da API concluido: raiz acessivel com 28 item(ns)
+2026-05-13 10:23:02,619 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra Planalto' (tentativa 1/3)
+2026-05-13 10:23:02,620 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Planalto': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": [{"key": "Exportação Siscobra Planalto", "name": "Exportação Siscobra Planalto"}]}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:23:02,663 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Planalto': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Planalto%22%7D%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:23:02,663 [INFO] core.download_api - Listagem via API concluida para 'Exportação Siscobra Planalto': 62 item(ns)
+2026-05-13 10:23:02,663 [INFO] __main__.source.siscobra_planalto - Listagem via API HTTP concluida: 62 item(ns) em 'Exportação Siscobra Planalto'
+2026-05-13 10:23:02,663 [INFO] __main__.source.siscobra_planalto - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_planalto): Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,664 [INFO] core.download_api - Carteira iniciada para download via API: Exportação Siscobra Planalto
+2026-05-13 10:23:02,664 [INFO] core.download_api - Arquivo solicitado via API: Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,664 [INFO] core.download_api - Iniciando download HTTP direto do arquivo 'Exportacao_Siscobra_Planalto_20260512.csv' para C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,664 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_Planalto_20260512.csv' (tentativa 1/3)
+2026-05-13 10:23:02,973 [INFO] core.download_api - Download HTTP direto concluido com sucesso: arquivo=Exportacao_Siscobra_Planalto_20260512.csv caminho=C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Planalto_20260512.csv tamanho=425250 bytes
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Download HTTP direto concluido: Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Tamanho final do arquivo salvo: 425250 bytes
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Tempo total do download: 0.31s
+2026-05-13 10:23:02,977 [INFO] __main__.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-05-13 10:23:02,980 [INFO] __main__.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-05-13 10:23:03,007 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:23:03,954 [INFO] core.download - Cabecalho removido do CSV: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:23:03,954 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145_excel.xlsx
+2026-05-13 10:23:03,956 [INFO] __main__.source.siscobra_planalto - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:23:03,956 [INFO] __main__.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-05-13 10:23:03,959 [INFO] __main__.source.siscobra_planalto - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:23:03,962 [INFO] __main__.source.siscobra_planalto - Executando etapa send_ftp (try=1).
+2026-05-13 10:23:03,972 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:23:04,120 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:23:04,195 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:23:04,268 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:23:04,268 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:23:04,603 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:23:04,648 [INFO] core.download - Iniciando envio ao FTP: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:23:04,671 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:23:04,793 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:23:04,866 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:23:04,941 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:23:04,941 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:23:04,980 [INFO] core.download - Enviando arquivo via STOR: LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv (protecao=P, modo=PASV)
+2026-05-13 10:23:35,409 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-05-13 10:23:35,409 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:23:35,525 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:23:35,598 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:23:35,672 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:23:35,672 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:23:35,760 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv tamanho_local=427057 tamanho_remoto=427057 ok=True
+2026-05-13 10:23:35,797 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:23:35,798 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:23:35,802 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:23:45,805 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221a5c0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:23:55,816 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221aef0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:24:05,828 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221b820>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:24:06,967 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-05-13 10:24:09,113 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f91004b6a2sm20726934eec.0 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f91004b6a2sm20726934eec.0 - gsmtp')
+2026-05-13 10:24:09,115 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-05-13 10:24:09,123 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-05-13T10:22:58 finished=2026-05-13T10:24:09 duration_s=70.282 category=success final_stage=send_ftp
+2026-05-13 10:24:09,124 [INFO] __main__ - Source siscobra_planalto finalizado com status=SUCCESS
+2026-05-13 10:24:09,125 [INFO] __main__ - Processando source 3/4: siscobra_sudoeste
+2026-05-13 10:24:09,128 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-05-13 10:24:09,132 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-05-13 10:24:09,135 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=1).
+2026-05-13 10:24:09,136 [INFO] __main__.source.siscobra_sudoeste - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_sudoeste)
+2026-05-13 10:24:09,137 [INFO] core.download_api - Iniciando autenticacao HTTP no REVO360: https://nef.revo360.io/api/revolutionService/loginUserCRM
+2026-05-13 10:24:12,998 [INFO] core.download_api - Login HTTP no REVO360 concluido: usuario=rafael.flores endpoint_file_manager=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-05-13 10:24:13,000 [INFO] __main__.source.siscobra_sudoeste - Login HTTP realizado com sucesso
+2026-05-13 10:24:13,008 [INFO] __main__.source.siscobra_sudoeste - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:24:13,008 [INFO] __main__.source.siscobra_sudoeste - Consultando pasta remota via API HTTP: Exportação Siscobra Sudoeste
+2026-05-13 10:24:13,009 [INFO] core.download_api - Executando diagnostico de autenticacao HTTP da API File Manager na raiz '..\UPLOAD'
+2026-05-13 10:24:13,009 [INFO] core.download_api - Executando diagnostico da sessao HTTP da API (tentativa 1/3)
+2026-05-13 10:24:13,010 [INFO] core.download_api - listagem da pasta '..\UPLOAD': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": []}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:24:13,153 [INFO] core.download_api - listagem da pasta '..\UPLOAD': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:24:13,154 [INFO] core.download_api - Diagnostico da sessao HTTP da API concluido: raiz acessivel com 28 item(ns)
+2026-05-13 10:24:13,154 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra Sudoeste' (tentativa 1/3)
+2026-05-13 10:24:13,155 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Sudoeste': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Sudoeste%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Sudoeste%22%7D%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": [{"key": "Exportação Siscobra Sudoeste", "name": "Exportação Siscobra Sudoeste"}]}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:24:13,199 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Sudoeste': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Sudoeste%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Sudoeste%22%7D%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:24:13,200 [INFO] core.download_api - Listagem via API concluida para 'Exportação Siscobra Sudoeste': 58 item(ns)
+2026-05-13 10:24:13,200 [INFO] __main__.source.siscobra_sudoeste - Listagem via API HTTP concluida: 58 item(ns) em 'Exportação Siscobra Sudoeste'
+2026-05-13 10:24:13,201 [INFO] __main__.source.siscobra_sudoeste - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_sudoeste): Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,201 [INFO] core.download_api - Carteira iniciada para download via API: Exportação Siscobra Sudoeste
+2026-05-13 10:24:13,202 [INFO] core.download_api - Arquivo solicitado via API: Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,202 [INFO] core.download_api - Iniciando download HTTP direto do arquivo 'Exportacao_Siscobra_Sudoeste_20260512.csv' para C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,202 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_Sudoeste_20260512.csv' (tentativa 1/3)
+2026-05-13 10:24:13,408 [INFO] core.download_api - Download HTTP direto concluido com sucesso: arquivo=Exportacao_Siscobra_Sudoeste_20260512.csv caminho=C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Sudoeste_20260512.csv tamanho=286924 bytes
+2026-05-13 10:24:13,409 [INFO] __main__.source.siscobra_sudoeste - Download HTTP direto concluido: Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,410 [INFO] __main__.source.siscobra_sudoeste - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,410 [INFO] __main__.source.siscobra_sudoeste - Tamanho final do arquivo salvo: 286924 bytes
+2026-05-13 10:24:13,410 [INFO] __main__.source.siscobra_sudoeste - Tempo total do download: 0.20s
+2026-05-13 10:24:13,413 [INFO] __main__.source.siscobra_sudoeste - Etapa download concluida com sucesso.
+2026-05-13 10:24:13,417 [INFO] __main__.source.siscobra_sudoeste - Executando etapa prepare (try=1).
+2026-05-13 10:24:13,448 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:24:14,097 [INFO] core.download - Cabecalho removido do CSV: LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:24:14,097 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145_excel.xlsx
+2026-05-13 10:24:14,098 [INFO] __main__.source.siscobra_sudoeste - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:24:14,098 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare concluida com sucesso.
+2026-05-13 10:24:14,101 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:24:14,105 [INFO] __main__.source.siscobra_sudoeste - Executando etapa send_ftp (try=1).
+2026-05-13 10:24:14,117 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:24:14,263 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:24:14,354 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:24:14,426 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:24:14,427 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:24:14,791 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:24:14,829 [INFO] core.download - Iniciando envio ao FTP: LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:24:14,839 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:24:14,998 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:24:15,077 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:24:15,168 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:24:15,169 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:24:15,233 [INFO] core.download - Enviando arquivo via STOR: LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv (protecao=P, modo=PASV)
+2026-05-13 10:24:45,728 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-05-13 10:24:45,728 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:24:45,882 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:24:45,968 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:24:46,044 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:24:46,044 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:24:46,124 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv tamanho_local=288599 tamanho_remoto=288599 ok=True
+2026-05-13 10:24:46,163 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:24:46,164 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:24:46,167 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:24:56,182 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3251b640>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:25:06,193 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3251be80>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:25:16,208 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32518550>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:25:17,628 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-05-13 10:25:19,967 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f888e4016asm22176178eec.28 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f888e4016asm22176178eec.28 - gsmtp')
+2026-05-13 10:25:19,969 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste concluido com sucesso na tentativa 1.
+2026-05-13 10:25:19,977 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-05-13T10:24:09 finished=2026-05-13T10:25:19 duration_s=70.843 category=success final_stage=send_ftp
+2026-05-13 10:25:19,978 [INFO] __main__ - Source siscobra_sudoeste finalizado com status=SUCCESS
+2026-05-13 10:25:19,979 [INFO] __main__ - Processando source 4/4: siscobra_centro_sul
+2026-05-13 10:25:19,983 [INFO] __main__.source.siscobra_centro_sul - Iniciando pipeline do source=siscobra_centro_sul
+2026-05-13 10:25:19,986 [INFO] __main__.source.siscobra_centro_sul - Source siscobra_centro_sul - tentativa 1/10
+2026-05-13 10:25:19,988 [INFO] __main__.source.siscobra_centro_sul - Executando etapa download (try=1).
+2026-05-13 10:25:19,988 [INFO] __main__.source.siscobra_centro_sul - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_centro_sul)
+2026-05-13 10:25:19,989 [INFO] core.download_api - Iniciando autenticacao HTTP no REVO360: https://nef.revo360.io/api/revolutionService/loginUserCRM
+2026-05-13 10:25:23,508 [INFO] core.download_api - Login HTTP no REVO360 concluido: usuario=rafael.flores endpoint_file_manager=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-05-13 10:25:23,509 [INFO] __main__.source.siscobra_centro_sul - Login HTTP realizado com sucesso
+2026-05-13 10:25:23,517 [INFO] __main__.source.siscobra_centro_sul - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:25:23,517 [INFO] __main__.source.siscobra_centro_sul - Consultando pasta remota via API HTTP: Exportação Siscobra Centro Sul
+2026-05-13 10:25:23,517 [INFO] core.download_api - Executando diagnostico de autenticacao HTTP da API File Manager na raiz '..\UPLOAD'
+2026-05-13 10:25:23,518 [INFO] core.download_api - Executando diagnostico da sessao HTTP da API (tentativa 1/3)
+2026-05-13 10:25:23,518 [INFO] core.download_api - listagem da pasta '..\UPLOAD': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": []}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:25:23,686 [INFO] core.download_api - listagem da pasta '..\UPLOAD': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:25:23,687 [INFO] core.download_api - Diagnostico da sessao HTTP da API concluido: raiz acessivel com 28 item(ns)
+2026-05-13 10:25:23,688 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra Centro Sul' (tentativa 1/3)
+2026-05-13 10:25:23,689 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Centro Sul': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Centro+Sul%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Centro+Sul%22%7D%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": [{"key": "Exportação Siscobra Centro Sul", "name": "Exportação Siscobra Centro Sul"}]}'} headers={'User-Agent': 'python-requests/2.33.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-05-13 10:25:23,734 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra Centro Sul': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Centro+Sul%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Centro+Sul%22%7D%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-05-13 10:25:23,735 [INFO] core.download_api - Listagem via API concluida para 'Exportação Siscobra Centro Sul': 8 item(ns)
+2026-05-13 10:25:23,735 [INFO] __main__.source.siscobra_centro_sul - Listagem via API HTTP concluida: 8 item(ns) em 'Exportação Siscobra Centro Sul'
+2026-05-13 10:25:23,736 [INFO] __main__.source.siscobra_centro_sul - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_centro_sul): Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,737 [INFO] core.download_api - Carteira iniciada para download via API: Exportação Siscobra Centro Sul
+2026-05-13 10:25:23,737 [INFO] core.download_api - Arquivo solicitado via API: Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,738 [INFO] core.download_api - Iniciando download HTTP direto do arquivo 'Exportacao_Siscobra_CentroSul_20260512.csv' para C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,738 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_CentroSul_20260512.csv' (tentativa 1/3)
+2026-05-13 10:25:23,937 [INFO] core.download_api - Download HTTP direto concluido com sucesso: arquivo=Exportacao_Siscobra_CentroSul_20260512.csv caminho=C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_CentroSul_20260512.csv tamanho=167760 bytes
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Download HTTP direto concluido: Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Tamanho final do arquivo salvo: 167760 bytes
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Tempo total do download: 0.20s
+2026-05-13 10:25:23,942 [INFO] __main__.source.siscobra_centro_sul - Etapa download concluida com sucesso.
+2026-05-13 10:25:23,944 [INFO] __main__.source.siscobra_centro_sul - Executando etapa prepare (try=1).
+2026-05-13 10:25:23,982 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:25:24,366 [INFO] core.download - Cabecalho removido do CSV: LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv.tmp
+2026-05-13 10:25:24,366 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145_excel.xlsx
+2026-05-13 10:25:24,367 [INFO] __main__.source.siscobra_centro_sul - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:25:24,368 [INFO] __main__.source.siscobra_centro_sul - Etapa prepare concluida com sucesso.
+2026-05-13 10:25:24,370 [INFO] __main__.source.siscobra_centro_sul - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:25:24,373 [INFO] __main__.source.siscobra_centro_sul - Executando etapa send_ftp (try=1).
+2026-05-13 10:25:24,383 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:25:24,531 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:25:24,606 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:25:24,683 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:25:24,684 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:25:25,038 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:25:25,075 [INFO] core.download - Iniciando envio ao FTP: LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:25:25,085 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:25:25,233 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:25:25,313 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:25:25,391 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:25:25,392 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:25:25,429 [INFO] core.download - Enviando arquivo via STOR: LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv (protecao=P, modo=PASV)
+2026-05-13 10:25:55,832 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-05-13 10:25:55,833 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-05-13 10:25:55,952 [INFO] core.download - Autenticando no FTP
+2026-05-13 10:25:56,293 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-05-13 10:25:56,369 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-05-13 10:25:56,369 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-05-13 10:25:56,447 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv tamanho_local=168503 tamanho_remoto=168503 ok=True
+2026-05-13 10:25:56,487 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:25:56,489 [INFO] __main__.source.siscobra_centro_sul - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:25:56,492 [INFO] __main__.source.siscobra_centro_sul - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:26:06,495 [ERROR] __main__.source.siscobra_centro_sul - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32219f60>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:26:16,504 [ERROR] __main__.source.siscobra_centro_sul - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221a5c0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:26:26,516 [ERROR] __main__.source.siscobra_centro_sul - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221a500>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:26:27,792 [INFO] __main__.source.siscobra_centro_sul - Resumo enviado ao Google Chat.
+2026-05-13 10:26:29,871 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f88924af95sm22173731eec.30 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-2f88924af95sm22173731eec.30 - gsmtp')
+2026-05-13 10:26:29,873 [INFO] __main__.source.siscobra_centro_sul - Source siscobra_centro_sul concluido com sucesso na tentativa 1.
+2026-05-13 10:26:29,882 [INFO] __main__.source.siscobra_centro_sul - Metricas do source: started=2026-05-13T10:25:19 finished=2026-05-13T10:26:29 duration_s=69.891 category=success final_stage=send_ftp
+2026-05-13 10:26:29,882 [INFO] __main__ - Source siscobra_centro_sul finalizado com status=SUCCESS
+2026-05-13 10:26:29,883 [INFO] __main__ - Resumo final do ciclo por source (padrao observabilidade):
+2026-05-13 10:26:29,884 [INFO] __main__ - source=siscobra_celeiro enabled=True category=success status=SUCCESS final_stage=send_ftp started=2026-05-13T10:21:45 finished=2026-05-13T10:22:58 duration_s=72.969 expected=Exportacao_Siscobra_Celeiro_20260512.csv resolved=Exportacao_Siscobra_Celeiro_20260512.csv server=False ftp=True error=-
+2026-05-13 10:26:29,884 [INFO] __main__ - source=siscobra_planalto enabled=True category=success status=SUCCESS final_stage=send_ftp started=2026-05-13T10:22:58 finished=2026-05-13T10:24:09 duration_s=70.282 expected=Exportacao_Siscobra_Planalto_20260512.csv resolved=Exportacao_Siscobra_Planalto_20260512.csv server=False ftp=True error=-
+2026-05-13 10:26:29,885 [INFO] __main__ - source=siscobra_sudoeste enabled=True category=success status=SUCCESS final_stage=send_ftp started=2026-05-13T10:24:09 finished=2026-05-13T10:25:19 duration_s=70.843 expected=Exportacao_Siscobra_Sudoeste_20260512.csv resolved=Exportacao_Siscobra_Sudoeste_20260512.csv server=False ftp=True error=-
+2026-05-13 10:26:29,885 [INFO] __main__ - source=siscobra_centro_sul enabled=True category=success status=SUCCESS final_stage=send_ftp started=2026-05-13T10:25:19 finished=2026-05-13T10:26:29 duration_s=69.891 expected=Exportacao_Siscobra_CentroSul_20260512.csv resolved=Exportacao_Siscobra_CentroSul_20260512.csv server=False ftp=True error=-
+2026-05-13 10:26:29,885 [INFO] __main__ - Resumo do ciclo: status=SUCCESS started=2026-05-13T10:21:45 finished=2026-05-13T10:26:29 duration_s=284.016 enabled=4 success=4 failed=0 not_found=0 skipped=0 disabled=0
+2026-05-13 10:26:29,887 [INFO] __main__ - Resumo observabilidade persistido em C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\cycle_summary_2026-05-12.json
+2026-05-13 10:26:29,888 [INFO] __main__ - Lock de instancia removido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock

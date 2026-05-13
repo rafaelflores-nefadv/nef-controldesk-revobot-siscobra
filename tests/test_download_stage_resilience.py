@@ -59,79 +59,62 @@ class DownloadStageResilienceTests(unittest.TestCase):
 
         self.assertEqual(found, variant_2)
 
-    def test_download_stage_uses_form_submit_and_waits_for_file_for_cycle_date(self) -> None:
+    def test_download_stage_uses_http_api_for_cycle_date(self) -> None:
         cycle_date = date(2026, 2, 26)
         nome_esperado = "Exportacao_Siscobra_0914_20260226.csv"
         state = {"paths": {"downloaded": None}, "source_signature": None}
 
-        driver = Mock()
-        wait = Mock()
+        session = Mock()
         itens = [
             {"name": "Exportacao_Siscobra_0914_20260225.csv"},
             {"name": nome_esperado},
         ]
         destino = self.download_dir / nome_esperado
 
-        def fake_disparar_download(_driver, _pasta, _nome_arquivo):
-            self.assertEqual(_driver, driver)
+        def fake_download(_session, _pasta, _nome_arquivo, _destino):
+            self.assertEqual(_session, session)
             self.assertEqual(_nome_arquivo, nome_esperado)
-            return {"action": "https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD"}
+            self.assertEqual(_destino, destino)
+            destino.write_text("h1;h2;h3\n1;2;3\n", encoding="utf-8")
+            return destino
 
         with ExitStack() as stack:
             stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
             stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
-            stack.enter_context(patch.object(main, "criar_driver", return_value=(driver, wait)))
-            stack.enter_context(patch.object(main, "realizar_login"))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
             listar_mock = stack.enter_context(
-                patch.object(main, "listar_arquivos_api_no_browser", return_value=itens)
+                patch.object(main, "listar_arquivos_api", return_value=itens)
             )
-            clean_mock = stack.enter_context(
-                patch.object(main, "limpar_arquivos_download_anteriores", wraps=main.limpar_arquivos_download_anteriores)
-            )
-            disparar_mock = stack.enter_context(
-                patch.object(main, "baixar_arquivo_via_form_submit_no_browser", side_effect=fake_disparar_download)
-            )
-            def fake_aguardar_download(_wait, _nome_arquivo):
-                self.assertEqual(_wait, wait)
-                self.assertEqual(_nome_arquivo, nome_esperado)
-                destino.write_text("h1;h2;h3\n1;2;3\n", encoding="utf-8")
-                return destino
-
-            aguardar_mock = stack.enter_context(
-                patch.object(main, "aguardar_download", side_effect=fake_aguardar_download)
+            download_mock = stack.enter_context(
+                patch.object(main, "baixar_exportacao_revo360", side_effect=fake_download)
             )
 
             main._run_download_stage(self.logger, state, cycle_date)
 
-        listar_mock.assert_called_once_with(driver, main.FILE_MANAGER_EXPORT_FOLDER)
-        clean_mock.assert_called_once_with(nome_esperado)
-        disparar_mock.assert_called_once_with(
-            driver,
+        listar_mock.assert_called_once_with(session, main.FILE_MANAGER_EXPORT_FOLDER)
+        download_mock.assert_called_once_with(
+            session,
             main.FILE_MANAGER_EXPORT_FOLDER,
             nome_esperado,
+            destino,
         )
-        aguardar_mock.assert_called_once_with(wait, nome_esperado)
         self.assertEqual(state["paths"]["downloaded"], str(destino))
         self.assertEqual(state["source_signature"]["name"], destino.name)
         self.assertTrue(Path(state["paths"]["downloaded"]).exists())
-        driver.quit.assert_called_once()
-        self.assertEqual([call[0] for call in driver.method_calls], ["quit"])
 
     def test_download_stage_fails_when_cycle_file_is_not_available(self) -> None:
         cycle_date = date(2026, 2, 27)
         state = {"paths": {"downloaded": None}, "source_signature": None}
 
-        driver = Mock()
-        wait = Mock()
+        session = Mock()
         itens = [{"name": "Exportacao_Siscobra_0914_20260226.csv"}]
 
         with ExitStack() as stack:
             stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
             stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
-            stack.enter_context(patch.object(main, "criar_driver", return_value=(driver, wait)))
-            stack.enter_context(patch.object(main, "realizar_login"))
-            stack.enter_context(patch.object(main, "listar_arquivos_api_no_browser", return_value=itens))
-            disparar_mock = stack.enter_context(patch.object(main, "baixar_arquivo_via_form_submit_no_browser"))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
+            stack.enter_context(patch.object(main, "listar_arquivos_api", return_value=itens))
+            download_mock = stack.enter_context(patch.object(main, "baixar_exportacao_revo360"))
 
             with self.assertRaisesRegex(
                 RuntimeError,
@@ -141,72 +124,64 @@ class DownloadStageResilienceTests(unittest.TestCase):
 
         self.assertIsNone(state["paths"]["downloaded"])
         self.assertIsNone(state["source_signature"])
-        disparar_mock.assert_not_called()
-        driver.quit.assert_called_once()
+        download_mock.assert_not_called()
 
     def test_download_stage_fails_with_clear_message_when_session_is_expired(self) -> None:
         cycle_date = date(2026, 2, 27)
         state = {"paths": {"downloaded": None}, "source_signature": None}
 
-        driver = Mock()
-        wait = Mock()
+        session = Mock()
 
         with ExitStack() as stack:
             stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
             stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
-            stack.enter_context(patch.object(main, "criar_driver", return_value=(driver, wait)))
-            stack.enter_context(patch.object(main, "realizar_login"))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
             stack.enter_context(
                 patch.object(
                     main,
-                    "listar_arquivos_api_no_browser",
+                    "listar_arquivos_api",
                     side_effect=main.SessionExpiredError("redirecionado para login"),
                 )
             )
 
             with self.assertRaisesRegex(
                 RuntimeError,
-                "Sessao do navegador do REVO360 parece expirada ou a API nao ficou acessivel no contexto autenticado durante a listagem.",
+                "Sessao HTTP do REVO360 parece expirada ou a API nao ficou acessivel durante a listagem.",
             ):
                 main._run_download_stage(self.logger, state, cycle_date)
 
         self.assertIsNone(state["paths"]["downloaded"])
         self.assertIsNone(state["source_signature"])
-        driver.quit.assert_called_once()
 
-    def test_download_stage_fails_when_file_does_not_appear_in_download_dir(self) -> None:
+    def test_download_stage_fails_when_http_download_does_not_save_file(self) -> None:
         cycle_date = date(2026, 2, 26)
         nome_esperado = "Exportacao_Siscobra_0914_20260226.csv"
         state = {"paths": {"downloaded": None}, "source_signature": None}
 
-        driver = Mock()
-        wait = Mock()
+        session = Mock()
         itens = [{"name": nome_esperado}]
 
         with ExitStack() as stack:
             stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
             stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
-            stack.enter_context(patch.object(main, "criar_driver", return_value=(driver, wait)))
-            stack.enter_context(patch.object(main, "realizar_login"))
-            stack.enter_context(patch.object(main, "listar_arquivos_api_no_browser", return_value=itens))
-            stack.enter_context(patch.object(main, "baixar_arquivo_via_form_submit_no_browser"))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
+            stack.enter_context(patch.object(main, "listar_arquivos_api", return_value=itens))
             stack.enter_context(
                 patch.object(
                     main,
-                    "aguardar_download",
-                    side_effect=RuntimeError("arquivo nao apareceu"),
+                    "baixar_exportacao_revo360",
+                    side_effect=main.UnexpectedApiResponseError("corpo vazio"),
                 )
             )
 
             with self.assertRaisesRegex(
                 RuntimeError,
-                "nao apareceu no diretorio de download",
+                "Falha ao baixar o arquivo",
             ):
                 main._run_download_stage(self.logger, state, cycle_date)
 
         self.assertIsNone(state["paths"]["downloaded"])
         self.assertIsNone(state["source_signature"])
-        driver.quit.assert_called_once()
 
     def test_download_stage_template_not_found_records_absence_and_does_not_download(self) -> None:
         cycle_date = date(2026, 3, 13)
@@ -227,20 +202,18 @@ class DownloadStageResilienceTests(unittest.TestCase):
             },
         }
 
-        driver = Mock()
-        wait = Mock()
+        session = Mock()
         itens = [{"name": "Arquivo_20260312.csv"}, {"name": "Outro.csv"}]
 
         with ExitStack() as stack:
             stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
             stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
-            stack.enter_context(patch.object(main, "criar_driver", return_value=(driver, wait)))
-            stack.enter_context(patch.object(main, "realizar_login"))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
             listar_mock = stack.enter_context(
-                patch.object(main, "listar_arquivos_api_no_browser", return_value=itens)
+                patch.object(main, "listar_arquivos_api", return_value=itens)
             )
-            disparar_mock = stack.enter_context(
-                patch.object(main, "baixar_arquivo_via_form_submit_no_browser")
+            download_mock = stack.enter_context(
+                patch.object(main, "baixar_exportacao_revo360")
             )
 
             with self.assertRaisesRegex(
@@ -249,13 +222,12 @@ class DownloadStageResilienceTests(unittest.TestCase):
             ):
                 main._run_download_stage(self.logger, state, cycle_date)
 
-        listar_mock.assert_called_once_with(driver, "Pasta Template")
-        disparar_mock.assert_not_called()
+        listar_mock.assert_called_once_with(session, "Pasta Template")
+        download_mock.assert_not_called()
         self.assertEqual(state["file"]["expected_name"], "Arquivo_20260313.csv")
         self.assertIsNone(state["file"]["resolved_name"])
         self.assertFalse(state["file"]["found_in_listing"])
         self.assertIsNone(state["paths"]["downloaded"])
-        driver.quit.assert_called_once()
 
     def test_download_stage_template_match_triggers_download(self) -> None:
         cycle_date = date(2026, 3, 13)
@@ -277,42 +249,36 @@ class DownloadStageResilienceTests(unittest.TestCase):
             },
         }
 
-        driver = Mock()
-        wait = Mock()
+        session = Mock()
         itens = [{"name": "Arquivo_20260312.csv"}, {"name": nome_esperado}]
         destino = self.download_dir / nome_esperado
 
-        def fake_aguardar_download(_wait, _nome_arquivo):
-            self.assertEqual(_wait, wait)
+        def fake_download(_session, _pasta, _nome_arquivo, _destino):
+            self.assertEqual(_session, session)
             self.assertEqual(_nome_arquivo, nome_esperado)
+            self.assertEqual(_destino, destino)
             destino.write_text("h1;h2;h3\n1;2;3\n", encoding="utf-8")
             return destino
 
         with ExitStack() as stack:
             stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
             stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
-            stack.enter_context(patch.object(main, "criar_driver", return_value=(driver, wait)))
-            stack.enter_context(patch.object(main, "realizar_login"))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
             listar_mock = stack.enter_context(
-                patch.object(main, "listar_arquivos_api_no_browser", return_value=itens)
+                patch.object(main, "listar_arquivos_api", return_value=itens)
             )
-            disparar_mock = stack.enter_context(
-                patch.object(main, "baixar_arquivo_via_form_submit_no_browser")
-            )
-            aguardar_mock = stack.enter_context(
-                patch.object(main, "aguardar_download", side_effect=fake_aguardar_download)
+            download_mock = stack.enter_context(
+                patch.object(main, "baixar_exportacao_revo360", side_effect=fake_download)
             )
 
             main._run_download_stage(self.logger, state, cycle_date)
 
-        listar_mock.assert_called_once_with(driver, "Pasta Template")
-        disparar_mock.assert_called_once_with(driver, "Pasta Template", nome_esperado)
-        aguardar_mock.assert_called_once_with(wait, nome_esperado)
+        listar_mock.assert_called_once_with(session, "Pasta Template")
+        download_mock.assert_called_once_with(session, "Pasta Template", nome_esperado, destino)
         self.assertEqual(state["file"]["expected_name"], nome_esperado)
         self.assertEqual(state["file"]["resolved_name"], nome_esperado)
         self.assertTrue(state["file"]["found_in_listing"])
         self.assertEqual(state["paths"]["downloaded"], str(destino))
-        driver.quit.assert_called_once()
 
     def test_prepare_stage_removes_only_header_and_preserves_first_data_row(self) -> None:
         cycle_date = date(2026, 3, 13)

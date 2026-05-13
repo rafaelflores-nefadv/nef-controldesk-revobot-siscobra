@@ -4,6 +4,7 @@ from pathlib import Path
 BASE_URL = "https://nef.revo360.io/login"
 USERNAME = "rafael.flores"
 PASSWORD = "nef@2212"
+REVO360_APPLICATION_ID = "1K3K4H5N6BV69084J3UEYS63485091KL"
 
 HEADLESS = False
 DEFAULT_TIMEOUT = 20 # TEMPO DE ESPERA PARA O BOT AGUARDAR A PÁGINA CARREGAR
@@ -42,6 +43,7 @@ FILE_PREFIX = "LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_"
 FILE_MANAGER_EXPORT_FOLDER = "Exportação Siscobra 0914"
 FILE_NAME_TEMPLATE = "Exportacao_Siscobra_0914_{date:%Y%m%d}.csv"
 FILE_MANAGER_API_BASE_URL = "https://nef.revo360.io:10024"
+REVO360_API_BASE_URL = "https://nef.revo360.io/api"
 FILE_MANAGER_HTTP_TIMEOUT_CONNECT = 15
 FILE_MANAGER_HTTP_TIMEOUT_READ = 120
 FILE_MANAGER_HTTP_RETRY_ATTEMPTS = 3
@@ -124,7 +126,7 @@ GOOGLE_CHAT_WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAQAlFBeLe4/mes
 GOOGLE_CHAT_TIMEOUT = 10
 
 # WhatsApp notifications (WAHA)
-ENABLE_WHATSAPP_NOTIFICATION = True
+ENABLE_WHATSAPP_NOTIFICATION = True 
 WAHA_BASE_URL = "http://69.6.221.156:3000/"
 WAHA_SESSION = "default"
 WAHA_CHAT_IDS = ['556793087866', '556781386476', '556781376048']
@@ -148,7 +150,6 @@ EMAIL_FROM = "max.ia@nefadv.com.br"
 EMAIL_TO = [
     "rafaelflores@nefadv.com.br ",
     "juliogoncalves@nefadv.com.br",
-    "mauriciooliveira@nefadv.com.br",
     "vitor.niz@extranef.com.br",
     "talisson.inacio@extranef.com.br",
 ]

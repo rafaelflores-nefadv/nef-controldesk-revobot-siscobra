@@ -1,0 +1,27 @@
+2026-05-13 10:21:45,865 [INFO] __main__.source.siscobra_celeiro - Iniciando pipeline do source=siscobra_celeiro
+2026-05-13 10:21:45,870 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro - tentativa 1/10
+2026-05-13 10:21:45,871 [INFO] __main__.source.siscobra_celeiro - Executando etapa download (try=1).
+2026-05-13 10:21:45,872 [INFO] __main__.source.siscobra_celeiro - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_celeiro)
+2026-05-13 10:21:51,246 [INFO] __main__.source.siscobra_celeiro - Login HTTP realizado com sucesso
+2026-05-13 10:21:51,254 [INFO] __main__.source.siscobra_celeiro - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:21:51,254 [INFO] __main__.source.siscobra_celeiro - Consultando pasta remota via API HTTP: Exportação Siscobra Celeiro
+2026-05-13 10:21:51,498 [INFO] __main__.source.siscobra_celeiro - Listagem via API HTTP concluida: 133 item(ns) em 'Exportação Siscobra Celeiro'
+2026-05-13 10:21:51,499 [INFO] __main__.source.siscobra_celeiro - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_celeiro): Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,860 [INFO] __main__.source.siscobra_celeiro - Download HTTP direto concluido: Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,861 [INFO] __main__.source.siscobra_celeiro - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Celeiro_20260512.csv
+2026-05-13 10:21:51,861 [INFO] __main__.source.siscobra_celeiro - Tamanho final do arquivo salvo: 635169 bytes
+2026-05-13 10:21:51,861 [INFO] __main__.source.siscobra_celeiro - Tempo total do download: 0.36s
+2026-05-13 10:21:51,864 [INFO] __main__.source.siscobra_celeiro - Etapa download concluida com sucesso.
+2026-05-13 10:21:51,867 [INFO] __main__.source.siscobra_celeiro - Executando etapa prepare (try=1).
+2026-05-13 10:21:53,327 [INFO] __main__.source.siscobra_celeiro - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:21:53,327 [INFO] __main__.source.siscobra_celeiro - Etapa prepare concluida com sucesso.
+2026-05-13 10:21:53,330 [INFO] __main__.source.siscobra_celeiro - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:21:53,332 [INFO] __main__.source.siscobra_celeiro - Executando etapa send_ftp (try=1).
+2026-05-13 10:22:25,330 [INFO] __main__.source.siscobra_celeiro - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:22:25,333 [INFO] __main__.source.siscobra_celeiro - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:22:35,342 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32f6b0d0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:22:45,347 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32f6ba00>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:22:55,354 [ERROR] __main__.source.siscobra_celeiro - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a33058340>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:22:56,355 [INFO] __main__.source.siscobra_celeiro - Resumo enviado ao Google Chat.
+2026-05-13 10:22:58,834 [INFO] __main__.source.siscobra_celeiro - Source siscobra_celeiro concluido com sucesso na tentativa 1.
+2026-05-13 10:22:58,839 [INFO] __main__.source.siscobra_celeiro - Metricas do source: started=2026-05-13T10:21:45 finished=2026-05-13T10:22:58 duration_s=72.969 category=success final_stage=send_ftp

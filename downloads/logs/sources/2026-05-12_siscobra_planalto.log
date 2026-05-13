@@ -1,0 +1,27 @@
+2026-05-13 10:22:58,844 [INFO] __main__.source.siscobra_planalto - Iniciando pipeline do source=siscobra_planalto
+2026-05-13 10:22:58,847 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto - tentativa 1/10
+2026-05-13 10:22:58,848 [INFO] __main__.source.siscobra_planalto - Executando etapa download (try=1).
+2026-05-13 10:22:58,849 [INFO] __main__.source.siscobra_planalto - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_planalto)
+2026-05-13 10:23:02,457 [INFO] __main__.source.siscobra_planalto - Login HTTP realizado com sucesso
+2026-05-13 10:23:02,466 [INFO] __main__.source.siscobra_planalto - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:23:02,466 [INFO] __main__.source.siscobra_planalto - Consultando pasta remota via API HTTP: Exportação Siscobra Planalto
+2026-05-13 10:23:02,663 [INFO] __main__.source.siscobra_planalto - Listagem via API HTTP concluida: 62 item(ns) em 'Exportação Siscobra Planalto'
+2026-05-13 10:23:02,663 [INFO] __main__.source.siscobra_planalto - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_planalto): Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Download HTTP direto concluido: Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Planalto_20260512.csv
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Tamanho final do arquivo salvo: 425250 bytes
+2026-05-13 10:23:02,974 [INFO] __main__.source.siscobra_planalto - Tempo total do download: 0.31s
+2026-05-13 10:23:02,977 [INFO] __main__.source.siscobra_planalto - Etapa download concluida com sucesso.
+2026-05-13 10:23:02,980 [INFO] __main__.source.siscobra_planalto - Executando etapa prepare (try=1).
+2026-05-13 10:23:03,956 [INFO] __main__.source.siscobra_planalto - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:23:03,956 [INFO] __main__.source.siscobra_planalto - Etapa prepare concluida com sucesso.
+2026-05-13 10:23:03,959 [INFO] __main__.source.siscobra_planalto - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:23:03,962 [INFO] __main__.source.siscobra_planalto - Executando etapa send_ftp (try=1).
+2026-05-13 10:23:35,798 [INFO] __main__.source.siscobra_planalto - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:23:35,802 [INFO] __main__.source.siscobra_planalto - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:23:45,805 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221a5c0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:23:55,816 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221aef0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:24:05,828 [ERROR] __main__.source.siscobra_planalto - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221b820>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:24:06,967 [INFO] __main__.source.siscobra_planalto - Resumo enviado ao Google Chat.
+2026-05-13 10:24:09,115 [INFO] __main__.source.siscobra_planalto - Source siscobra_planalto concluido com sucesso na tentativa 1.
+2026-05-13 10:24:09,123 [INFO] __main__.source.siscobra_planalto - Metricas do source: started=2026-05-13T10:22:58 finished=2026-05-13T10:24:09 duration_s=70.282 category=success final_stage=send_ftp

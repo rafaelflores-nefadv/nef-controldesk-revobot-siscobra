@@ -15,10 +15,10 @@ Arquivos principais:
 No source atual, a etapa `download` executa:
 
 1. login no REVO360
-2. abrir contexto same-origin do File Manager no navegador autenticado
+2. criar sessao HTTP com requests.Session()
 3. listar arquivos da pasta remota (`GetDirContents`)
 4. validar o arquivo esperado do ciclo
-5. submeter download via formulario no navegador
+5. submeter download via POST HTTP direto
 6. aguardar arquivo final em `DOWNLOAD_DIR`
 
 Se o arquivo esperado nao estiver na listagem, o download nao e disparado.
@@ -39,7 +39,7 @@ Metadados gravados em `item_state["file"]`:
 ## Download via Navegador (Form Submit)
 
 O bot nao faz download final direto por HTTP no Python.
-O download e disparado pelo navegador autenticado (Selenium) com formulario:
+O download e disparado por POST HTTP direto:
 
 - `method=POST`
 - endpoint: `/api/file-manager-file-system?path=..\UPLOAD`
@@ -57,7 +57,7 @@ O download e disparado pelo navegador autenticado (Selenium) com formulario:
 
 Fluxo real:
 
-`LOGIN -> same-origin File Manager -> GetDirContents -> validar nome -> form submit -> aguardar DOWNLOAD_DIR`
+`LOGIN HTTP -> GetDirContents -> validar nome -> POST Download -> salvar em DOWNLOAD_DIR`
 
 ## Stage `prepare`
 

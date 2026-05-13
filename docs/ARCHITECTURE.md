@@ -83,7 +83,7 @@ Download so e disparado quando o nome esperado e encontrado na listagem.
 
 ## 5. Download no Navegador Autenticado
 
-O fluxo de producao usa o browser autenticado (Selenium), nao download final direto por HTTP no Python.
+O fluxo de producao usa requests.Session() autenticado e faz download final direto por HTTP no Python.
 
 Passos:
 
@@ -91,7 +91,7 @@ Passos:
 2. garantir contexto same-origin do File Manager
 3. listar via `GetDirContents`
 4. validar existencia do arquivo esperado
-5. submeter formulario de download no browser (`command=Download`)
+5. submeter POST HTTP de download (`command=Download`)
 6. aguardar arquivo no `DOWNLOAD_DIR`
 
 Formato de `arguments` no submit:

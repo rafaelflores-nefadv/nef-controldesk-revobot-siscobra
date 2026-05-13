@@ -1,0 +1,27 @@
+2026-05-13 10:24:09,128 [INFO] __main__.source.siscobra_sudoeste - Iniciando pipeline do source=siscobra_sudoeste
+2026-05-13 10:24:09,132 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste - tentativa 1/10
+2026-05-13 10:24:09,135 [INFO] __main__.source.siscobra_sudoeste - Executando etapa download (try=1).
+2026-05-13 10:24:09,136 [INFO] __main__.source.siscobra_sudoeste - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_sudoeste)
+2026-05-13 10:24:13,000 [INFO] __main__.source.siscobra_sudoeste - Login HTTP realizado com sucesso
+2026-05-13 10:24:13,008 [INFO] __main__.source.siscobra_sudoeste - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:24:13,008 [INFO] __main__.source.siscobra_sudoeste - Consultando pasta remota via API HTTP: Exportação Siscobra Sudoeste
+2026-05-13 10:24:13,200 [INFO] __main__.source.siscobra_sudoeste - Listagem via API HTTP concluida: 58 item(ns) em 'Exportação Siscobra Sudoeste'
+2026-05-13 10:24:13,201 [INFO] __main__.source.siscobra_sudoeste - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_sudoeste): Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,409 [INFO] __main__.source.siscobra_sudoeste - Download HTTP direto concluido: Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,410 [INFO] __main__.source.siscobra_sudoeste - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Sudoeste_20260512.csv
+2026-05-13 10:24:13,410 [INFO] __main__.source.siscobra_sudoeste - Tamanho final do arquivo salvo: 286924 bytes
+2026-05-13 10:24:13,410 [INFO] __main__.source.siscobra_sudoeste - Tempo total do download: 0.20s
+2026-05-13 10:24:13,413 [INFO] __main__.source.siscobra_sudoeste - Etapa download concluida com sucesso.
+2026-05-13 10:24:13,417 [INFO] __main__.source.siscobra_sudoeste - Executando etapa prepare (try=1).
+2026-05-13 10:24:14,098 [INFO] __main__.source.siscobra_sudoeste - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:24:14,098 [INFO] __main__.source.siscobra_sudoeste - Etapa prepare concluida com sucesso.
+2026-05-13 10:24:14,101 [INFO] __main__.source.siscobra_sudoeste - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:24:14,105 [INFO] __main__.source.siscobra_sudoeste - Executando etapa send_ftp (try=1).
+2026-05-13 10:24:46,164 [INFO] __main__.source.siscobra_sudoeste - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:24:46,167 [INFO] __main__.source.siscobra_sudoeste - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:24:56,182 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3251b640>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:25:06,193 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3251be80>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:25:16,208 [ERROR] __main__.source.siscobra_sudoeste - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32518550>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:25:17,628 [INFO] __main__.source.siscobra_sudoeste - Resumo enviado ao Google Chat.
+2026-05-13 10:25:19,969 [INFO] __main__.source.siscobra_sudoeste - Source siscobra_sudoeste concluido com sucesso na tentativa 1.
+2026-05-13 10:25:19,977 [INFO] __main__.source.siscobra_sudoeste - Metricas do source: started=2026-05-13T10:24:09 finished=2026-05-13T10:25:19 duration_s=70.843 category=success final_stage=send_ftp

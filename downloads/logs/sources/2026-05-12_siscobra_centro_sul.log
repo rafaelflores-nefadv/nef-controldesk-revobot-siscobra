@@ -1,0 +1,27 @@
+2026-05-13 10:25:19,983 [INFO] __main__.source.siscobra_centro_sul - Iniciando pipeline do source=siscobra_centro_sul
+2026-05-13 10:25:19,986 [INFO] __main__.source.siscobra_centro_sul - Source siscobra_centro_sul - tentativa 1/10
+2026-05-13 10:25:19,988 [INFO] __main__.source.siscobra_centro_sul - Executando etapa download (try=1).
+2026-05-13 10:25:19,988 [INFO] __main__.source.siscobra_centro_sul - Iniciando login HTTP no REVO360 para o ciclo 2026-05-12 (source=siscobra_centro_sul)
+2026-05-13 10:25:23,509 [INFO] __main__.source.siscobra_centro_sul - Login HTTP realizado com sucesso
+2026-05-13 10:25:23,517 [INFO] __main__.source.siscobra_centro_sul - File Manager sera consultado por requests.Session via HTTP direto
+2026-05-13 10:25:23,517 [INFO] __main__.source.siscobra_centro_sul - Consultando pasta remota via API HTTP: Exportação Siscobra Centro Sul
+2026-05-13 10:25:23,735 [INFO] __main__.source.siscobra_centro_sul - Listagem via API HTTP concluida: 8 item(ns) em 'Exportação Siscobra Centro Sul'
+2026-05-13 10:25:23,736 [INFO] __main__.source.siscobra_centro_sul - Arquivo selecionado para o ciclo 2026-05-12 (source=siscobra_centro_sul): Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Download HTTP direto concluido: Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_CentroSul_20260512.csv
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Tamanho final do arquivo salvo: 167760 bytes
+2026-05-13 10:25:23,939 [INFO] __main__.source.siscobra_centro_sul - Tempo total do download: 0.20s
+2026-05-13 10:25:23,942 [INFO] __main__.source.siscobra_centro_sul - Etapa download concluida com sucesso.
+2026-05-13 10:25:23,944 [INFO] __main__.source.siscobra_centro_sul - Executando etapa prepare (try=1).
+2026-05-13 10:25:24,367 [INFO] __main__.source.siscobra_centro_sul - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_20260512_102145.csv
+2026-05-13 10:25:24,368 [INFO] __main__.source.siscobra_centro_sul - Etapa prepare concluida com sucesso.
+2026-05-13 10:25:24,370 [INFO] __main__.source.siscobra_centro_sul - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-05-13 10:25:24,373 [INFO] __main__.source.siscobra_centro_sul - Executando etapa send_ftp (try=1).
+2026-05-13 10:25:56,489 [INFO] __main__.source.siscobra_centro_sul - Etapa send_ftp concluida com sucesso.
+2026-05-13 10:25:56,492 [INFO] __main__.source.siscobra_centro_sul - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-05-13 10:26:06,495 [ERROR] __main__.source.siscobra_centro_sul - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a32219f60>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:26:16,504 [ERROR] __main__.source.siscobra_centro_sul - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221a5c0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:26:26,516 [ERROR] __main__.source.siscobra_centro_sul - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x21a3221a500>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-05-13 10:26:27,792 [INFO] __main__.source.siscobra_centro_sul - Resumo enviado ao Google Chat.
+2026-05-13 10:26:29,873 [INFO] __main__.source.siscobra_centro_sul - Source siscobra_centro_sul concluido com sucesso na tentativa 1.
+2026-05-13 10:26:29,882 [INFO] __main__.source.siscobra_centro_sul - Metricas do source: started=2026-05-13T10:25:19 finished=2026-05-13T10:26:29 duration_s=69.891 category=success final_stage=send_ftp

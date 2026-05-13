@@ -86,8 +86,8 @@ Regras importantes:
 
 ## Download via Navegador Autenticado
 
-O bot nao faz download direto por HTTP para o arquivo final.
-Ele usa o navegador autenticado (Selenium) no endpoint do File Manager:
+O bot faz download direto por HTTP para o arquivo final usando requests.Session().
+Ele usa o endpoint do File Manager:
 
 - `POST /api/file-manager-file-system?path=..\UPLOAD`
 - `command=Download`
@@ -106,7 +106,7 @@ Formato de `arguments`:
 
 Fluxo real:
 
-`LOGIN -> contexto same-origin -> GetDirContents -> validacao do nome esperado -> form submit -> aguardar arquivo em DOWNLOAD_DIR`
+`LOGIN HTTP -> GetDirContents -> validacao do nome esperado -> POST Download -> salvar arquivo em DOWNLOAD_DIR`
 
 ## Stage Prepare e `remover_cabecalho_csv`
 
@@ -185,5 +185,5 @@ Diferencas de acentuacao ou case (ex.: `PLANALTO` vs `Planalto`) impedem a local
 ## Modulos
 
 - Arquitetura geral: [ARCHITECTURE.md](ARCHITECTURE.md)
-- Download e listagem no browser autenticado: [modules/download.md](modules/download.md)
+- Download e listagem via HTTP direto: [modules/download.md](modules/download.md)
 

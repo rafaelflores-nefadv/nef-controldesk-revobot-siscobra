@@ -13,8 +13,8 @@ import pandas as pd
 from openpyxl import Workbook
 
 from core.download_api import (
-    baixar_arquivo_via_form_submit_no_browser,
-    listar_arquivos_api_no_browser,
+    baixar_exportacao_revo360,
+    listar_arquivos_api,
 )
 
 from config.settings import (
@@ -168,10 +168,10 @@ def _abrir_conexao_ftp(contexto, passive=True, data_protection="P", ftp_dir: str
     ftp.cwd(destino_ftp)
     return ftp
 
-def abrir_pasta_exportacao(driver, wait):
-    del driver, wait
+def abrir_pasta_exportacao(session, wait=None):
+    del session, wait
     logger.info(
-        "Compatibilidade legado: abrir_pasta_exportacao nao navega mais pela UI; a pasta '%s' sera consultada no navegador autenticado.",
+        "Compatibilidade legado: abrir_pasta_exportacao nao navega mais pela UI; a pasta '%s' sera consultada via API HTTP.",
         FILE_MANAGER_EXPORT_FOLDER,
     )
 
@@ -195,23 +195,23 @@ def _mapear_csvs_legado(itens):
     return csvs
 
 
-def listar_csvs(driver, wait):
+def listar_csvs(session, wait=None):
     del wait
     try:
-        itens = listar_arquivos_api_no_browser(driver, FILE_MANAGER_EXPORT_FOLDER)
+        itens = listar_arquivos_api(session, FILE_MANAGER_EXPORT_FOLDER)
         logger.info(
-            "Listagem via navegador concluida na pasta '%s': %s item(ns)",
+            "Listagem via API HTTP concluida na pasta '%s': %s item(ns)",
             FILE_MANAGER_EXPORT_FOLDER,
             len(itens),
         )
         csvs = _mapear_csvs_legado(itens)
         if not csvs:
-            raise RuntimeError("Nenhum arquivo CSV encontrado no navegador autenticado.")
-        logger.info("Total de CSVs encontrados no navegador: %s", len(csvs))
+            raise RuntimeError("Nenhum arquivo CSV encontrado via API HTTP.")
+        logger.info("Total de CSVs encontrados via API HTTP: %s", len(csvs))
         return csvs
     except Exception as exc:
         logger.exception(
-            "Falha ao listar arquivos no navegador autenticado na pasta '%s'",
+            "Falha ao listar arquivos via API HTTP na pasta '%s'",
             FILE_MANAGER_EXPORT_FOLDER,
         )
         raise RuntimeError(
@@ -251,32 +251,32 @@ def selecionar_csv_mais_recente(csvs):
     return ordenados[0]
 
 
-def baixar_arquivo(driver, wait, nome_arquivo):
+def baixar_arquivo(session, wait, nome_arquivo):
+    del wait
     try:
         logger.info(
-            "Iniciando download via form submit no navegador do arquivo '%s' na pasta '%s'",
+            "Iniciando download via API HTTP do arquivo '%s' na pasta '%s'",
             nome_arquivo,
             FILE_MANAGER_EXPORT_FOLDER,
         )
-        baixar_arquivo_via_form_submit_no_browser(
-            driver,
+        baixado = baixar_exportacao_revo360(
+            session,
             FILE_MANAGER_EXPORT_FOLDER,
             nome_arquivo,
+            Path(DOWNLOAD_DIR) / nome_arquivo,
         )
-        logger.info("Download disparado. Aguardando arquivo em %s", DOWNLOAD_DIR)
-        baixado = aguardar_download(wait, nome_arquivo)
         if not baixado.exists():
             raise RuntimeError(
-                f"Download nao encontrado em disco apos disparo no navegador: {baixado}"
+                f"Download nao encontrado em disco apos API HTTP: {baixado}"
             )
         if int(baixado.stat().st_size) <= 0:
             raise RuntimeError(f"Arquivo baixado esta vazio: {baixado.name}")
-        logger.info("Download via navegador concluido para: %s", nome_arquivo)
+        logger.info("Download via API HTTP concluido para: %s", nome_arquivo)
         return baixado
     except Exception as exc:
-        logger.exception("Falha ao baixar arquivo via form submit no navegador: %s", nome_arquivo)
+        logger.exception("Falha ao baixar arquivo via API HTTP: %s", nome_arquivo)
         raise RuntimeError(
-            f"Falha ao baixar o arquivo '{nome_arquivo}' no navegador."
+            f"Falha ao baixar o arquivo '{nome_arquivo}' via API HTTP."
         ) from exc
 
 

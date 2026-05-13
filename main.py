@@ -16,11 +16,7 @@ ROOT_DIR = Path(__file__).resolve().parent
 SRC_DIR = ROOT_DIR / "src"
 sys.path.insert(0, str(SRC_DIR))
 
-from core.driver import criar_driver
-from core.login import realizar_login
 from core.download import (
-    aguardar_download,
-    limpar_arquivos_download_anteriores,
     remover_cabecalho_csv,
     copiar_arquivo,
     enviar_arquivo_ftp,
@@ -31,8 +27,9 @@ from core.download_api import (
     FileManagerApiError,
     SessionExpiredError,
     UnexpectedApiResponseError,
-    listar_arquivos_api_no_browser,
-    baixar_arquivo_via_form_submit_no_browser,
+    baixar_exportacao_revo360,
+    criar_sessao_revo360_http,
+    listar_arquivos_api,
     selecionar_csv_por_data,
 )
 from core.email_notifier import send_execution_email
@@ -1082,144 +1079,122 @@ def _run_download_stage(logger: logging.Logger, state: dict, cycle_date: date) -
     remote_folder = source.get("remote_folder") or FILE_MANAGER_EXPORT_FOLDER
     filename_template = source.get("filename_template")
 
-    driver = None
-    wait = None
+    logger.info(
+        "Iniciando login HTTP no REVO360 para o ciclo %s (source=%s)",
+        cycle_date.isoformat(),
+        source_id,
+    )
+    session = criar_sessao_revo360_http()
+    logger.info("Login HTTP realizado com sucesso")
+    logger.info("File Manager sera consultado por requests.Session via HTTP direto")
+
+    logger.info("Consultando pasta remota via API HTTP: %s", remote_folder)
     try:
+        itens = listar_arquivos_api(session, remote_folder)
         logger.info(
-            "Iniciando login no REVO360 para o ciclo %s (source=%s)",
-            cycle_date.isoformat(),
-            source_id,
+            "Listagem via API HTTP concluida: %s item(ns) em '%s'",
+            len(itens),
+            remote_folder,
         )
-        driver, wait = criar_driver()
-        realizar_login(driver, wait)
-        logger.info("Login realizado com sucesso")
-        logger.info("File Manager sera consultado via navegacao e form submit no navegador autenticado")
+        state["file"]["listed_count"] = len(itens)
+        state["file"]["listed_at"] = datetime.now().isoformat(timespec="seconds")
+    except SessionExpiredError as exc:
+        logger.exception(
+            "Sessao HTTP do REVO360 parece expirada durante a listagem da pasta '%s'",
+            remote_folder,
+        )
+        raise RuntimeError(
+            "Sessao HTTP do REVO360 parece expirada ou a API nao ficou acessivel durante a listagem."
+        ) from exc
+    except (UnexpectedApiResponseError, FileManagerApiError) as exc:
+        logger.exception(
+            "Falha ao listar arquivos via API HTTP na pasta '%s'",
+            remote_folder,
+        )
+        raise RuntimeError(
+            f"Falha ao listar arquivos na pasta '{remote_folder}'."
+        ) from exc
 
-        logger.info("Consultando pasta remota no navegador autenticado: %s", remote_folder)
-        try:
-            itens = listar_arquivos_api_no_browser(driver, remote_folder)
-            logger.info(
-                "Listagem via navegacao do navegador concluida: %s item(ns) em '%s'",
-                len(itens),
-                remote_folder,
-            )
-            state["file"]["listed_count"] = len(itens)
-            state["file"]["listed_at"] = datetime.now().isoformat(timespec="seconds")
-        except SessionExpiredError as exc:
-            logger.exception(
-                "Sessao do navegador do REVO360 parece expirada durante a listagem da pasta '%s'",
-                remote_folder,
-            )
-            raise RuntimeError(
-                "Sessao do navegador do REVO360 parece expirada ou a API nao ficou acessivel no contexto autenticado durante a listagem."
-            ) from exc
-        except (UnexpectedApiResponseError, FileManagerApiError) as exc:
-            logger.exception(
-                "Falha ao listar arquivos no navegador autenticado na pasta '%s'",
-                remote_folder,
-            )
-            raise RuntimeError(
-                f"Falha ao listar arquivos na pasta '{remote_folder}'."
-            ) from exc
-
-        expected_name = _render_filename_template(filename_template, cycle_date)
-        state["file"]["expected_name"] = expected_name
-        try:
-            if expected_name:
-                csv_do_ciclo = None
-                for item in itens:
-                    if bool(item.get("isDirectory")):
-                        continue
-                    if str(item.get("name") or "").strip() == expected_name:
-                        csv_do_ciclo = item
-                        break
-                if csv_do_ciclo is None:
-                    raise RuntimeError(
-                        f"Arquivo esperado nao encontrado na listagem: {expected_name}"
-                    )
-            else:
-                csv_do_ciclo = selecionar_csv_por_data(itens, cycle_date)
-                expected_name = str(csv_do_ciclo.get("name") or "").strip()
-                state["file"]["expected_name"] = expected_name
-        except Exception as exc:
-            exemplos = _recent_file_examples(itens)
-            state["file"]["found_in_listing"] = False
-            logger.error(
-                "Arquivo do ciclo %s ainda nao disponivel na pasta '%s'. Itens retornados=%s. Exemplos recentes=%s",
-                cycle_date.isoformat(),
-                remote_folder,
-                len(itens),
-                ", ".join(exemplos) if exemplos else "nenhum",
-            )
-            raise RuntimeError(
-                f"Arquivo CSV do ciclo {cycle_date.isoformat()} ainda nao esta disponivel na pasta '{remote_folder}'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360."
-            ) from exc
-
-        nome_esperado = str(csv_do_ciclo["name"]).strip()
-        state["file"]["resolved_name"] = nome_esperado
-        state["file"]["found_in_listing"] = True
-        logger.info(
-            "Arquivo selecionado para o ciclo %s (source=%s): %s",
+    expected_name = _render_filename_template(filename_template, cycle_date)
+    state["file"]["expected_name"] = expected_name
+    try:
+        if expected_name:
+            csv_do_ciclo = None
+            for item in itens:
+                if bool(item.get("isDirectory")):
+                    continue
+                if str(item.get("name") or "").strip() == expected_name:
+                    csv_do_ciclo = item
+                    break
+            if csv_do_ciclo is None:
+                raise RuntimeError(
+                    f"Arquivo esperado nao encontrado na listagem: {expected_name}"
+                )
+        else:
+            csv_do_ciclo = selecionar_csv_por_data(itens, cycle_date)
+            expected_name = str(csv_do_ciclo.get("name") or "").strip()
+            state["file"]["expected_name"] = expected_name
+    except Exception as exc:
+        exemplos = _recent_file_examples(itens)
+        state["file"]["found_in_listing"] = False
+        logger.error(
+            "Arquivo do ciclo %s ainda nao disponivel na pasta '%s'. Itens retornados=%s. Exemplos recentes=%s",
             cycle_date.isoformat(),
-            source_id,
+            remote_folder,
+            len(itens),
+            ", ".join(exemplos) if exemplos else "nenhum",
+        )
+        raise RuntimeError(
+            f"Arquivo CSV do ciclo {cycle_date.isoformat()} ainda nao esta disponivel na pasta '{remote_folder}'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360."
+        ) from exc
+
+    nome_esperado = str(csv_do_ciclo["name"]).strip()
+    state["file"]["resolved_name"] = nome_esperado
+    state["file"]["found_in_listing"] = True
+    logger.info(
+        "Arquivo selecionado para o ciclo %s (source=%s): %s",
+        cycle_date.isoformat(),
+        source_id,
+        nome_esperado,
+    )
+
+    download_started_at = monotonic()
+    destino = Path(DOWNLOAD_DIR) / nome_esperado
+    try:
+        downloaded = baixar_exportacao_revo360(
+            session,
+            remote_folder,
+            nome_esperado,
+            destino,
+        )
+    except SessionExpiredError as exc:
+        logger.exception(
+            "Sessao HTTP do REVO360 parece expirada durante o download do arquivo '%s'",
             nome_esperado,
         )
+        raise RuntimeError(
+            f"Sessao HTTP do REVO360 parece expirada ou a API nao ficou acessivel durante o download de '{nome_esperado}'."
+        ) from exc
+    except (UnexpectedApiResponseError, FileManagerApiError, requests.RequestException) as exc:
+        logger.exception("Falha no download HTTP direto: %s", nome_esperado)
+        raise RuntimeError(
+            f"Falha ao baixar o arquivo '{nome_esperado}' via API HTTP direta."
+        ) from exc
 
-        limpar_arquivos_download_anteriores(nome_esperado)
-        logger.info("Iniciando download via form submit no navegador: %s", nome_esperado)
-        download_started_at = monotonic()
+    if not downloaded.exists():
+        logger.error("Download HTTP direto nao encontrado em disco: %s", downloaded)
+        raise RuntimeError(f"Download nao encontrado em disco apos API HTTP: {downloaded}")
+    if int(downloaded.stat().st_size) <= 0:
+        logger.error("Arquivo baixado via API HTTP esta vazio: %s", downloaded)
+        raise RuntimeError(f"Arquivo baixado esta vazio: {downloaded.name}")
 
-        try:
-            baixar_arquivo_via_form_submit_no_browser(
-                driver,
-                remote_folder,
-                nome_esperado,
-            )
-        except SessionExpiredError as exc:
-            logger.exception(
-                "Sessao do navegador do REVO360 parece expirada durante o download do arquivo '%s'",
-                nome_esperado,
-            )
-            raise RuntimeError(
-                f"Sessao do navegador do REVO360 parece expirada ou a API nao ficou acessivel no contexto autenticado durante o download de '{nome_esperado}'."
-            ) from exc
-        except (UnexpectedApiResponseError, FileManagerApiError) as exc:
-            logger.exception("Falha ao disparar download via navegador: %s", nome_esperado)
-            raise RuntimeError(
-                f"Falha ao disparar o download do arquivo '{nome_esperado}' no navegador."
-            ) from exc
-
-        logger.info("Download disparado. Aguardando arquivo no diretorio configurado: %s", DOWNLOAD_DIR)
-        try:
-            downloaded = aguardar_download(wait, nome_esperado)
-        except Exception as exc:
-            logger.exception(
-                "Arquivo esperado nao apareceu no diretorio apos form submit: %s",
-                nome_esperado,
-            )
-            raise RuntimeError(
-                f"O arquivo '{nome_esperado}' nao apareceu no diretorio de download apos o disparo no navegador para o ciclo {cycle_date.isoformat()}."
-            ) from exc
-
-        if not downloaded.exists():
-            logger.error("Download via navegador nao encontrado em disco: %s", downloaded)
-            raise RuntimeError(
-                f"Download nao encontrado em disco apos o disparo no navegador: {downloaded}"
-            )
-        if int(downloaded.stat().st_size) <= 0:
-            logger.error("Arquivo baixado via navegador esta vazio: %s", downloaded)
-            raise RuntimeError(f"Arquivo baixado esta vazio: {downloaded.name}")
-
-        state["paths"]["downloaded"] = str(downloaded)
-        state["source_signature"] = _build_source_signature(downloaded)
-        state["last_error"] = None
-        logger.info("Download via navegador concluido: %s", nome_esperado)
-        logger.info("Arquivo salvo em: %s", downloaded)
-        logger.info("Tamanho final do arquivo salvo: %s bytes", downloaded.stat().st_size)
-        logger.info("Tempo total do download: %.2fs", monotonic() - download_started_at)
-    finally:
-        if driver:
-            driver.quit()
+    state["paths"]["downloaded"] = str(downloaded)
+    state["source_signature"] = _build_source_signature(downloaded)
+    state["last_error"] = None
+    logger.info("Download HTTP direto concluido: %s", nome_esperado)
+    logger.info("Arquivo salvo em: %s", downloaded)
+    logger.info("Tamanho final do arquivo salvo: %s bytes", downloaded.stat().st_size)
+    logger.info("Tempo total do download: %.2fs", monotonic() - download_started_at)
 
 
 def _run_prepare_stage(logger: logging.Logger, state: dict, cycle_date: date) -> None:

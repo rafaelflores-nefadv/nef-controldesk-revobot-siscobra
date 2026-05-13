@@ -51,6 +51,23 @@ class PipelineCheckpointTests(unittest.TestCase):
             patch.object(main, "RETRY_ON_FAILURE_ENABLED", True),
             patch.object(main, "RETRY_MAX_ATTEMPTS", 3),
             patch.object(main, "RETRY_DELAY_SECONDS", 0),
+            patch.object(
+                main,
+                "DOWNLOAD_SOURCES",
+                [
+                    {
+                        "id": "default_legacy",
+                        "enabled": True,
+                        "remote_folder": "Exportacao Teste",
+                        "filename_template": "Exportacao_{date:%Y%m%d}.csv",
+                        "prepared_prefix": "LOCAL_TEST_",
+                        "copy_dir": str(self.copy_dir),
+                        "ftp_dir": "/tmp",
+                        "send_to_server": True,
+                        "send_to_ftp": True,
+                    }
+                ],
+            ),
         ]
 
     def _read_state(self, cycle_date: date | None = None) -> dict:

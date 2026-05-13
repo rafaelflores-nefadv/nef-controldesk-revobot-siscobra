@@ -43,8 +43,8 @@ Cada source e processado de forma independente. Falha em um source nao interromp
 
 ## Como o Download Funciona
 
-O bot nao faz download binario direto por HTTP no Python.
-O download ocorre no navegador autenticado (Selenium), via form submit:
+O bot faz download binario direto por HTTP no Python usando requests.Session().
+O download ocorre via POST no endpoint do File Manager:
 
 - endpoint: `POST /api/file-manager-file-system?path=..\UPLOAD`
 - `command=Download`
@@ -67,7 +67,7 @@ Fluxo real:
 2. abrir contexto same-origin do File Manager
 3. listar arquivos via `GetDirContents`
 4. validar se o arquivo esperado existe
-5. executar form submit no navegador
+5. executar POST HTTP direto e salvar o binario em DOWNLOAD_DIR
 6. aguardar arquivo aparecer em `DOWNLOAD_DIR`
 
 ## Stage Prepare
