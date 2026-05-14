@@ -113,7 +113,7 @@ DOWNLOAD_SOURCES = [
         "id": "siscobra_centro_sul",
         "enabled": True,
         "remote_folder": "Exportação Siscobra Centro Sul",
-        "filename_template": "Exportacao_Siscobra_Centro_Sul_{date:%Y%m%d}.csv",
+        "filename_template": "Exportacao_Siscobra_CentroSul_{date:%Y%m%d}.csv",
         "prepared_prefix": "LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_",
         "copy_dir": r"Z:\\control_desk\\RETORNO\\0903",
         "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
