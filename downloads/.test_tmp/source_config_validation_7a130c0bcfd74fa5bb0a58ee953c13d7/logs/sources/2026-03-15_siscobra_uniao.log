@@ -1,0 +1,12 @@
+2026-07-29 08:24:26,499 [INFO] test-revo360-source-config.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-29 08:24:26,501 [INFO] test-revo360-source-config.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/1
+2026-07-29 08:24:26,501 [INFO] test-revo360-source-config.source.siscobra_uniao - Executando etapa download (try=1).
+2026-07-29 08:24:26,502 [INFO] test-revo360-source-config.source.siscobra_uniao - Etapa download concluida com sucesso.
+2026-07-29 08:24:26,504 [INFO] test-revo360-source-config.source.siscobra_uniao - Executando etapa prepare (try=1).
+2026-07-29 08:24:26,506 [INFO] test-revo360-source-config.source.siscobra_uniao - Etapa prepare concluida com sucesso.
+2026-07-29 08:24:26,508 [INFO] test-revo360-source-config.source.siscobra_uniao - Executando etapa send_server (try=1).
+2026-07-29 08:24:26,509 [INFO] test-revo360-source-config.source.siscobra_uniao - Etapa send_server concluida com sucesso.
+2026-07-29 08:24:26,511 [INFO] test-revo360-source-config.source.siscobra_uniao - Executando etapa send_ftp (try=1).
+2026-07-29 08:24:26,512 [INFO] test-revo360-source-config.source.siscobra_uniao - Etapa send_ftp concluida com sucesso.
+2026-07-29 08:24:26,515 [INFO] test-revo360-source-config.source.siscobra_uniao - Source siscobra_uniao concluido com sucesso na tentativa 1.
+2026-07-29 08:24:26,537 [INFO] test-revo360-source-config.source.siscobra_uniao - Metricas do source: started=2026-07-29T08:24:26 finished=2026-07-29T08:24:26 duration_s=0.016 category=success final_stage=send_ftp
