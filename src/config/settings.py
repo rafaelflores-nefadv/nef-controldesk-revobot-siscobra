@@ -135,7 +135,7 @@ DOWNLOAD_SOURCES = [
         "enabled": True,
         "remote_folder": "Exportação Siscobra União",
         "filename_template": "Exportacao_Siscobra_Uniao_{date:%Y%m%d}.csv",
-        "prepared_prefix": "LOCAL_0911_80_NABARRETEFERRO_ACIONAMENTOS_",
+        "prepared_prefix": "LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_",
         "copy_dir": r"Z:\control_desk\RETORNO\0911",
         "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
         "send_to_server": False,
