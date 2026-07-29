@@ -47,6 +47,8 @@ class SourceConfigValidationTests(unittest.TestCase):
     def _source(self, **overrides) -> dict:
         source = {
             "id": "source_a",
+            "carteira_codigo": "0000",
+            "flow_type": "http",
             "enabled": True,
             "remote_folder": "Pasta A",
             "filename_template": "A_{date:%Y%m%d}.csv",
@@ -162,6 +164,36 @@ class SourceConfigValidationTests(unittest.TestCase):
         self.assertIn("source_b", state["items"])
         self.assertEqual(state["items"]["source_a"]["status"], "SUCCESS")
         self.assertEqual(state["items"]["source_b"]["status"], "SUCCESS")
+
+    def test_union_source_is_accepted_and_kept_in_state(self) -> None:
+        cycle_date = date(2026, 3, 15)
+        sources = [
+            self._source(
+                id="siscobra_uniao",
+                carteira_codigo="0911",
+                remote_folder="Exportacao Siscobra Uniao",
+                filename_template="Exportacao_Siscobra_Uniao_{date:%Y%m%d}.csv",
+                prepared_prefix="LOCAL_0911_80_NABARRETEFERRO_ACIONAMENTOS_",
+                copy_dir=str(self.copy_dir / "0911"),
+                ftp_dir="/ftp/0911",
+            )
+        ]
+        with ExitStack() as stack:
+            for patcher in self._common_patches():
+                stack.enter_context(patcher)
+            stack.enter_context(patch.object(main, "DOWNLOAD_SOURCES", sources))
+            stack.enter_context(patch.object(main, "_run_download_stage", side_effect=self._success_download))
+            stack.enter_context(patch.object(main, "_run_prepare_stage", side_effect=self._success_prepare))
+            stack.enter_context(patch.object(main, "_run_send_server_stage"))
+            stack.enter_context(patch.object(main, "_run_send_ftp_stage"))
+            stack.enter_context(patch.object(main, "emitir_notificacoes"))
+            status = main.run_with_retries(self.logger, force_run=False, cycle_date=cycle_date)
+
+        self.assertEqual(status, 0)
+        state = json.loads(self._state_path(cycle_date).read_text(encoding="utf-8"))
+        self.assertIn("siscobra_uniao", state["items"])
+        self.assertEqual(state["items"]["siscobra_uniao"]["source"]["carteira_codigo"], "0911")
+        self.assertEqual(state["items"]["siscobra_uniao"]["source"]["flow_type"], "http")
 
     def test_invalid_configuration_aborts_entire_execution(self) -> None:
         cycle_date = date(2026, 3, 14)

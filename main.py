@@ -140,6 +140,14 @@ def _legacy_source_definition() -> dict:
     }
 
 
+def _source_metadata(source: dict) -> dict:
+    metadata = {}
+    for key in ("carteira_codigo", "flow_type"):
+        if key in source:
+            metadata[key] = source.get(key)
+    return metadata
+
+
 def _normalize_single_source(raw_source: dict, index: int, requested_targets: dict) -> dict:
     fallback_id = f"source_{index + 1:02d}"
     source_id = _sanitize_source_id(raw_source.get("id"), fallback=fallback_id)
@@ -157,6 +165,7 @@ def _normalize_single_source(raw_source: dict, index: int, requested_targets: di
     send_to_ftp = bool(raw_source.get("send_to_ftp", True)) and bool(requested_targets["ftp"])
     return {
         "id": source_id,
+        **_source_metadata(raw_source),
         "enabled": enabled,
         "remote_folder": remote_folder,
         "filename_template": filename_template,

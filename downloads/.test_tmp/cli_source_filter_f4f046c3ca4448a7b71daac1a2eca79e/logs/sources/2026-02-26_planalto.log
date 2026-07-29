@@ -1,0 +1,12 @@
+2026-07-29 08:08:41,920 [INFO] test-revo360-cli-source-filter.source.planalto - Iniciando pipeline do source=planalto
+2026-07-29 08:08:41,922 [INFO] test-revo360-cli-source-filter.source.planalto - Source planalto - tentativa 1/1
+2026-07-29 08:08:41,922 [INFO] test-revo360-cli-source-filter.source.planalto - Executando etapa download (try=1).
+2026-07-29 08:08:41,923 [INFO] test-revo360-cli-source-filter.source.planalto - Etapa download concluida com sucesso.
+2026-07-29 08:08:41,924 [INFO] test-revo360-cli-source-filter.source.planalto - Executando etapa prepare (try=1).
+2026-07-29 08:08:41,924 [INFO] test-revo360-cli-source-filter.source.planalto - Etapa prepare concluida com sucesso.
+2026-07-29 08:08:41,940 [INFO] test-revo360-cli-source-filter.source.planalto - Executando etapa send_server (try=1).
+2026-07-29 08:08:41,941 [INFO] test-revo360-cli-source-filter.source.planalto - Etapa send_server concluida com sucesso.
+2026-07-29 08:08:41,950 [INFO] test-revo360-cli-source-filter.source.planalto - Executando etapa send_ftp (try=1).
+2026-07-29 08:08:41,950 [INFO] test-revo360-cli-source-filter.source.planalto - Etapa send_ftp concluida com sucesso.
+2026-07-29 08:08:41,953 [INFO] test-revo360-cli-source-filter.source.planalto - Source planalto concluido com sucesso na tentativa 1.
+2026-07-29 08:08:41,967 [INFO] test-revo360-cli-source-filter.source.planalto - Metricas do source: started=2026-07-29T08:08:41 finished=2026-07-29T08:08:41 duration_s=0.031 category=success final_stage=send_ftp
