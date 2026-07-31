@@ -163,6 +163,55 @@ class SourceConfigValidationTests(unittest.TestCase):
         self.assertEqual(state["items"]["source_a"]["status"], "SUCCESS")
         self.assertEqual(state["items"]["source_b"]["status"], "SUCCESS")
 
+    def test_download_sources_include_uniao_with_expected_values(self) -> None:
+        sources = main._resolve_download_sources(requested_targets={"server": True, "ftp": True})
+        source_by_id = {source["id"]: source for source in sources}
+
+        self.assertIn("siscobra_uniao", source_by_id)
+        self.assertEqual(source_by_id["siscobra_uniao"]["remote_folder"], "Exportação Siscobra União")
+        self.assertEqual(
+            source_by_id["siscobra_uniao"]["filename_template"],
+            "Exportacao_Siscobra_Uniao_{date:%Y%m%d}.csv",
+        )
+        self.assertEqual(
+            source_by_id["siscobra_uniao"]["prepared_prefix"],
+            "LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_",
+        )
+        self.assertEqual(source_by_id["siscobra_uniao"]["copy_dir"], r"Z:\control_desk\RETORNO\0911")
+        self.assertEqual(source_by_id["siscobra_uniao"]["ftp_dir"], "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO")
+        self.assertFalse(source_by_id["siscobra_uniao"]["send_to_server"])
+        self.assertTrue(source_by_id["siscobra_uniao"]["send_to_ftp"])
+
+    def test_download_sources_keep_existing_carteiras_unchanged(self) -> None:
+        sources = main._resolve_download_sources(requested_targets={"server": True, "ftp": True})
+        source_by_id = {source["id"]: source for source in sources}
+
+        self.assertEqual(source_by_id["siscobra_celeiro"]["filename_template"], "Exportacao_Siscobra_Celeiro_{date:%Y%m%d}.csv")
+        self.assertEqual(source_by_id["siscobra_celeiro"]["prepared_prefix"], "LOCAL_0914_80_NABARRETEFERRO_ACIONAMENTOS_")
+        self.assertEqual(source_by_id["siscobra_planalto"]["filename_template"], "Exportacao_Siscobra_Planalto_{date:%Y%m%d}.csv")
+        self.assertEqual(source_by_id["siscobra_planalto"]["prepared_prefix"], "LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_")
+        self.assertEqual(source_by_id["siscobra_sudoeste"]["filename_template"], "Exportacao_Siscobra_Sudoeste_{date:%Y%m%d}.csv")
+        self.assertEqual(source_by_id["siscobra_sudoeste"]["prepared_prefix"], "LOCAL_0804_106_NABARRETEFERRO_ACIONAMENTOS_")
+        self.assertEqual(source_by_id["siscobra_centro_sul"]["filename_template"], "Exportacao_Siscobra_CentroSul_{date:%Y%m%d}.csv")
+        self.assertEqual(source_by_id["siscobra_centro_sul"]["prepared_prefix"], "LOCAL_0903_360_NABARRETEFERRO_ACIONAMENTOS_")
+
+    def test_download_sources_do_not_introduce_new_fields(self) -> None:
+        sources = main._resolve_download_sources(requested_targets={"server": True, "ftp": True})
+        expected_keys = {
+            "id",
+            "enabled",
+            "remote_folder",
+            "filename_template",
+            "prepared_prefix",
+            "copy_dir",
+            "ftp_dir",
+            "send_to_server",
+            "send_to_ftp",
+        }
+
+        for source in sources:
+            self.assertSetEqual(set(source.keys()), expected_keys)
+
     def test_invalid_configuration_aborts_entire_execution(self) -> None:
         cycle_date = date(2026, 3, 14)
         invalid_sources = [

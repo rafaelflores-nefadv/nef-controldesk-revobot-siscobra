@@ -62,7 +62,7 @@ COPY_TO_FTP = True
 # FTP CONFIG
 FTP_HOST = "172.25.68.13"
 FTP_USER = "silva_cunha"
-FTP_PASSWORD = "@Nefadv*1966"
+FTP_PASSWORD = "Nefadv@2026"
 FTP_DIR = "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO"
 FTP_USE_TLS = True
 FTP_PORT = 990
@@ -94,6 +94,17 @@ DOWNLOAD_SOURCES = [
         "filename_template": "Exportacao_Siscobra_Planalto_{date:%Y%m%d}.csv",
         "prepared_prefix": "LOCAL_3953_190_NABARRETEFERRO_ACIONAMENTOS_",
         "copy_dir": r"Z:\\control_desk\\RETORNO\\3953",
+        "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
+        "send_to_server": False,
+        "send_to_ftp": True,
+    },
+    {
+        "id": "siscobra_uniao",
+        "enabled": True,
+        "remote_folder": "Exportação Siscobra União",
+        "filename_template": "Exportacao_Siscobra_Uniao_{date:%Y%m%d}.csv",
+        "prepared_prefix": "LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_",
+        "copy_dir": r"Z:\control_desk\RETORNO\0911",
         "ftp_dir": "/ftp_nabarreteferro_adv/SISCOBRA/RETORNO",
         "send_to_server": False,
         "send_to_ftp": True,
