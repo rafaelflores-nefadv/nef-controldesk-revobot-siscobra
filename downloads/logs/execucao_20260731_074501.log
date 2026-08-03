@@ -1,0 +1,82 @@
+2026-07-31 07:45:01,916 [INFO] __main__ - Log iniciado em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260731_074501.log
+2026-07-31 07:45:01,919 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-07-30 (server=True ftp=True).
+2026-07-31 07:45:01,920 [INFO] __main__ - Lock de instancia adquirido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:45:01,920 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-07-31 07:45:01,920 [INFO] __main__ - Inicio do ciclo 2026-07-30 em 2026-07-31T07:45:01
+2026-07-31 07:45:01,950 [INFO] __main__ - Ciclo 2026-07-30 carregado com targets: server=True ftp=True
+2026-07-31 07:45:01,950 [INFO] __main__ - Pre-validacao de configuracao concluida: 5 source(s) configurado(s).
+2026-07-31 07:45:01,950 [INFO] __main__ - Source selecionado manualmente: siscobra_uniao
+2026-07-31 07:45:01,951 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_uniao
+2026-07-31 07:45:01,951 [INFO] __main__ - Processando source 1/1: siscobra_uniao
+2026-07-31 07:45:01,954 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-31 07:45:01,955 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Etapa download ja concluida em tentativa anterior. Pulando.
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Etapa prepare ja concluida em tentativa anterior. Pulando.
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Executando etapa send_ftp (try=2).
+2026-07-31 07:45:01,987 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-07-31 07:45:02,129 [INFO] core.download - Autenticando no FTP
+2026-07-31 07:45:02,246 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-07-31 07:45:02,327 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-07-31 07:45:02,328 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-07-31 07:45:02,662 [INFO] core.download - Verificacao FTP (sem SIZE): existe=False arquivo=LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+2026-07-31 07:45:02,699 [INFO] core.download - Iniciando envio ao FTP: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+2026-07-31 07:45:02,714 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-07-31 07:45:02,831 [INFO] core.download - Autenticando no FTP
+2026-07-31 07:45:02,910 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-07-31 07:45:02,984 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-07-31 07:45:02,985 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-07-31 07:45:03,019 [INFO] core.download - Enviando arquivo via STOR: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv (protecao=P, modo=PASV)
+2026-07-31 07:45:33,445 [WARNING] core.download - Timeout no envio/fechamento TLS (protecao=P, modo=PASV).
+2026-07-31 07:45:33,445 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-07-31 07:45:33,564 [INFO] core.download - Autenticando no FTP
+2026-07-31 07:45:33,638 [INFO] core.download - Canal de dados com TLS (prot_p)
+2026-07-31 07:45:33,710 [INFO] core.download - Modo de transferencia FTP: PASV
+2026-07-31 07:45:33,711 [INFO] core.download - Alterando diretorio no FTP: /ftp_nabarreteferro_adv/SISCOBRA/RETORNO
+2026-07-31 07:45:33,799 [INFO] core.download - Verificacao FTP: arquivo=LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv tamanho_local=292349 tamanho_remoto=292349 ok=True
+2026-07-31 07:45:33,836 [WARNING] core.download - Arquivo parece ter sido enviado com sucesso apesar do timeout (verificado por SIZE): LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+2026-07-31 07:45:33,837 [INFO] __main__.source.siscobra_uniao - Etapa send_ftp concluida com sucesso.
+2026-07-31 07:45:33,842 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:45:43,850 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01b0bcd0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:45:53,864 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01b0b040>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:03,877 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01b09ab0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:04,814 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-07-31 07:46:07,513 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3153dd4e666sm8352800eec.4 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3153dd4e666sm8352800eec.4 - gsmtp')
+2026-07-31 07:46:07,513 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao concluido com sucesso na tentativa 1.
+2026-07-31 07:46:07,513 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:46:17,514 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01bd2170>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:27,529 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01bd29b0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:37,545 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01bd3280>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:38,500 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-07-31 07:46:41,038 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3153e044912sm6098663eec.15 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3153e044912sm6098663eec.15 - gsmtp')
+2026-07-31 07:46:41,042 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-07-31T07:45:01 finished=2026-07-31T07:46:41 duration_s=99.094 category=failed final_stage=send_ftp
+2026-07-31 07:46:41,042 [INFO] __main__ - Source siscobra_uniao finalizado com status=SUCCESS
+2026-07-31 07:46:41,043 [INFO] __main__ - Resumo final do ciclo por source (padrao observabilidade):
+2026-07-31 07:46:41,043 [INFO] __main__ - source=siscobra_celeiro enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=False ftp=True error=-
+2026-07-31 07:46:41,043 [INFO] __main__ - source=siscobra_planalto enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=False ftp=True error=-
+2026-07-31 07:46:41,044 [INFO] __main__ - source=siscobra_uniao enabled=True category=failed status=SUCCESS final_stage=send_ftp started=2026-07-31T07:29:55 finished=2026-07-31T07:46:41 duration_s=99.094 expected=Exportacao_Siscobra_Uniao_20260730.csv resolved=Exportacao_Siscobra_Uniao_20260730.csv server=False ftp=True error=-
+2026-07-31 07:46:41,044 [INFO] __main__ - source=siscobra_sudoeste enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=False ftp=True error=-
+2026-07-31 07:46:41,045 [INFO] __main__ - source=siscobra_centro_sul enabled=True category=skipped status=PENDING final_stage=download started=- finished=- duration_s=- expected=- resolved=- server=False ftp=True error=-
+2026-07-31 07:46:41,045 [INFO] __main__ - Resumo do ciclo: status=SUCCESS started=2026-07-31T07:45:01 finished=2026-07-31T07:46:41 duration_s=99.125 enabled=5 success=0 failed=1 not_found=0 skipped=4 disabled=0
+2026-07-31 07:46:41,055 [INFO] __main__ - Resumo observabilidade persistido em C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\cycle_summary_2026-07-30.json
+2026-07-31 07:46:41,056 [INFO] __main__ - Lock de instancia removido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock

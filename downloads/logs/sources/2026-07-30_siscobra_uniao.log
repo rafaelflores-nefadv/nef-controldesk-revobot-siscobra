@@ -1,0 +1,63 @@
+2026-07-31 07:29:55,839 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-31 07:29:55,841 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-07-31 07:29:55,842 [INFO] __main__.source.siscobra_uniao - Executando etapa download (try=1).
+2026-07-31 07:29:55,843 [INFO] __main__.source.siscobra_uniao - Iniciando login HTTP no REVO360 para o ciclo 2026-07-30 (source=siscobra_uniao)
+2026-07-31 07:29:57,698 [INFO] __main__.source.siscobra_uniao - Login HTTP realizado com sucesso
+2026-07-31 07:29:57,698 [INFO] __main__.source.siscobra_uniao - File Manager sera consultado por requests.Session via HTTP direto
+2026-07-31 07:29:57,715 [INFO] __main__.source.siscobra_uniao - Consultando pasta remota via API HTTP: Exportação Siscobra União
+2026-07-31 07:29:57,853 [INFO] __main__.source.siscobra_uniao - Listagem via API HTTP concluida: 87 item(ns) em 'Exportação Siscobra União'
+2026-07-31 07:29:57,853 [INFO] __main__.source.siscobra_uniao - Arquivo selecionado para o ciclo 2026-07-30 (source=siscobra_uniao): Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:58,037 [INFO] __main__.source.siscobra_uniao - Download HTTP direto concluido: Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:58,037 [INFO] __main__.source.siscobra_uniao - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:58,037 [INFO] __main__.source.siscobra_uniao - Tamanho final do arquivo salvo: 290449 bytes
+2026-07-31 07:29:58,038 [INFO] __main__.source.siscobra_uniao - Tempo total do download: 0.19s
+2026-07-31 07:29:58,038 [INFO] __main__.source.siscobra_uniao - Etapa download concluida com sucesso.
+2026-07-31 07:29:58,041 [INFO] __main__.source.siscobra_uniao - Executando etapa prepare (try=1).
+2026-07-31 07:29:58,848 [INFO] __main__.source.siscobra_uniao - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+2026-07-31 07:29:58,849 [INFO] __main__.source.siscobra_uniao - Etapa prepare concluida com sucesso.
+2026-07-31 07:29:58,851 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-07-31 07:29:58,854 [INFO] __main__.source.siscobra_uniao - Executando etapa send_ftp (try=1).
+2026-07-31 07:29:59,371 [ERROR] __main__.source.siscobra_uniao - Falha na etapa send_ftp: 530 User cannot log in.
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1287, in _run_single_stage
+    _run_send_ftp_stage(logger, state)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1273, in _run_send_ftp_stage
+    enviar_arquivo_ftp(prepared, ftp_dir=ftp_dir)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 540, in enviar_arquivo_ftp
+    ftp = _abrir_conexao_ftp(
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 153, in _abrir_conexao_ftp
+    ftp.login(FTP_USER, FTP_PASSWORD)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 746, in login
+    return super().login(user, passwd, acct)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 414, in login
+    resp = self.sendcmd('PASS ' + passwd)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 281, in sendcmd
+    return self.getresp()
+  File "C:\Program Files\Python310\lib\ftplib.py", line 254, in getresp
+    raise error_perm(resp)
+ftplib.error_perm: 530 User cannot log in.
+2026-07-31 07:29:59,391 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:30:09,411 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x22e1ae38850>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:30:19,414 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x22e1ae39150>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:30:29,429 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-07-31T07:29:55 finished=2026-07-31T07:30:29 duration_s=33.594 category=failed final_stage=send_ftp
+2026-07-31 07:45:01,954 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-31 07:45:01,955 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Etapa download ja concluida em tentativa anterior. Pulando.
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Etapa prepare ja concluida em tentativa anterior. Pulando.
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-07-31 07:45:01,964 [INFO] __main__.source.siscobra_uniao - Executando etapa send_ftp (try=2).
+2026-07-31 07:45:33,837 [INFO] __main__.source.siscobra_uniao - Etapa send_ftp concluida com sucesso.
+2026-07-31 07:45:33,842 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:45:43,850 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01b0bcd0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:45:53,864 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01b0b040>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:03,877 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01b09ab0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:04,814 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-07-31 07:46:07,513 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao concluido com sucesso na tentativa 1.
+2026-07-31 07:46:07,513 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:46:17,514 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01bd2170>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:27,529 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01bd29b0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:37,545 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1fd01bd3280>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:46:38,500 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-07-31 07:46:41,042 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-07-31T07:45:01 finished=2026-07-31T07:46:41 duration_s=99.094 category=failed final_stage=send_ftp

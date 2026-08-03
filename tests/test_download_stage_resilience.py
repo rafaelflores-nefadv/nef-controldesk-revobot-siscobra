@@ -102,6 +102,55 @@ class DownloadStageResilienceTests(unittest.TestCase):
         self.assertEqual(state["source_signature"]["name"], destino.name)
         self.assertTrue(Path(state["paths"]["downloaded"]).exists())
 
+    def test_download_stage_uses_http_api_for_uniao_source(self) -> None:
+        cycle_date = date(2026, 7, 31)
+        nome_esperado = "Exportacao_Siscobra_Uniao_20260731.csv"
+        state = {
+            "source": {
+                "id": "siscobra_uniao",
+                "remote_folder": "ExportaÃ§Ã£o Siscobra UniÃ£o",
+                "filename_template": "Exportacao_Siscobra_Uniao_{date:%Y%m%d}.csv",
+                "prepared_prefix": "LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_",
+            },
+            "paths": {"downloaded": None},
+            "source_signature": None,
+        }
+
+        session = Mock()
+        itens = [{"name": nome_esperado}]
+        destino = self.download_dir / nome_esperado
+
+        def fake_download(_session, _pasta, _nome_arquivo, _destino):
+            self.assertEqual(_session, session)
+            self.assertEqual(_pasta, "ExportaÃ§Ã£o Siscobra UniÃ£o")
+            self.assertEqual(_nome_arquivo, nome_esperado)
+            self.assertEqual(_destino, destino)
+            destino.write_text("h1;h2;h3\n1;2;3\n", encoding="utf-8")
+            return destino
+
+        with ExitStack() as stack:
+            stack.enter_context(patch.object(main, "DOWNLOAD_DIR", self.download_dir))
+            stack.enter_context(patch.object(download_core, "DOWNLOAD_DIR", self.download_dir))
+            stack.enter_context(patch.object(main, "criar_sessao_revo360_http", return_value=session))
+            listar_mock = stack.enter_context(
+                patch.object(main, "listar_arquivos_api", return_value=itens)
+            )
+            download_mock = stack.enter_context(
+                patch.object(main, "baixar_exportacao_revo360", side_effect=fake_download)
+            )
+
+            main._run_download_stage(self.logger, state, cycle_date)
+
+        listar_mock.assert_called_once_with(session, "ExportaÃ§Ã£o Siscobra UniÃ£o")
+        download_mock.assert_called_once_with(
+            session,
+            "ExportaÃ§Ã£o Siscobra UniÃ£o",
+            nome_esperado,
+            destino,
+        )
+        self.assertEqual(state["paths"]["downloaded"], str(destino))
+        self.assertEqual(state["source_signature"]["name"], destino.name)
+
     def test_download_stage_fails_when_cycle_file_is_not_available(self) -> None:
         cycle_date = date(2026, 2, 27)
         state = {"paths": {"downloaded": None}, "source_signature": None}

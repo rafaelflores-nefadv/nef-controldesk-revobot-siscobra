@@ -1,0 +1,146 @@
+2026-07-31 07:27:16,803 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-31 07:27:16,805 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-07-31 07:27:16,807 [INFO] __main__.source.siscobra_uniao - Executando etapa download (try=1).
+2026-07-31 07:27:16,808 [INFO] __main__.source.siscobra_uniao - Iniciando login HTTP no REVO360 para o ciclo 2026-07-31 (source=siscobra_uniao)
+2026-07-31 07:27:18,871 [INFO] __main__.source.siscobra_uniao - Login HTTP realizado com sucesso
+2026-07-31 07:27:18,872 [INFO] __main__.source.siscobra_uniao - File Manager sera consultado por requests.Session via HTTP direto
+2026-07-31 07:27:18,882 [INFO] __main__.source.siscobra_uniao - Consultando pasta remota via API HTTP: Exportação Siscobra União
+2026-07-31 07:27:19,044 [INFO] __main__.source.siscobra_uniao - Listagem via API HTTP concluida: 87 item(ns) em 'Exportação Siscobra União'
+2026-07-31 07:27:19,045 [ERROR] __main__.source.siscobra_uniao - Arquivo do ciclo 2026-07-31 ainda nao disponivel na pasta 'Exportação Siscobra União'. Itens retornados=87. Exemplos recentes=Exportacao_Siscobra_Uniao_20260730.csv, Exportacao_Siscobra_Uniao_20260729.csv, Exportacao_Siscobra_Uniao_20260728.csv, Exportacao_Siscobra_Uniao_20260727.csv, Exportacao_Siscobra_Uniao_20260726.csv
+2026-07-31 07:27:19,045 [ERROR] __main__.source.siscobra_uniao - Falha na etapa download: Arquivo CSV do ciclo 2026-07-31 ainda nao esta disponivel na pasta 'Exportação Siscobra União'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1130, in _run_download_stage
+    raise RuntimeError(
+RuntimeError: Arquivo esperado nao encontrado na listagem: Exportacao_Siscobra_Uniao_20260731.csv
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1278, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1147, in _run_download_stage
+    raise RuntimeError(
+RuntimeError: Arquivo CSV do ciclo 2026-07-31 ainda nao esta disponivel na pasta 'Exportação Siscobra União'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+2026-07-31 07:27:19,060 [INFO] __main__.source.siscobra_uniao - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-07-31 07:27:19,069 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-07-31 07:27:19,070 [INFO] __main__.source.siscobra_uniao - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-07-31 07:27:19,082 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:27:29,096 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1aab43e8490>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:27:39,114 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1aab43e8d00>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:27:49,120 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1aab43e95d0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:27:50,258 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-07-31 07:27:53,569 [WARNING] __main__.source.siscobra_uniao - Source siscobra_uniao falhou. Nova tentativa em 1800 segundos.
+2026-07-31 07:27:56,390 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-07-31T07:27:16 finished=2026-07-31T07:27:56 duration_s=39.578 category=not_found final_stage=download
+2026-08-03 08:00:46,340 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-08-03 08:00:46,344 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-08-03 08:00:46,347 [INFO] __main__.source.siscobra_uniao - Executando etapa download (try=2).
+2026-08-03 08:00:46,348 [INFO] __main__.source.siscobra_uniao - Iniciando login HTTP no REVO360 para o ciclo 2026-07-31 (source=siscobra_uniao)
+2026-08-03 08:00:48,312 [INFO] __main__.source.siscobra_uniao - Login HTTP realizado com sucesso
+2026-08-03 08:00:48,313 [INFO] __main__.source.siscobra_uniao - File Manager sera consultado por requests.Session via HTTP direto
+2026-08-03 08:00:48,313 [INFO] __main__.source.siscobra_uniao - Consultando pasta remota via API HTTP: Exportação Siscobra União
+2026-08-03 08:01:36,454 [ERROR] __main__.source.siscobra_uniao - Falha na etapa download: HTTPSConnectionPool(host='nef.revo360.io', port=10024): Max retries exceeded with url: /api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D (Caused by ConnectTimeoutError(<HTTPSConnection(host='nef.revo360.io', port=10024) at 0x226da690280>, 'Connection to nef.revo360.io timed out. (connect timeout=15)'))
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<HTTPSConnection(host='nef.revo360.io', port=10024) at 0x226da690280>, 'Connection to nef.revo360.io timed out. (connect timeout=15)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='nef.revo360.io', port=10024): Max retries exceeded with url: /api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D (Caused by ConnectTimeoutError(<HTTPSConnection(host='nef.revo360.io', port=10024) at 0x226da690280>, 'Connection to nef.revo360.io timed out. (connect timeout=15)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1278, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1093, in _run_download_stage
+    itens = listar_arquivos_api(session, remote_folder)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 857, in listar_arquivos_api
+    itens = _listar_arquivos_api_raw(sessao, pasta)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 841, in _listar_arquivos_api_raw
+    _diagnosticar_autenticacao_sessao_http(sessao)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 828, in _diagnosticar_autenticacao_sessao_http
+    _executar_com_retry("diagnostico da sessao HTTP da API", _operacao)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 487, in _executar_com_retry
+    return operacao()
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 820, in _operacao
+    itens = _executar_get_dir_contents(sessao, [], FILE_MANAGER_ROOT)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download_api.py", line 795, in _executar_get_dir_contents
+    response = sessao.get(
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\paulo.silva\AppData\Roaming\Python\Python310\site-packages\requests\adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='nef.revo360.io', port=10024): Max retries exceeded with url: /api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D (Caused by ConnectTimeoutError(<HTTPSConnection(host='nef.revo360.io', port=10024) at 0x226da690280>, 'Connection to nef.revo360.io timed out. (connect timeout=15)'))
+2026-08-03 08:01:36,574 [INFO] __main__.source.siscobra_uniao - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-08-03 08:01:36,575 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-08-03 08:01:36,578 [INFO] __main__.source.siscobra_uniao - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-08-03 08:01:36,582 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-08-03 08:01:46,607 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x226da691ea0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-08-03 08:01:56,632 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x226da6475b0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-08-03 08:02:06,656 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x226da646b30>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-08-03 08:02:07,655 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-08-03 08:02:10,261 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-08-03T08:00:46 finished=2026-08-03T08:02:10 duration_s=83.766 category=not_found final_stage=download
+2026-08-03 08:22:45,310 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-08-03 08:22:45,314 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-08-03 08:22:45,314 [INFO] __main__.source.siscobra_uniao - Executando etapa download (try=1).
+2026-08-03 08:22:45,315 [INFO] __main__.source.siscobra_uniao - Iniciando login HTTP no REVO360 para o ciclo 2026-07-31 (source=siscobra_uniao)
+2026-08-03 08:22:47,524 [INFO] __main__.source.siscobra_uniao - Login HTTP realizado com sucesso
+2026-08-03 08:22:47,524 [INFO] __main__.source.siscobra_uniao - File Manager sera consultado por requests.Session via HTTP direto
+2026-08-03 08:22:47,524 [INFO] __main__.source.siscobra_uniao - Consultando pasta remota via API HTTP: Exportação Siscobra União
+2026-08-03 08:22:47,624 [INFO] __main__.source.siscobra_uniao - Listagem via API HTTP concluida: 90 item(ns) em 'Exportação Siscobra União'
+2026-08-03 08:22:47,624 [INFO] __main__.source.siscobra_uniao - Arquivo selecionado para o ciclo 2026-07-31 (source=siscobra_uniao): Exportacao_Siscobra_Uniao_20260731.csv
+2026-08-03 08:22:47,849 [INFO] __main__.source.siscobra_uniao - Download HTTP direto concluido: Exportacao_Siscobra_Uniao_20260731.csv
+2026-08-03 08:22:47,849 [INFO] __main__.source.siscobra_uniao - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Uniao_20260731.csv
+2026-08-03 08:22:47,850 [INFO] __main__.source.siscobra_uniao - Tamanho final do arquivo salvo: 368440 bytes
+2026-08-03 08:22:47,850 [INFO] __main__.source.siscobra_uniao - Tempo total do download: 0.19s
+2026-08-03 08:22:47,850 [INFO] __main__.source.siscobra_uniao - Etapa download concluida com sucesso.
+2026-08-03 08:22:47,853 [INFO] __main__.source.siscobra_uniao - Executando etapa prepare (try=1).
+2026-08-03 08:22:48,725 [INFO] __main__.source.siscobra_uniao - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260731_082245.csv
+2026-08-03 08:22:48,725 [INFO] __main__.source.siscobra_uniao - Etapa prepare concluida com sucesso.
+2026-08-03 08:22:48,725 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-08-03 08:22:48,725 [INFO] __main__.source.siscobra_uniao - Executando etapa send_ftp (try=1).
+2026-08-03 08:23:20,641 [INFO] __main__.source.siscobra_uniao - Etapa send_ftp concluida com sucesso.
+2026-08-03 08:23:20,645 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-08-03 08:23:30,657 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x2494b6a4790>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-08-03 08:23:40,671 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x2494b6a50c0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-08-03 08:23:50,674 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x2494b6a5990>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-08-03 08:23:51,699 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-08-03 08:23:55,393 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao concluido com sucesso na tentativa 1.
+2026-08-03 08:23:55,398 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-08-03T08:22:45 finished=2026-08-03T08:23:55 duration_s=70.094 category=success final_stage=send_ftp

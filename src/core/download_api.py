@@ -29,6 +29,7 @@ from config.settings import (
 logger = logging.getLogger(__name__)
 
 FILE_MANAGER_ENDPOINT = "/api/file-manager-file-system"
+FILE_MANAGER_API_DASH_PREFIX = "/apiDash"
 FILE_MANAGER_ROOT = r"..\UPLOAD"
 FILE_MANAGER_LIST_ACCEPT = "application/json, text/javascript, */*; q=0.01"
 REQUEST_TIMEOUT = (
@@ -88,7 +89,12 @@ def _resolver_origem_configurado() -> str | None:
     if not configurado:
         return None
     try:
-        return _extrair_origem_http(configurado)
+        origem = _extrair_origem_http(configurado)
+        parsed = urlsplit(origem)
+        hostname = parsed.hostname
+        if not hostname:
+            raise RuntimeError(f"URL invalida para extrair origem HTTP: {configurado!r}")
+        return f"{parsed.scheme}://{hostname}{FILE_MANAGER_API_DASH_PREFIX}"
     except RuntimeError as exc:
         raise RuntimeError(
             f"Configuracao FILE_MANAGER_API_BASE_URL invalida: {configurado!r}"
@@ -138,14 +144,27 @@ def _construir_path_info(pasta_normalizada: str) -> list[dict]:
 def _resolver_endpoint(sessao: requests.Session) -> str:
     endpoint = _session_attr_str(sessao, "revo360_file_manager_endpoint")
     if endpoint:
+        parsed = urlsplit(endpoint)
+        if parsed.scheme and parsed.netloc:
+            return _resolver_endpoint_base(parsed.scheme, parsed.hostname)
         return endpoint
 
     origin = _session_attr_str(sessao, "revo360_origin")
     if origin:
+        parsed = urlsplit(origin)
+        if parsed.scheme and parsed.netloc:
+            return _resolver_endpoint_base(parsed.scheme, parsed.hostname)
         return f"{origin}{FILE_MANAGER_ENDPOINT}"
 
     referer = _coletar_headers_sessao(sessao).get("Referer") or BASE_URL
-    return f"{_extrair_origem_http(referer)}{FILE_MANAGER_ENDPOINT}"
+    parsed = urlsplit(_extrair_origem_http(referer))
+    return _resolver_endpoint_base(parsed.scheme, parsed.hostname)
+
+
+def _resolver_endpoint_base(scheme: str, hostname: str | None) -> str:
+    if not hostname:
+        raise RuntimeError("Nao foi possivel determinar o hostname do File Manager.")
+    return f"{scheme}://{hostname}{FILE_MANAGER_API_DASH_PREFIX}{FILE_MANAGER_ENDPOINT}"
 
 
 def _coletar_headers_sessao(sessao: requests.Session) -> dict[str, str]:
@@ -532,7 +551,7 @@ def criar_sessao_revo360_http(
     sessao = requests.Session()
     api_base_url = _resolver_revo360_api_base_url()
     portal_origin = _extrair_origem_http(BASE_URL)
-    file_manager_origin = _resolver_origem_configurado() or portal_origin
+    file_manager_origin = _resolver_origem_configurado() or f"{portal_origin}{FILE_MANAGER_API_DASH_PREFIX}"
     file_manager_endpoint = f"{file_manager_origin}{FILE_MANAGER_ENDPOINT}"
 
     sessao.headers.update(

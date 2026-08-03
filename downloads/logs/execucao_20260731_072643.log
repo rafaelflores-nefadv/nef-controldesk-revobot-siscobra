@@ -1,0 +1,6 @@
+2026-07-31 07:26:43,231 [INFO] __main__ - Log iniciado em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260731_072643.log
+2026-07-31 07:26:43,327 [INFO] __main__ - Lock de instancia adquirido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:26:43,352 [INFO] __main__ - Modo daemon iniciado (poll=30s, after_run_sleep=60s).
+2026-07-31 07:26:43,355 [INFO] __main__ - Fora da janela (2026-07-31 18:40:00 -> 2026-07-31 18:40:59). Proxima janela em 2026-07-31 18:40:00. Dormindo 40396 segundos.
+2026-07-31 07:27:13,365 [INFO] __main__ - Lock de instancia removido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:27:13,385 [INFO] __main__ - Execucao interrompida pelo usuario (Ctrl+C).

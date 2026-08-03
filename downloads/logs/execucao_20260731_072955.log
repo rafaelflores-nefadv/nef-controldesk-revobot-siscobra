@@ -1,0 +1,110 @@
+2026-07-31 07:29:55,815 [INFO] __main__ - Log iniciado em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260731_072955.log
+2026-07-31 07:29:55,815 [WARNING] __main__ - Execucao manual solicitada para ciclo 2026-07-30 (server=True ftp=True).
+2026-07-31 07:29:55,815 [INFO] __main__ - Lock de instancia adquirido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:29:55,815 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-07-31 07:29:55,815 [INFO] __main__ - Inicio do ciclo 2026-07-30 em 2026-07-31T07:29:55
+2026-07-31 07:29:55,834 [INFO] __main__ - Ciclo 2026-07-30 carregado com targets: server=True ftp=True
+2026-07-31 07:29:55,834 [INFO] __main__ - Pre-validacao de configuracao concluida: 5 source(s) configurado(s).
+2026-07-31 07:29:55,834 [INFO] __main__ - Source selecionado manualmente: siscobra_uniao
+2026-07-31 07:29:55,835 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_uniao
+2026-07-31 07:29:55,835 [INFO] __main__ - Processando source 1/1: siscobra_uniao
+2026-07-31 07:29:55,839 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-31 07:29:55,841 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-07-31 07:29:55,842 [INFO] __main__.source.siscobra_uniao - Executando etapa download (try=1).
+2026-07-31 07:29:55,843 [INFO] __main__.source.siscobra_uniao - Iniciando login HTTP no REVO360 para o ciclo 2026-07-30 (source=siscobra_uniao)
+2026-07-31 07:29:55,843 [INFO] core.download_api - Iniciando autenticacao HTTP no REVO360: https://nef.revo360.io/api/revolutionService/loginUserCRM
+2026-07-31 07:29:57,698 [INFO] core.download_api - Login HTTP no REVO360 concluido: usuario=rafael.flores endpoint_file_manager=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-07-31 07:29:57,698 [INFO] __main__.source.siscobra_uniao - Login HTTP realizado com sucesso
+2026-07-31 07:29:57,698 [INFO] __main__.source.siscobra_uniao - File Manager sera consultado por requests.Session via HTTP direto
+2026-07-31 07:29:57,715 [INFO] __main__.source.siscobra_uniao - Consultando pasta remota via API HTTP: Exportação Siscobra União
+2026-07-31 07:29:57,716 [INFO] core.download_api - Executando diagnostico de autenticacao HTTP da API File Manager na raiz '..\UPLOAD'
+2026-07-31 07:29:57,716 [INFO] core.download_api - Executando diagnostico da sessao HTTP da API (tentativa 1/3)
+2026-07-31 07:29:57,716 [INFO] core.download_api - listagem da pasta '..\UPLOAD': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": []}'} headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-07-31 07:29:57,817 [INFO] core.download_api - listagem da pasta '..\UPLOAD': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-07-31 07:29:57,818 [INFO] core.download_api - Diagnostico da sessao HTTP da API concluido: raiz acessivel com 33 item(ns)
+2026-07-31 07:29:57,818 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra União' (tentativa 1/3)
+2026-07-31 07:29:57,818 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra União': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%7D%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": [{"key": "Exportação Siscobra União", "name": "Exportação Siscobra União"}]}'} headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-07-31 07:29:57,852 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra União': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%7D%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-07-31 07:29:57,853 [INFO] core.download_api - Listagem via API concluida para 'Exportação Siscobra União': 87 item(ns)
+2026-07-31 07:29:57,853 [INFO] __main__.source.siscobra_uniao - Listagem via API HTTP concluida: 87 item(ns) em 'Exportação Siscobra União'
+2026-07-31 07:29:57,853 [INFO] __main__.source.siscobra_uniao - Arquivo selecionado para o ciclo 2026-07-30 (source=siscobra_uniao): Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:57,854 [INFO] core.download_api - Carteira iniciada para download via API: Exportação Siscobra União
+2026-07-31 07:29:57,854 [INFO] core.download_api - Arquivo solicitado via API: Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:57,854 [INFO] core.download_api - Iniciando download HTTP direto do arquivo 'Exportacao_Siscobra_Uniao_20260730.csv' para C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:57,855 [INFO] core.download_api - Executando download do arquivo 'Exportacao_Siscobra_Uniao_20260730.csv' (tentativa 1/3)
+2026-07-31 07:29:58,037 [INFO] core.download_api - Download HTTP direto concluido com sucesso: arquivo=Exportacao_Siscobra_Uniao_20260730.csv caminho=C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Uniao_20260730.csv tamanho=290449 bytes
+2026-07-31 07:29:58,037 [INFO] __main__.source.siscobra_uniao - Download HTTP direto concluido: Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:58,037 [INFO] __main__.source.siscobra_uniao - Arquivo salvo em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\Exportacao_Siscobra_Uniao_20260730.csv
+2026-07-31 07:29:58,037 [INFO] __main__.source.siscobra_uniao - Tamanho final do arquivo salvo: 290449 bytes
+2026-07-31 07:29:58,038 [INFO] __main__.source.siscobra_uniao - Tempo total do download: 0.19s
+2026-07-31 07:29:58,038 [INFO] __main__.source.siscobra_uniao - Etapa download concluida com sucesso.
+2026-07-31 07:29:58,041 [INFO] __main__.source.siscobra_uniao - Executando etapa prepare (try=1).
+2026-07-31 07:29:58,067 [WARNING] core.download - CSV convertido de cp1252 para UTF-8 antes do tratamento: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv.tmp
+2026-07-31 07:29:58,832 [INFO] core.download - Cabecalho removido do CSV: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv.tmp
+2026-07-31 07:29:58,832 [INFO] core.download - Arquivo XLSX de visualizacao gerado: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955_excel.xlsx
+2026-07-31 07:29:58,848 [INFO] __main__.source.siscobra_uniao - Prepare concluido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+2026-07-31 07:29:58,849 [INFO] __main__.source.siscobra_uniao - Etapa prepare concluida com sucesso.
+2026-07-31 07:29:58,851 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-07-31 07:29:58,854 [INFO] __main__.source.siscobra_uniao - Executando etapa send_ftp (try=1).
+2026-07-31 07:29:58,864 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-07-31 07:29:58,999 [INFO] core.download - Autenticando no FTP
+2026-07-31 07:29:59,096 [ERROR] core.download - Falha ao verificar arquivo no FTP: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 475, in _verificar_upload_ftp
+    ftp = _abrir_conexao_ftp(contexto, passive=True, data_protection="P", ftp_dir=ftp_dir)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 153, in _abrir_conexao_ftp
+    ftp.login(FTP_USER, FTP_PASSWORD)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 746, in login
+    return super().login(user, passwd, acct)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 414, in login
+    resp = self.sendcmd('PASS ' + passwd)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 281, in sendcmd
+    return self.getresp()
+  File "C:\Program Files\Python310\lib\ftplib.py", line 254, in getresp
+    raise error_perm(resp)
+ftplib.error_perm: 530 User cannot log in.
+2026-07-31 07:29:59,132 [INFO] core.download - Iniciando envio ao FTP: LOCAL_0911_290_NABARRETEFERRO_ACIONAMENTOS_20260730_072955.csv
+2026-07-31 07:29:59,152 [INFO] core.download - Conectando ao FTP 172.25.68.13:990 (timeout=30s)
+2026-07-31 07:29:59,273 [INFO] core.download - Autenticando no FTP
+2026-07-31 07:29:59,370 [ERROR] core.download - Falha no envio ao FTP
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 540, in enviar_arquivo_ftp
+    ftp = _abrir_conexao_ftp(
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 153, in _abrir_conexao_ftp
+    ftp.login(FTP_USER, FTP_PASSWORD)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 746, in login
+    return super().login(user, passwd, acct)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 414, in login
+    resp = self.sendcmd('PASS ' + passwd)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 281, in sendcmd
+    return self.getresp()
+  File "C:\Program Files\Python310\lib\ftplib.py", line 254, in getresp
+    raise error_perm(resp)
+ftplib.error_perm: 530 User cannot log in.
+2026-07-31 07:29:59,371 [ERROR] __main__.source.siscobra_uniao - Falha na etapa send_ftp: 530 User cannot log in.
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1287, in _run_single_stage
+    _run_send_ftp_stage(logger, state)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1273, in _run_send_ftp_stage
+    enviar_arquivo_ftp(prepared, ftp_dir=ftp_dir)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 540, in enviar_arquivo_ftp
+    ftp = _abrir_conexao_ftp(
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\download.py", line 153, in _abrir_conexao_ftp
+    ftp.login(FTP_USER, FTP_PASSWORD)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 746, in login
+    return super().login(user, passwd, acct)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 414, in login
+    resp = self.sendcmd('PASS ' + passwd)
+  File "C:\Program Files\Python310\lib\ftplib.py", line 281, in sendcmd
+    return self.getresp()
+  File "C:\Program Files\Python310\lib\ftplib.py", line 254, in getresp
+    raise error_perm(resp)
+ftplib.error_perm: 530 User cannot log in.
+2026-07-31 07:29:59,391 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:30:09,411 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x22e1ae38850>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:30:19,414 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x22e1ae39150>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:30:29,429 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-07-31T07:29:55 finished=2026-07-31T07:30:29 duration_s=33.594 category=failed final_stage=send_ftp
+2026-07-31 07:30:29,430 [INFO] __main__ - Lock de instancia removido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:30:29,431 [INFO] __main__ - Execucao interrompida pelo usuario (Ctrl+C).

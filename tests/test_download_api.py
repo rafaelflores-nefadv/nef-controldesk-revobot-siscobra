@@ -27,7 +27,7 @@ class FakeResponse:
         status_code=200,
         headers=None,
         text=None,
-        url="https://nef.revo360.io/api/file-manager-file-system",
+        url="https://nef.revo360.io/apiDash/api/file-manager-file-system",
         history=None,
         json_error: Exception | None = None,
     ):
@@ -73,7 +73,7 @@ class DownloadApiTests(unittest.TestCase):
         sessao.revo360_origin = "https://nef.revo360.io"
         sessao.revo360_base_url = "https://nef.revo360.io"
         sessao.revo360_referer = "https://nef.revo360.io/"
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         sessao.revo360_auth_probe_enabled = False
         sessao.get.return_value = FakeResponse(
             payload={
@@ -121,7 +121,7 @@ class DownloadApiTests(unittest.TestCase):
         )
 
         sessao.get.assert_called_once_with(
-            "https://nef.revo360.io/api/file-manager-file-system",
+            "https://nef.revo360.io/apiDash/api/file-manager-file-system",
             params={
                 "path": r"..\UPLOAD",
                 "command": "GetDirContents",
@@ -151,7 +151,7 @@ class DownloadApiTests(unittest.TestCase):
         sessao.headers = {"User-Agent": "Mozilla/5.0 Teste"}
         sessao.revo360_origin = "https://nef.revo360.io"
         sessao.revo360_base_url = "https://nef.revo360.io"
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         sessao.revo360_auth_probe_enabled = False
         sessao.get.side_effect = [
             requests.Timeout("timeout"),
@@ -173,7 +173,7 @@ class DownloadApiTests(unittest.TestCase):
         sessao.headers = {"User-Agent": "Mozilla/5.0 Teste"}
         sessao.revo360_origin = "https://nef.revo360.io"
         sessao.revo360_base_url = "https://nef.revo360.io"
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         sessao.revo360_auth_probe_enabled = False
         sessao.get.return_value = FakeResponse(
             payload={"success": True},
@@ -190,7 +190,7 @@ class DownloadApiTests(unittest.TestCase):
         sessao.headers = {"User-Agent": "Mozilla/5.0 Teste"}
         sessao.revo360_origin = "https://nef.revo360.io"
         sessao.revo360_base_url = "https://nef.revo360.io"
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         sessao.revo360_auth_probe_enabled = False
         sessao.get.return_value = FakeResponse(
             text="<html><body>login</body></html>",
@@ -206,7 +206,7 @@ class DownloadApiTests(unittest.TestCase):
         sessao.headers = {"User-Agent": "Mozilla/5.0 Teste"}
         sessao.revo360_origin = "https://nef.revo360.io"
         sessao.revo360_base_url = "https://nef.revo360.io"
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         sessao.revo360_auth_probe_enabled = True
         sessao.revo360_auth_probe_done = False
         sessao.get.return_value = FakeResponse(
@@ -230,7 +230,7 @@ class DownloadApiTests(unittest.TestCase):
         self.assertIn("url=https://nef.revo360.io/login", output)
         self.assertIn("corpo HTML inesperado", output)
         sessao.get.assert_called_once_with(
-            "https://nef.revo360.io/api/file-manager-file-system",
+            "https://nef.revo360.io/apiDash/api/file-manager-file-system",
             params={
                 "path": r"..\UPLOAD",
                 "command": "GetDirContents",
@@ -248,7 +248,7 @@ class DownloadApiTests(unittest.TestCase):
     @unittest.skip("estrategia anterior baseada em fetch foi desativada")
     def test_baixar_arquivo_api_faz_stream_para_arquivo_temporario_e_move_no_final(self) -> None:
         sessao = Mock()
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         sessao.post.return_value = FakeResponse(
             chunks=[b"abc", b"", b"def"],
             headers={
@@ -287,7 +287,7 @@ class DownloadApiTests(unittest.TestCase):
         post_args = sessao.post.call_args
         self.assertEqual(
             post_args.args[0],
-            "https://nef.revo360.io/api/file-manager-file-system",
+            "https://nef.revo360.io/apiDash/api/file-manager-file-system",
         )
         self.assertEqual(post_args.kwargs["params"], {"path": r"..\UPLOAD"})
         self.assertTrue(post_args.kwargs["stream"])
@@ -311,7 +311,7 @@ class DownloadApiTests(unittest.TestCase):
 
     def test_baixar_arquivo_api_retry_em_http_503_e_sucesso_na_segunda_tentativa(self) -> None:
         sessao = Mock()
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         item = {
             "name": "Exportacao_Siscobra_0914_20260309.csv",
             "key": r"Exportação Siscobra 0914\Exportacao_Siscobra_0914_20260309.csv",
@@ -350,7 +350,7 @@ class DownloadApiTests(unittest.TestCase):
 
     def test_baixar_arquivo_api_detecta_html_no_lugar_do_binario(self) -> None:
         sessao = Mock()
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         item = {
             "name": "Exportacao_Siscobra_0914_20260309.csv",
             "key": r"Exportação Siscobra 0914\Exportacao_Siscobra_0914_20260309.csv",
@@ -381,7 +381,7 @@ class DownloadApiTests(unittest.TestCase):
 
     def test_baixar_arquivo_api_falha_quando_content_disposition_ausente(self) -> None:
         sessao = Mock()
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         item = {
             "name": "Exportacao_Siscobra_0914_20260309.csv",
             "key": r"Exportação Siscobra 0914\Exportacao_Siscobra_0914_20260309.csv",
@@ -409,7 +409,7 @@ class DownloadApiTests(unittest.TestCase):
 
     def test_baixar_arquivo_api_falha_quando_download_retorna_vazio(self) -> None:
         sessao = Mock()
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         item = {
             "name": "Exportacao_Siscobra_0914_20260309.csv",
             "key": r"Exportação Siscobra 0914\Exportacao_Siscobra_0914_20260309.csv",
@@ -438,9 +438,44 @@ class DownloadApiTests(unittest.TestCase):
         finally:
             shutil.rmtree(base_tmp, ignore_errors=True)
 
+    def test_baixar_arquivo_api_normaliza_endpoint_antigo_para_api_dash(self) -> None:
+        sessao = Mock()
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
+        item = {
+            "name": "Exportacao_Siscobra_Uniao_20260731.csv",
+            "key": r"ExportaÃ§Ã£o Siscobra UniÃ£o\Exportacao_Siscobra_Uniao_20260731.csv",
+            "isDirectory": False,
+        }
+        sessao.post.return_value = FakeResponse(
+            chunks=[b"abc"],
+            headers={
+                "Content-Type": "application/octet-stream",
+                "Content-Disposition": 'attachment; filename="Exportacao_Siscobra_Uniao_20260731.csv"',
+            },
+        )
+
+        base_tmp = ROOT_DIR / "downloads" / f"test_download_api_{uuid4().hex}"
+        base_tmp.mkdir(parents=True, exist_ok=True)
+        try:
+            destino = base_tmp / item["name"]
+            with patch.object(download_api, "_listar_arquivos_api_raw", return_value=[item]):
+                caminho = download_api.baixar_arquivo_api(
+                    sessao,
+                    "ExportaÃ§Ã£o Siscobra UniÃ£o",
+                    item["name"],
+                    destino,
+                )
+
+            self.assertEqual(caminho, destino)
+        finally:
+            shutil.rmtree(base_tmp, ignore_errors=True)
+
+        self.assertEqual(sessao.post.call_args.args[0], "https://nef.revo360.io/apiDash/api/file-manager-file-system")
+        self.assertNotIn(":10024", sessao.post.call_args.args[0])
+
     def test_baixar_arquivo_api_trata_json_success_true_result_null_como_payload_incorreto(self) -> None:
         sessao = Mock()
-        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io/api/file-manager-file-system"
+        sessao.revo360_file_manager_endpoint = "https://nef.revo360.io:10024/api/file-manager-file-system"
         item = {
             "name": "Exportacao_Siscobra_0914_20260309.csv",
             "key": r"Exportação Siscobra 0914\Exportacao_Siscobra_0914_20260309.csv",

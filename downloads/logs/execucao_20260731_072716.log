@@ -1,0 +1,68 @@
+2026-07-31 07:27:16,788 [INFO] __main__ - Log iniciado em: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\execucao_20260731_072716.log
+2026-07-31 07:27:16,788 [INFO] __main__ - Lock de instancia adquirido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:27:16,788 [WARNING] __main__ - Execucao forcada: ignorando o agendamento configurado.
+2026-07-31 07:27:16,788 [INFO] __main__ - Inicio do ciclo 2026-07-31 em 2026-07-31T07:27:16
+2026-07-31 07:27:16,788 [INFO] __main__ - Ciclo 2026-07-31 carregado com targets: server=True ftp=True
+2026-07-31 07:27:16,788 [INFO] __main__ - Pre-validacao de configuracao concluida: 5 source(s) configurado(s).
+2026-07-31 07:27:16,788 [INFO] __main__ - Source selecionado manualmente: siscobra_uniao
+2026-07-31 07:27:16,799 [INFO] __main__ - Sources habilitados para este ciclo (1): siscobra_uniao
+2026-07-31 07:27:16,800 [INFO] __main__ - Processando source 1/1: siscobra_uniao
+2026-07-31 07:27:16,803 [INFO] __main__.source.siscobra_uniao - Iniciando pipeline do source=siscobra_uniao
+2026-07-31 07:27:16,805 [INFO] __main__.source.siscobra_uniao - Source siscobra_uniao - tentativa 1/10
+2026-07-31 07:27:16,807 [INFO] __main__.source.siscobra_uniao - Executando etapa download (try=1).
+2026-07-31 07:27:16,808 [INFO] __main__.source.siscobra_uniao - Iniciando login HTTP no REVO360 para o ciclo 2026-07-31 (source=siscobra_uniao)
+2026-07-31 07:27:16,808 [INFO] core.download_api - Iniciando autenticacao HTTP no REVO360: https://nef.revo360.io/api/revolutionService/loginUserCRM
+2026-07-31 07:27:18,869 [INFO] core.download_api - Login HTTP no REVO360 concluido: usuario=rafael.flores endpoint_file_manager=https://nef.revo360.io:10024/api/file-manager-file-system
+2026-07-31 07:27:18,871 [INFO] __main__.source.siscobra_uniao - Login HTTP realizado com sucesso
+2026-07-31 07:27:18,872 [INFO] __main__.source.siscobra_uniao - File Manager sera consultado por requests.Session via HTTP direto
+2026-07-31 07:27:18,882 [INFO] __main__.source.siscobra_uniao - Consultando pasta remota via API HTTP: Exportação Siscobra União
+2026-07-31 07:27:18,883 [INFO] core.download_api - Executando diagnostico de autenticacao HTTP da API File Manager na raiz '..\UPLOAD'
+2026-07-31 07:27:18,884 [INFO] core.download_api - Executando diagnostico da sessao HTTP da API (tentativa 1/3)
+2026-07-31 07:27:18,884 [INFO] core.download_api - listagem da pasta '..\UPLOAD': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": []}'} headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-07-31 07:27:19,000 [INFO] core.download_api - listagem da pasta '..\UPLOAD': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-07-31 07:27:19,000 [INFO] core.download_api - Diagnostico da sessao HTTP da API concluido: raiz acessivel com 33 item(ns)
+2026-07-31 07:27:19,001 [INFO] core.download_api - Executando listagem da pasta 'Exportação Siscobra União' (tentativa 1/3)
+2026-07-31 07:27:19,002 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra União': request method=GET url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%7D%5D%7D params={'path': '..\\UPLOAD', 'command': 'GetDirContents', 'arguments': '{"pathInfo": [{"key": "Exportação Siscobra União", "name": "Exportação Siscobra União"}]}'} headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json, text/javascript, */*; q=0.01', 'Connection': 'keep-alive', 'Origin': 'https://nef.revo360.io:10024', 'Referer': 'https://nef.revo360.io/'} cookies_na_sessao=[]
+2026-07-31 07:27:19,042 [INFO] core.download_api - listagem da pasta 'Exportação Siscobra União': response status=200 url=https://nef.revo360.io:10024/api/file-manager-file-system?path=..%5CUPLOAD&command=GetDirContents&arguments=%7B%22pathInfo%22%3A+%5B%7B%22key%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%2C+%22name%22%3A+%22Exporta%C3%A7%C3%A3o+Siscobra+Uni%C3%A3o%22%7D%5D%7D content_type=application/json content_length=<ausente> location=<ausente>
+2026-07-31 07:27:19,043 [INFO] core.download_api - Listagem via API concluida para 'Exportação Siscobra União': 87 item(ns)
+2026-07-31 07:27:19,044 [INFO] __main__.source.siscobra_uniao - Listagem via API HTTP concluida: 87 item(ns) em 'Exportação Siscobra União'
+2026-07-31 07:27:19,045 [ERROR] __main__.source.siscobra_uniao - Arquivo do ciclo 2026-07-31 ainda nao disponivel na pasta 'Exportação Siscobra União'. Itens retornados=87. Exemplos recentes=Exportacao_Siscobra_Uniao_20260730.csv, Exportacao_Siscobra_Uniao_20260729.csv, Exportacao_Siscobra_Uniao_20260728.csv, Exportacao_Siscobra_Uniao_20260727.csv, Exportacao_Siscobra_Uniao_20260726.csv
+2026-07-31 07:27:19,045 [ERROR] __main__.source.siscobra_uniao - Falha na etapa download: Arquivo CSV do ciclo 2026-07-31 ainda nao esta disponivel na pasta 'Exportação Siscobra União'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1130, in _run_download_stage
+    raise RuntimeError(
+RuntimeError: Arquivo esperado nao encontrado na listagem: Exportacao_Siscobra_Uniao_20260731.csv
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\pipeline_orchestrator.py", line 54, in execute_stage_flow
+    run_single_stage(stage, logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1278, in _run_single_stage
+    _run_download_stage(logger, state, cycle_date)
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\main.py", line 1147, in _run_download_stage
+    raise RuntimeError(
+RuntimeError: Arquivo CSV do ciclo 2026-07-31 ainda nao esta disponivel na pasta 'Exportação Siscobra União'. Isso pode ocorrer se a geracao do arquivo ainda nao terminou no REVO360.
+2026-07-31 07:27:19,060 [INFO] __main__.source.siscobra_uniao - Etapa prepare bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-07-31 07:27:19,069 [INFO] __main__.source.siscobra_uniao - Etapa send_server desabilitada pelos targets do ciclo. Marcando como SKIPPED.
+2026-07-31 07:27:19,070 [INFO] __main__.source.siscobra_uniao - Etapa send_ftp bloqueada por dependencia pendente. Pulando nesta tentativa.
+2026-07-31 07:27:19,082 [INFO] __main__.source.siscobra_uniao - Enviando notificacao WhatsApp via WAHA (base_url=http://69.6.221.156:3000, session=default, destinatarios=3).
+2026-07-31 07:27:29,096 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556793087866: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1aab43e8490>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:27:39,114 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781386476: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1aab43e8d00>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:27:49,120 [ERROR] __main__.source.siscobra_uniao - Falha ao enviar WhatsApp para 556781376048: HTTPConnectionPool(host='69.6.221.156', port=3000): Max retries exceeded with url: /api/sendText (Caused by ConnectTimeoutError(<HTTPConnection(host='69.6.221.156', port=3000) at 0x1aab43e95d0>, 'Connection to 69.6.221.156 timed out. (connect timeout=10)'))
+2026-07-31 07:27:50,258 [INFO] __main__.source.siscobra_uniao - Resumo enviado ao Google Chat.
+2026-07-31 07:27:53,536 [ERROR] core.email_notifier - Falha ao enviar notificacao por e-mail: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3153dd9c93dsm5352825eec.8 - gsmtp')
+Traceback (most recent call last):
+  File "C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\src\core\email_notifier.py", line 90, in send_execution_email
+    smtp.login(EMAIL_USER, EMAIL_PASSWORD)
+  File "C:\Program Files\Python310\lib\smtplib.py", line 750, in login
+    raise last_exception
+  File "C:\Program Files\Python310\lib\smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "C:\Program Files\Python310\lib\smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3153dd9c93dsm5352825eec.8 - gsmtp')
+2026-07-31 07:27:53,569 [WARNING] __main__.source.siscobra_uniao - Source siscobra_uniao falhou. Nova tentativa em 1800 segundos.
+2026-07-31 07:27:56,390 [INFO] __main__.source.siscobra_uniao - Metricas do source: started=2026-07-31T07:27:16 finished=2026-07-31T07:27:56 duration_s=39.578 category=not_found final_stage=download
+2026-07-31 07:27:56,391 [INFO] __main__ - Lock de instancia removido: C:\Users\paulo.silva\nef-controldesk-revobot-siscobra\downloads\logs\revo360.lock
+2026-07-31 07:27:56,392 [INFO] __main__ - Execucao interrompida pelo usuario (Ctrl+C).
